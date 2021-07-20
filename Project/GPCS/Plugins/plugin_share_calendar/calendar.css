@@ -1,0 +1,62 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: 'pingFangSC-Medium';
+}
+#calendar{
+	width: 100%;
+	height: 100%;
+	background:#fff;
+	overflow: scroll;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+#calendar th{
+	width: 14.2%;
+	color:#7a7a7a;
+	background: #e6eaf1;
+	padding: 10px;
+	border: 1px solid #ddd;
+	font-weight: normal;
+	text-align: center;
+}
+#calendar td{
+	text-align: center;
+	color:#4a4a4a;
+	border: 1px solid #ddd;
+	position: relative;
+	font-size: 12px;
+}
+#calendar tr:nth-child(even){background:#f8f8fa;}
+#calendar .date{
+	display: inline-block;
+	color: #7a7a7a;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+#calendar tbody tr td:first-child .date,#calendar tbody tr td:last-child .date{color:#F44336;}
+#calendar .val{
+	display: inline-block;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+#calendar .valc{
+	color:#00B9B4;
+	height: 36px;
+	overflow: hidden;
+	padding-top: 20px;
+}
+#calendar .valc div{line-height: 150%;}
+#calendar .show-tip{
+	opacity: 0;
+	cursor: pointer;
+	text-decoration: underline;
+	color:#00B9B4;
+}
+.layui-layer-content{overflow-y: auto !important;}

@@ -1,0 +1,17 @@
+<?php
+	header("Content:text/html;charset=utf-8");
+	include_once(dirname(dirname(__FILE__))."/share.php");
+
+	$result = $db -> query("select * from [Things+].[dbo].[TB_Share_Group] where F_id not in ('sys_basic','sys_free') and F_project_code = 2002");
+	foreach($result as $res){
+		$db = new DB();
+		$sql = "";
+		$id = uniqid("g");
+		$sql .= "insert into [Things+].[dbo].[TB_Share_Group] values('".$id."','".$res -> F_name."','".$res -> F_code."','','".date("Y-m-d H:i:s")."','2005');";
+		$ton = $db -> query("select * from [Things+].[dbo].[TB_Share_GroupToNode] where F_group_id = '".$res -> F_id."'");
+		foreach($ton as $t){
+			$sql .= "insert into [Things+].[dbo].[TB_Share_GroupToNode] values('".uniqid("n")."','".$t -> F_node_id."','".$id."');";
+		}
+		$db -> multi_query($sql);
+	}
+?>

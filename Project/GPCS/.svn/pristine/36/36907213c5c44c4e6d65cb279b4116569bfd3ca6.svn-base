@@ -1,0 +1,4 @@
+USE [Things]
+SET IDENTITY_INSERT tb_A_Project ON
+INSERT dbo.tb_A_Project (F_ProjectNo,F_ProjectName,F_ProjectAbbr,F_ProjectTag,F_ProjectType,F_ProjectIndex,F_ProjectColor,F_ProjectDes,F_ProjectFrame,F_SystemFunction,F_GuideFunction) VALUES (2005,'末端空调系统','末端空调','GPCS','暖通控制',51,'#00ABA9','',3,'0','1610000000')
+SET IDENTITY_INSERT tb_A_Project OFF

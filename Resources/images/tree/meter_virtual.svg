@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>画板</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="8.30090847" cy="8.5" r="7"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="14" height="14" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="画板" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-17备份" transform="translate(-0.500000, -0.500000)">
+            <use id="椭圆形备份-12" stroke="#5DA467" mask="url(#mask-2)" stroke-width="2.8" stroke-linejoin="bevel" stroke-dasharray="1" transform="translate(8.300908, 8.500000) rotate(-7.000000) translate(-8.300908, -8.500000) " xlink:href="#path-1"></use>
+            <polygon id="路径-59备份-5" fill="#5DA467" points="8.45925362 5.54118207 6.38837857 10.1890214 10.6116214 10.1890214"></polygon>
+        </g>
+    </g>
+</svg>

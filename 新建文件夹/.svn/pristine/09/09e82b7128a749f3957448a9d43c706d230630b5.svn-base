@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title>通用监测配置 </title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="layui-row layui-col-space30">
+		<div class="layui-col-md2">
+			<div class="block base">
+				<div class="logo"></div>
+				<h5>基础配置</h5>
+			</div>
+		</div>
+		<div class="layui-col-md2">
+			<div class="block monitor">
+				<div class="logo"></div>
+				<h5>实时监测配置</h5>
+			</div>
+		</div>
+		<div class="layui-col-md2">
+			<div class="block apiReady">
+				<div class="logo"></div>
+				<h5>控制接口定义</h5>
+			</div>
+		</div>
+		<div class="layui-col-md2">
+			<div class="block apiGo">
+				<div class="logo"></div>
+				<h5>控制接口实现</h5>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/html" id="base_tpl">
+	<form class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">策略回调地址</label>
+			<div class="layui-input-block">
+				<input type="text" autocomplete="off" class="layui-input" value="{{d.ip}}" onblur="save()">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">批量任务个数</label>
+			<div class="layui-input-block">
+				<input type="text" autocomplete="off" class="layui-input" value="{{d.num}}" onblur="save()">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">日志保存周期</label>
+			<div class="layui-input-block">
+				<select lay-filter="keySel">
+					<option value="0" {{d.clear == 0 ? 'selected' : ''}}>不启用</option>
+					<option value="1" {{d.clear == 1 ? 'selected' : ''}}>一个月</option>
+					<option value="3" {{d.clear == 3 ? 'selected' : ''}}>三个月</option>
+					<option value="6" {{d.clear == 6 ? 'selected' : ''}}>六个月</option>
+					<option value="12" {{d.clear == 12 ? 'selected' : ''}}>一年</option>
+				</select>
+			</div>
+		</div>
+	</form>
+</script>

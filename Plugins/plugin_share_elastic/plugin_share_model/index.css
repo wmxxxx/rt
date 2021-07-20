@@ -1,0 +1,123 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	font-family: 'pingFangSC-Medium';
+}
+.action,.cycle{
+	width: calc(50% - 0.5px);
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+.cycle{border-right:1px solid #D0DCE4;}
+.action{
+	border-left:1px solid #D0DCE4;
+	margin-left: 1px;
+}
+.header{
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.main{
+	height: calc(100% - 80px);
+	overflow-y: auto;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+#cycle_open,#control_open{padding-right: 30px;}
+#action_open{padding:30px;}
+#action_open table tbody td{
+	padding: 5px;
+	text-align: center;
+}
+#action_open .layui-anim{max-height: 150px;}
+#action_open .layui-anim dd{line-height: 24px;}
+.pd0{
+	padding: 0;
+	text-align: center;
+}
+/*  */
+.x-block{
+	border: 1px solid #C1CFD6;
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 2px;
+	float: left;
+	margin: 0 0 15px 15px;
+}
+.x-block h2{
+	height: 35px;
+	line-height: 35px;
+	margin: 0;
+	padding: 0 9px;
+	font-size: 14px;
+	background: #EFF2F7;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+}
+.x-block h2 ol li{
+	width: 25px;
+	height: 35px;
+	background: no-repeat center;
+	float: left;
+	cursor: pointer;
+}
+.x-block ul{
+	max-height: 135px;
+	overflow: hidden;
+}
+.x-block ul li{
+	min-width: 200px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 30px;
+	text-align: center;
+}
+.cycle .x-block ul li:last-child{border-top: 1px dashed #C1CFD6;}
+/* 修正 */
+#cycle_open .layui-form-checkbox[lay-skin=primary]{
+	margin:0;
+	padding-left: 25px;
+}
+#control_open .layui-form-switch{margin: 0;}
+/* 无数据 */
+.x-nodata{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.x-nodata:before{
+	content:"暂无分组";
+	display:inline-block;
+	width:160px;
+	background:url(images/nodata.gif) no-repeat;
+	padding-top:160px;
+	text-align:center;
+}
+.cycle .x-nodata:before{content: "暂无周期模型";}
+.action .x-nodata:before{content: "暂无动作模型";}
+
+
+.layui-form-label{
+	width: 90px;
+	padding: 0;
+	line-height: 36px;
+}
+.layui-input-block{
+	display: flex;
+	align-items: center;
+}
+.layui-input-block .layui-form-switch{
+	margin: 0 ;
+	box-sizing: initial ;
+}

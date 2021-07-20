@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/base.css"/>
+	<link type="text/css" rel="stylesheet" href="zui/css/zui.min.css"/>
+	<link type="text/css" rel="stylesheet" href="zui/css/zui-theme.css"/>
+	<link type="text/css" rel="stylesheet" href="zui/lib/datetimepicker/datetimepicker.css">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title>实时监测</title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="zui/js/zui.js"></script>
+	<script type="text/javascript" src="zui/lib/datetimepicker/datetimepicker.js"></script>
+	<script type="text/javascript" src="zui/lib/selectable/zui.selectable.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div id="ztree"></div>
+	<div id="group" class="loading load-indicator warpper" data-loading="正在加载...">
+		<div class="header"></div>
+		<div class="main"></div>
+	</div>
+	<div id="node" class="warpper one">
+		<ul class="nav nav-tabs"></ul>
+		<div class="tab-content"></div>
+	</div>
+	<div id="device" class="warpper"></div>
+</body>
+</html>
+<script type="text/html" id="screen_tpl">
+	<div class="layui-form-item">
+		<label class="layui-form-label">筛选属性</label>
+		<div class="layui-input-block">
+			<select lay-filter="attr">
+				<option value="online#0:离线-1:在线">通讯状态</option>
+				<option value="illegal#0:正常-1:违规">违规状态</option>
+				{{#d.forEach(ele => {}}
+					<option value="{{ele.F_ValueLabel}}#{{ele.F_KV}}">{{ele.F_ValueName}}</option>
+				{{# });}}
+			</select>
+		</div>
+	</div>
+	<div class="main">
+		<div class="layui-form-item s-value">
+			<label class="layui-form-label">筛选内容</label>
+			<div class="layui-input-block">
+				<select lay-filter="type">
+					<option value="离线">离线</option>
+					<option value="在线">在线</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</script>

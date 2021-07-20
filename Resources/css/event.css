@@ -1,0 +1,169 @@
+﻿.event
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.event .tbar
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: #F0F0F0;
+}
+.event .view
+{
+    position: absolute;
+	left: 0px;
+	top: 43px;
+	right:0px;
+	bottom:0px;
+	border:0px;
+	padding:10px;
+	overflow:auto;
+}
+.event .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.event .tbar .logo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.event .tbar .logo img{
+    width: 22px;
+    height: 22px;
+}
+.event .tbar .text_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+}
+.event .tbar .date_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+    background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+}
+.event .tbar .ddl {
+    position: relative;
+    float: right;
+    width: 125px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 130px;
+    font-family: Microsoft YaHei;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.event .tbar .query_btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.event .tbar .query_btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.event .view .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -20px;
+    width: 330px;
+    height: 40px;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 25pt;
+    color: #A9A9A9;
+}
+.event .view table
+{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+.event .view table th
+{
+    font-size:14px;
+    padding:8px;
+    color:#333;
+    border-bottom:0px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+}
+.event .view table td
+{
+    padding:8px;
+    color:#333;
+    vertical-align: top;
+    line-height: 20px;
+    border:1px solid #ddd;
+}
+.event .view table tr.active
+{
+    background-color:#f9f9f9;
+}
+.event .view table tr:hover
+{
+    background-color:#f5f5f5;
+}

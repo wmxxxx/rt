@@ -1,0 +1,50 @@
+{
+	"data": [{
+			"code": "P_000",
+			"line": 2,
+			"id": 592485321110,
+			"isAct": true,
+			"leak":0
+		},
+		{
+			"code": "P_100",
+			"line": 0,
+			"id": 592485395330,
+			"isAct": true,
+			"leak":0
+		},
+		{
+			"code": "P_200",
+			"line": 0,
+			"id": 592485408267,
+			"isAct": true,
+			"leak":0
+		},
+		{
+			"code": "P_101",
+			"line": 1,
+			"id": 592485423123,
+			"isAct": true,
+			"leak":0
+		},
+		{
+			"code": "P_102",
+			"line": 1,
+			"id": 592485436160,
+			"isAct": true,
+			"leak":0
+		},
+		{
+			"code": "P_103",
+			"line": 2,
+			"id": 592485443227,
+			"isAct": true,
+			"leak":0
+		}
+	],
+	"leakColor1": "orange",
+	"leakColor2": "red",
+	"onlineColor": "gray",
+	"Color": "#00cc14",
+	"id":"592485321110,592485395330,592485408267,592485423123,592485436160,592485443227"
+}

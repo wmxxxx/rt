@@ -1,0 +1,15 @@
+辅仁  http://fa.reatgreen.com/Plugins/plugin_wechat_index/wxIndex.php
+
+人民医院  http://mt.reatgreen.com/wxrmyy/classic/html/index.html
+
+三院  http://mt.reatgreen.com/wxsy/classic/html/index.html
+
+天津妇产  http://mt.reatgreen.com/tjfcyy/classic/html/index.html
+
+重庆附二院  http://mt.reatgreen.com/cqfey/classic/html/index.html
+
+兴化  http://mt.reatgreen.com/xinhua/classic/html/index.html
+
+滨湖区政府  http://mt.reatgreen.com/wxbhqzf/classic/html/index.html
+
+实验幼儿园  http://mt.reatgreen.com/wxsyyey/classic/html/index.html

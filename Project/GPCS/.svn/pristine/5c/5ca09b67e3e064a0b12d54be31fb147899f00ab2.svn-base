@@ -1,0 +1,16 @@
+﻿<?php
+	header("Content:text/html;charset=utf-8");
+	include_once(dirname(dirname(dirname(dirname(__FILE__))))."/Php/lib/plugin/share.php");
+	
+	$nodes = $_POST["nodes"];
+	$ills = _GETDATA($nodes);
+	$illeagls = $db -> query("select distinct b.F_node_id from [Things+].[dbo].[TB_Share_warning_relation] a,[Things+].[dbo].[TB_Share_GroupToNode] b where a.F_group_id = b.F_group_id and b.F_node_id in (".implode(",",$nodes).")");
+	$strategy = $db -> query("select distinct b.F_node_id from [Things+].[dbo].[TB_Share_Relation] a,[Things+].[dbo].[TB_Share_GroupToNode] b where a.F_group_id = b.F_group_id and b.F_node_id in (".implode(",",$nodes).")");
+	$result = array(
+		"all" => count($illeagls),
+		"str" => count($strategy),
+		"ill" => count($ills)
+	);
+	ob_clean();
+	echo json_encode($result);
+?>

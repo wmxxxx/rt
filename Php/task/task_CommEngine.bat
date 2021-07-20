@@ -1,0 +1,1 @@
+E:\wamp\bin\php\php5.3.10\php.exe -q E:\wamp\www\Php\task\task_CommEngine.php

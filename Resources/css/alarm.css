@@ -1,0 +1,632 @@
+﻿.alarm
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+    font-family: Microsoft YaHei;
+	background-color: #0A1233;
+}
+.alarm .tbar
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	height:70px;
+    padding: 20px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .waiting{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right:0px;
+	bottom:0px;
+	background:#000000;
+	opacity:0.5;
+}
+.alarm .waiting img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.alarm .tbar .btn_set
+{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 0px;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    padding-right: 16px;
+    font-size: 14px;
+    color: #ffffff;
+    opacity: 0.9;
+    cursor:pointer;
+    border-radius: 26px;
+    -moz-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/Resources/images/alarm/set.png) center left 16px no-repeat #00BAB5;
+}
+.alarm .tbar .btn_set:hover
+{
+    opacity:1;
+}
+.alarm .tbar .ddl {
+    position: relative;
+    float: right;
+    height: 30px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 130px;
+    font-family: Microsoft YaHei;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid #254164;
+}
+.alarm .tbar input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 30px;
+    margin-left: 10px;
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #00bab5;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    font-family: Microsoft YaHei;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #254164;
+    background: url(/Resources/images/calendar.png) center right no-repeat;
+}
+.alarm .tbar .btn_search {
+    position: relative;
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-top: 7px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.alarm .tbar .btn_search:hover
+{
+    opacity:1;
+}
+.alarm .kpi
+{
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    right: 6px;
+    height: 110px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .kpi .panel {
+    position: relative;
+    float: left;
+    width: 14.28%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .kpi .item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 14px;
+    bottom: 0px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.alarm .kpi .item .title
+{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 70px;
+    height: 20px;
+    font-size: 14px;
+    text-align: right;
+}
+.alarm .kpi .item .icon
+{
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+.alarm .kpi .item .data
+{
+    position: absolute;
+    top: 38px;
+    left: 20px;
+    width: 136px;
+    height: 52px;
+    text-align: center;
+}
+.alarm .tab
+{
+    position: absolute;
+    left: 20px;
+    top: 180px;
+    right: 6px;
+    height: 64px;
+    padding: 17px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .tab .nav {
+    position: relative;
+    float: left;
+    width: 110px;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #A9A9AB;
+    text-align: center;
+    line-height: 26px;
+    cursor:pointer;
+    font-family: Microsoft YaHei;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #A9A9AB;
+}
+.alarm .tab .nav:hover {
+    color:#02898F;
+    background-color: #08324C;
+    border: 1px solid #02898F;
+}
+.alarm .tab .nav.active {
+    color:#02898F;
+    background-color: #08324C;
+    border: 1px solid #02898F;
+}
+.alarm .tab .ack {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 30px;
+    line-height: 28px;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #A9A9AB;
+    cursor: pointer;
+    font-family: Microsoft YaHei;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .tab .ack:hover {
+    color:#02898F;
+}
+.alarm .tab .ack.active {
+    color:#02898F;
+}
+.alarm .tab .my {
+    position: relative;
+    float: right;
+    width: 72px;
+    height: 30px;
+    line-height: 28px;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #A9A9AB;
+    cursor: pointer;
+    font-family: Microsoft YaHei;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .tab .my:hover {
+    color:#02898F;
+}
+.alarm .tab .my.active {
+    color:#02898F;
+}
+.alarm .record
+{
+    position: absolute;
+	left: 20px;
+	top: 244px;
+	right: 20px;
+	bottom:41px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .record .tb_head
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    color: #e6e6e6; 
+    border-collapse:collapse;
+    background-color: #1a385d;
+    border: 1px solid #254164;
+}
+.alarm .record .tb_head td
+{
+    border: 1px solid #254164;
+    text-align:center;
+    font-size:12px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .record .tb_data
+{
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    background-color: #01234c;
+}
+.alarm .record .tb_data table
+{
+    position:relative;
+    width: 100%;
+    color: #b3b3b3; 
+    border-collapse:collapse;
+    border: 1px solid #254164;
+}
+.alarm .record .tb_data td
+{
+    font-size:12px;
+    word-break: break-all;
+    border: 1px solid #254164;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .record .tb_data tr:hover
+{
+    background-color: #1a385d;
+}
+.alarm .footer
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .footer .fbar
+{
+    position: relative;
+    margin: auto;
+    width: 638px;
+    height: 100%;
+    padding: 7px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .footer .fbar .plbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+    width: 40px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 10pt;
+    color: #00B9B4;
+    background-color: #222946;
+    border: 0px;
+}
+.alarm .footer .fbar .plbox.active
+{
+    color: #ffffff;
+    background-color: #00B9B4;
+}
+.alarm .footer .fbar .pbbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+    width: 28px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10pt;
+    color: #00B9B4;
+    cursor: pointer;
+    background-color: #222946;
+}
+.alarm .footer .fbar .pbbox:hover
+{
+    color:#ffffff;
+    background-color:#00B9B4;
+}
+.alarm .footer .fbar .plabel
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 15px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 10pt;
+    color: #e6e6e6;
+}
+.alarm .footer .fbar .btn
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+    width: 50px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10pt;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #00B9B4;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.alarm .footer .fbar .btn:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+.alarm .win_set
+{
+    position: absolute;
+	left: 0px;
+	height:100%;
+	width:100%;
+	display:none;
+    font-family: Microsoft YaHei;
+	background-color: #0A1233;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tbar
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 64px;
+    padding: 19px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tbar .title
+{
+    position:relative;
+    float: left;
+    width: 100px;
+    height: 24px;
+    font-size: 18px;
+    color: #e6e6e6;
+    font-family: Microsoft YaHei;
+}
+.alarm .win_set .tbar .btn_back
+{
+    position: relative;
+    float: right;
+    width: 74px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    padding-right: 14px;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/Resources/images/alarm/back.png) center left 14px no-repeat #00BAB5;
+}
+.alarm .win_set .tbar .btn_back:hover
+{
+    opacity:1;
+}
+.alarm .win_set .tb_head
+{
+    position: absolute;
+    top: 64px;
+    left: 20px;
+    right: 20px;
+    height: 40px;
+    background-color: #1a385d;
+}
+.alarm .win_set .tb_head table
+{
+    position:relative;
+    width: 100%;
+    color: #e6e6e6; 
+    border-collapse:collapse;
+    border: 1px solid #254164;
+}
+.alarm .win_set .tb_head td
+{
+    border: 1px solid #254164;
+    text-align:center;
+    font-size:12px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tb_data
+{
+    position: absolute;
+    top: 104px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    overflow: auto;
+    background-color: #01234c;
+}
+.alarm .win_set .tb_data table
+{
+    position:relative;
+    width: 100%;
+    color: #b3b3b3; 
+    border-collapse:collapse;
+    border: 1px solid #254164;
+}
+.alarm .win_set .tb_data td
+{
+    font-size:12px;
+    word-break: break-all;
+    border: 1px solid #254164;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tb_data .text {
+    position: relative;
+    width: 40px;
+    height: 12px;
+    color: #00bab5;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    text-align: center;
+    outline: none;
+    border: 0px;
+    border-bottom: 1px solid #b3b3b3;
+    background-color: transparent;
+}
+.alarm .win_set .tb_data td.active
+{
+    background-color: #1a385d;
+}
+.alarm .win_set .tlist{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tlist li {
+    position: relative;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 0px 5px 0px 10px;
+    font-size: 12px;
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .tlist li label {
+    margin-left: 6px;
+    font-size: 12px;
+    color: #3d4b69;
+    cursor:pointer;
+}
+.alarm .win_set .tlist li label:hover{
+    color: #b3b3b3;
+}
+.alarm .win_set .ukey {
+    position: relative;
+    width: 120px;
+    height: 26px;
+    margin: 10px 10px 0px 10px;
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 30px;
+    color: #00bab5;
+    outline: none;
+    background: #263e62;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0px;
+}
+.alarm .win_set .ulist{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 10px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .ulist li {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    cursor:pointer;
+    text-align: left;
+    padding-left: 10px;
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alarm .win_set .ulist li:hover 
+{
+    color:#00bab5;
+    background-color: #1a385d;
+}

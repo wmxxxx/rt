@@ -1,0 +1,492 @@
+﻿.account
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.account .tbar
+{
+    position: absolute;
+    left: 202px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #F0F0F0;
+    border-left: 1px solid #EEEEEE;
+}
+.account .tbar .logo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.account .tbar .logo img{
+    width: 22px;
+    height: 22px;
+}
+.account .tbar .add_btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.account .tbar .add_btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.account .left{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    bottom: 0px;
+    background-color: #FFFFFF;
+}
+.account .left .nav_admin {
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    width: 200px;
+    height: 40px;
+    color: #626262;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    text-align: center;
+    cursor:pointer;
+    border-left: 7px solid #0076D6;
+    background-color: #f2f3f8;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .left .nav_admin .icon {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/Resources/images/n_account.png)!important;
+}
+.account .left .nav_api {
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    width: 200px;
+    height: 40px;
+    color: #626262;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    text-align: center;
+    cursor:pointer;
+    border-left: 7px solid #0076D6;
+    background-color: #f2f3f8;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .left .nav_api .icon {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/Resources/images/n_account.png)!important;
+}
+.account .left .nav_guest {
+    position: absolute;
+    left: 0px;
+    top: 105px;
+    width: 200px;
+    height: 40px;
+    color: #626262;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    text-align: center;
+    cursor:pointer;
+    border-left: 7px solid #0076D6;
+    background-color: #f2f3f8;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .left .nav_guest .icon {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/Resources/images/n_account.png)!important;
+}
+.account .left .list {
+    position: absolute;
+    left: 0px;
+    top: 145px;
+    width: 200px;
+    bottom: 0px;
+    color: #FFFFFF;
+    font-size: 10pt;
+    overflow: auto;
+}
+.account .left .list .item {
+    position: relative;
+    height: 20px;
+    padding-top: 5px;
+    color: #adb8c1;
+    cursor: pointer;
+    font-size: 10pt;
+    text-align: center;
+}
+.account .left .list .item:hover
+{
+    color:#0076D6;
+}
+.account .left .list .item.active
+{
+    color:#0076D6;
+}
+.account .view
+{
+    position: absolute;
+    left: 202px;
+    top: 45px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    padding: 20px;
+    border-left: 1px solid #EEEEEE;
+    background-color: #f2f3f8;
+}
+.account .view .item
+{
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    float: left;
+    width: 310px;
+    height: 155px;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 1px 0px #c5c4c4;
+    -webkit-box-shadow: 1px 1px 1px 0px #c5c4c4;
+    -moz-box-shadow: 1px 1px 1px 0px #c5c4c4;
+}
+.account .view .item .expire
+{
+    color:#999999;
+}
+.account .view .item .limit
+{
+    color:#EE4D29;
+}
+.account .view .item .lock
+{
+    color:#FFB848;
+}
+.account .view .item:hover
+{
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.account .view .item .head
+{
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    width: 120px;
+    height: 120px;
+}
+.account .view .item .name
+{
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    right: 10px;
+    height: 22px;
+    font-size: 11pt;
+    font-weight: bold;
+}
+.account .view .item .id
+{
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    right: 10px;
+    height: 22px;
+    font-size: 10pt;
+    color: #6e6d6d;
+}
+.account .view .item .auth
+{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 140px;
+    height: 27px;
+    font-size: 10pt;
+}
+.account .view .item .oper
+{
+    position: absolute;
+    top: -10px;
+    right: -0px;
+    width: 145px;
+    height: 25px;
+    background-color: #0076d6;
+    box-shadow: 2px 0px 0px 0px #0076d6;
+    -webkit-box-shadow: 2px 0px 0px 0px #0076d6;
+    -moz-box-shadow: 2px 0px 0px 0px #0076d6;
+}
+.account .view .item .oper .sline
+{
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    border-left: 5px transparent dotted;
+    border-bottom: 25px #0076d6 solid;
+    box-shadow: 1px 0px 1px 0px #0076d6;
+    -webkit-box-shadow: 1px 0px 0px 0px #0076d6;
+    -moz-box-shadow: 1px 0px 1px 0px #0076d6;
+}
+.account .view .item .del
+{
+    position: absolute;
+    top: 3px;
+    right: 15px;
+    width: 48px;
+    height: 20px;
+    opacity: 0.9;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-align: right;
+    line-height: 20px;
+    z-index: 999;
+    background-image: url(/Resources/images/btn_del_w.png);
+    background-repeat: no-repeat;
+}
+.account .view .item .del:hover
+{
+    opacity:1;
+}
+.account .view .item .split
+{
+    position: absolute;
+    top: 6px;
+    right: 70px;
+    width: 1px;
+    height: 14px;
+    opacity: 0.9;
+    background-color: #FFFFFF;
+}
+.account .view .item .edit
+{
+    position: absolute;
+    top: 3px;
+    right: 80px;
+    width: 48px;
+    height: 20px;
+    opacity: 0.9;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-align: right;
+    line-height: 20px;
+    z-index: 999;
+    background-image: url(/Resources/images/btn_edit_w.png);
+    background-repeat: no-repeat;
+}
+.account .view .item .edit:hover
+{
+    opacity:1;
+}
+.account .view .item .ddl {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: Microsoft YaHei;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #E5E5E5;
+    background-color: #f1f3f8;
+}
+.account .win
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    height: 415px;
+    margin-left: -160px;
+    margin-top: -220px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+    z-index:9999;
+}
+.account .win .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.account .win .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.account .win .close:hover
+{
+    opacity:1;
+}
+.account .win .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.account .win .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.account .win .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.account .win .form .item .text_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 216px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .win .form .item .date_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 216px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .win .form .item .ddl {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 216px;
+    font-family: 微软雅黑;
+    -moz-border-radius: 3px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.account .win .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.account .win .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.account .win .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.account .win .cancelbtn:hover
+{
+    background-color:#0076d6;
+}

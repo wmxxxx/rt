@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.exhide.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="warpper" id="warp"></div>
+</body>
+</html>
+<script type="text/html" id="content_tpl">
+	<div class="panel" style="transform:scale({{d.ratio}});">
+		<div class="title">
+			<h2>强制控制</h2> 
+		</div>
+		<div class="main">
+			<div class="sum">
+				<h3>关联设备</h3>
+				<p>{{d.qz.length}}</p>
+			</div>
+			<div class="cont">
+				<p>时段管理</p>
+				<div><span class="start">{{d.start}}</span></div>
+				<div><span class="end">{{d.end}}</span></div>
+				<p>轮询间隔</p>
+				<div><span>{{d.lx}}</span></div>
+			</div>
+			<div class="tips">
+				适应于空调使用属性固定的场景，您可以在此快速进行时控温控配置操作
+			</div>
+		</div>
+		<div class="btn">
+			<button type="button" class="layui-btn layui-btn-sm layui-btn-action nodeRel">关联设备</button>
+			<button type="button" class="layui-btn layui-btn-sm timeSet">时段设置</button>
+		</div>
+	</div>
+	<div class="panel" style="transform:scale({{d.ratio}});">
+		<div class="title">
+			<h2>弹性控制</h2>
+		</div>
+		<div class="main">
+			<div class="sum">
+				<h3>关联设备</h3>
+				<p>{{d.tx.length}}</p>
+			</div>
+			<div class="cont">
+				<div class="img" style="background-image:url(images/tanxing.png)"></div>
+			</div>
+			<div class="tips">
+				适应于空调使用属性不固定的场景，您需要通过策略化、场景化的定义进行控制管理
+			</div>
+		</div>
+		<div class="btn">
+			<button type="button" class="layui-btn layui-btn-sm layui-btn-action str">策略管理</button>
+			<button type="button" class="layui-btn layui-btn-sm gro">场景管理</button>
+		</div>
+	</div>
+	<div class="panel" style="transform:scale({{d.ratio}});">
+		<div class="title">
+			<h2>未受控制</h2> 
+		</div>
+		<div class="main">
+			<div class="sum">
+				<h3>关联设备</h3>
+				<p>{{d.ws.length}}</p>
+			</div>
+			<div class="cont">
+				<div class="img" style="background-image:url(images/weishou.png)"></div>
+			</div>
+			<div class="tips">
+				针对空调使用不纳入控制的例外情形，您可以单独对此部分进行汇总查看操作
+			</div>
+		</div>
+		<div class="btn">
+			<button type="button" class="layui-btn layui-btn-sm layui-btn-action lookInfo">查看详情</button>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="timeSet_tpl">
+	<div class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">开始时间</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" id="test4" value={{d.start}}>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">结束时间</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" id="test5" value={{d.end}}>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">轮询间隔</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" id="test6" value={{d.lx}}>
+			</div>
+		</div>
+	</div>
+</script>

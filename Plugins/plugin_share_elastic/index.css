@@ -1,0 +1,37 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #EFF2F7;
+	font-family: 'pingFangSC-Medium'; 
+}
+body::after{
+	content: "v2.0";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: #00000033;
+}
+.layui-tab{
+	height: 100%;
+	margin: 0;
+}
+.layui-tab-title{
+	margin-bottom: 12px;
+	padding-left: 20px;
+	background-color: #fff;
+}
+.layui-tab-title li{padding: 0;}
+.layui-tab-content{
+	height: calc(100% - 62px);
+	background-color: #fff;
+	padding: 0;
+}
+.layui-tab-content div{
+	height: 100%;
+	overflow: hidden;
+}

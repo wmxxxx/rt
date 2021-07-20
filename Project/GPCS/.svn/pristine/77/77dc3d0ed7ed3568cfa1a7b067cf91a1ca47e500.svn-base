@@ -1,0 +1,35 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #EFF2F7;
+	font-family: 'pingFangSC-Medium';
+}
+#header{
+	height: 48px;
+	padding: 0 20px;
+	margin-bottom: 12px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+}
+#header .layui-form-item{margin: 0 5px 0 0;}
+.main{
+	height: calc(100% - 60px);
+	background: #fff;
+	padding: 10px 20px;
+	box-sizing: border-box;
+}
+#sub_open,#info_open{
+	padding: 10px 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+#node_open{
+	padding: 0;
+	overflow: hidden;
+}

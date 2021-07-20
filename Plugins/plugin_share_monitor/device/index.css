@@ -1,0 +1,677 @@
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #EFF2F7;
+	font-family: 'pingFangSC-Medium';
+}
+.dnav{
+	padding: 12px;
+	padding-bottom: 0;
+	margin-bottom: 12px;
+	background: #fff;
+	border: none !important;
+}
+.dnav li a{border: none !important;}
+.dnav li.active a{
+	color: #00B9B4 !important;
+	border: none !important;
+	border-bottom: 3px solid #00B9B4 !important;
+}
+.tab-content{height: calc(100% - 62px);}
+.tab-content > div{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+/* tab1 */
+#tabContent1 > div{position: absolute;}
+#tabContent1 .layTop,#tabContent1 .layDown{
+	width: calc(100% - 320px);
+	height: 50%;
+	background: #fff;
+	padding: 15px;
+}
+#tabContent1 .layDown{
+	height: 50%;
+	top: 50%;
+}
+#tabContent1 .axis{
+	width: 320px;
+	height: 100%;
+	padding: 15px;
+	right: 0;
+	background: #fff;
+}
+#tabContent1 .tab-content{height: calc(100% - 38px);}
+/* 空调面板 p1 */
+.airPanel{
+	width: 450px;
+	height: 310px;
+	margin: auto;
+	box-sizing: border-box;
+	transform-origin: center 0;
+	position:relative;
+}
+.p1 .airPanel{
+	background: url(images/p1.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.p1 .airPanel .aTop{
+	height: 75%;
+	position: relative;
+}
+.p1 .airPanel .aTop > div{
+	position: absolute;
+	color: #000;
+}
+.p1 .airPanel .aTop .key1{
+	top: 40px;
+	left: 30px;
+}
+.p1 .airPanel .aTop .key2{
+	top: 40px;
+	left: 105px;
+}
+.p1 .airPanel .key1 p,.p1 .airPanel .key2 p{
+	width: 35px;
+	height: 30px;
+	line-height: 15px;
+	font-size: 14px;
+	color: #00000080;
+	margin: 0;
+	float: left;
+}
+.p1 .airPanel .key1 span,.p1 .airPanel .key2 span{
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: no-repeat;
+	background-size: 30px 30px;
+}
+.p1 .airPanel .aTop .key3{
+	top: 40px;
+	right: 30px;
+}
+.p1 .airPanel .key3 strong{
+	float: left;
+	text-align: right;
+	font-size: 46px;
+	font-family: 'led-digital';
+	font-weight: 100;
+	position: relative;
+	top: -10px;
+}
+.p1 .airPanel .key3 div{
+	float: left;
+	margin-left: 5px;
+	font-size: 12px;
+}
+.p1 .airPanel .key3 div p{
+	padding: 0 5px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	margin-bottom: -1px;
+}
+.p1 .airPanel .key4{
+	height: 50px;
+	position: absolute;
+	top: 130px;
+	right: 190px;
+}
+.p1 .airPanel .key4 strong{
+	float: left;
+	font-size: 90px;
+	font-family: 'led-digital';
+	font-weight: 100;
+	position: relative;
+	top: -20px;
+}
+.p1 .airPanel .key4 div{
+	float: left;
+	margin-left: 10px;
+}
+.p1 .airPanel .key4 div p{
+	padding: 0 5px;
+	font-size: 12px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	text-align: center;
+	margin-bottom: 17px;
+}
+.p1 .airPanel .key4 div span{
+	display: block;
+	font-size: 22px;
+}
+.p1 .airPanel .key5{
+	height: 50px;
+	position: absolute;
+	top: 130px;
+	right: 30px;
+}
+.p1 .airPanel .key5 p{
+	padding: 0 5px;
+	font-size: 12px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	text-align: center;
+	margin: 0;
+}
+.p1 .airPanel .key5 div strong{
+	font-size: 50px;
+	font-family: 'led-digital';
+	font-weight: 100;
+}
+/* 面板下半部分*/
+.p1 .airPanel .aDown{
+	height: 25%;
+	position: relative;
+}
+.p1 .airPanel .aDown span{
+	position: absolute;
+	top: 10px;
+	left: 30px;
+}
+.p1 .airPanel .aDown span div{
+	width: 13px;
+	height: 13px;
+	background: red;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: -17px;
+	box-shadow: inset 0 0 5px rgba(201,214,229,1);
+}
+.p1 .airPanel .aDown span div:after{
+	content: "";
+	width: 5px;
+	height: 5px;
+	display: block;
+	background: rgba(0,0,0,0);
+	border-radius: 50%;
+	box-shadow: -20px 0 3.5px #fff;
+	position: absolute;
+	top: 2.3px;
+	left: 25px;
+}
+.p1 .airPanel .aDown ul{
+	height: 60px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	border-radius: 20px;
+}
+.p1 .airPanel .aDown ul > li{
+	width: 50px;
+	height: 100%;
+	float: left;
+	cursor: pointer;
+	background: no-repeat center;
+	background-size: 50px 50px;
+	margin-left: 5px;
+}
+.p1 .airPanel .aDown ul > li:first-child{border-left: none;}
+.p1 .airPanel .sBtn{
+	color: #353535;
+	text-align: center;
+	margin: 9px !important;
+	padding: 2px 10px;
+	background: #dfe7f2;
+	border: 1px solid #ccd6e5;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* 空调面板 p2 */
+.p2 .airPanel{
+	background: #f4f5f7;
+	border: 2px solid #cecece;
+	border-radius: 15px;
+	box-shadow: -5px 5px 10px #00000021;
+	padding: 20px;
+}
+.p2 .airPanel .aTop{
+	height: 100%;
+	border: 1px solid #fff;
+	border-radius: 8px;
+	background-image: linear-gradient(-60deg, #9bccd7 0%, #cbe5f0 60%, #d8eaf4 60%, #daebf5 100%);
+	box-shadow: 0 0 10px #00000070 inset;
+}
+.p2 .airPanel .aTop::before{
+	content: "";
+	display: block;
+	width: 86%;
+	position: absolute;
+	top: 28%;
+	left: 7%;
+	border-top: 1px dashed rgba(255,255,255,.5);
+}
+.p2 .airPanel .aTop::after{
+	content: "";
+	display: block;
+	width: 86%;
+	position: absolute;
+	top: 68%;
+	left: 7%;
+	border-top: 1px dashed rgba(255,255,255,.5);
+}
+.p2 .airPanel .aTop > div{
+	position: absolute;
+	color: #000;
+}
+.p2 .airPanel .aTop .key1{
+	top: 40px;
+	left: 45px;
+}
+.p2 .airPanel .aTop .key2{
+	top: 40px;
+	left: 120px;
+}
+.p2 .airPanel .key1 p,.p2 .airPanel .key2 p{
+	width: 35px;
+	height: 30px;
+	line-height: 15px;
+	font-size: 14px;
+	color: #00000080;
+	margin: 0;
+	float: left;
+}
+.p2 .airPanel .key1 span,.p2 .airPanel .key2 span{
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: no-repeat;
+	background-size: 30px 30px;
+}
+.p2 .airPanel .aTop .key3{
+	top: 40px;
+	right: 45px;
+}
+.p2 .airPanel .key3 strong{
+	float: left;
+	text-align: right;
+	font-size: 46px;
+	font-family: 'led-digital';
+	font-weight: 100;
+	position: relative;
+	top: -10px;
+}
+.p2 .airPanel .key3 div{
+	float: left;
+	margin-left: 5px;
+	font-size: 12px;
+}
+.p2 .airPanel .key3 div p{
+	padding: 0 5px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	margin-bottom: -1px;
+}
+.p2 .airPanel .key4{
+	height: 50px;
+	position: absolute;
+	top: 120px;
+	right: 190px;
+}
+.p2 .airPanel .key4 strong{
+	float: left;
+	font-size: 90px;
+	font-family: 'led-digital';
+	font-weight: 100;
+	position: relative;
+	top: -20px;
+}
+.p2 .airPanel .key4 div{
+	float: left;
+	margin-left: 10px;
+}
+.p2 .airPanel .key4 div p{
+	padding: 0 5px;
+	font-size: 12px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	text-align: center;
+	margin-bottom: 17px;
+}
+.p2 .airPanel .key4 div span{
+	display: block;
+	font-size: 22px;
+}
+.p2 .airPanel .key5{
+	height: 50px;
+	position: absolute;
+	top: 120px;
+	right: 45px;
+}
+.p2 .airPanel .key5 p{
+	padding: 0 5px;
+	font-size: 12px;
+	background: rgba(255,255,255,.4);
+	color: #000;
+	text-align: center;
+	margin: 0;
+}
+.p2 .airPanel .key5 div strong{
+	font-size: 50px;
+	font-family: 'led-digital';
+	font-weight: 100;
+}
+.p2 .airPanel .aDown{
+	bottom: 40px;
+	right: 40px;
+}
+.p2 .airPanel .aDown ul{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.p2 .airPanel .aDown ul > li{
+	width: 40px;
+	height: 40px;
+	float: left;
+	cursor: pointer;
+	background: no-repeat center;
+	background-size: 80%;
+	margin-left: 10px;
+}
+.p2 .airPanel .aDown ul > li:first-child{border-left: none;}
+.p2 .airPanel .sBtn{
+	color: #353535;
+	text-align: center;
+	margin: 9px !important;
+	padding: 2px 10px;
+	background: #dfe7f2;
+	border: 1px solid #ccd6e5;
+	border-radius: 5px;
+	cursor: pointer;
+}
+/* p3 */
+.p3#tabContent1 .layTop{display: none;}
+.p3#tabContent1 .layDown{
+	height: 100%;
+	top: 0;
+}
+/* 左右*/
+.aLeft,.aRight{
+	width:120px;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:-130px;
+	padding:0;
+	overflow-y:auto;
+	padding-left:5px;
+}
+.aLeft p{
+	border-left:1px solid #ccc;
+	padding:10px 0 10px 15px;
+	font-size:12px;
+	margin:0;
+	position:relative;
+}
+.aLeft p:before{
+	content:"";
+	display:block;
+	width:7px;
+	height:7px;
+	border-radius:50%;
+	position:absolute;
+	top:15px;
+	left:-4px;
+	background:#00B9B4;
+}
+.aRight{
+	left:initial;
+	right:-130px;
+}
+.aRight > div{
+	width:75px;
+	height:75px;
+	text-align:center;
+	background:#e5f8f7;
+	border-radius:50%;
+	padding-top:10px;
+	margin:20px 10px;
+	color:#00B9B4;
+	font-size:12px;
+	overflow: hidden;
+}
+.aRight > div p{
+	margin:0;
+	margin-top:3px;
+}
+::-webkit-scrollbar{display:none;}
+/* 信息页 */
+.tab-pane ol,#tabContent6 ul{
+	height: 100%;
+	margin: 0;
+	padding: 10px;
+	padding-bottom: 0;
+	overflow-y: auto;
+}
+.tab-pane ol li{
+	width: 25%;
+	min-width: 250px;
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px dashed #ccc;
+	float: left;
+	overflow: hidden;
+}
+.tab-pane ol li div{
+	width: 95px;
+	height: 100%;
+	color: #7a8ca0;
+	text-align: right;
+	float: left;
+	overflow: hidden;
+}
+.tab-pane ol li span{
+	width: calc(100% - 95px);
+	height: 100%;
+	background: #fff;
+	padding-left: 15px;
+	float: left;
+}
+#tabContent6 ul li{
+	line-height: 35px;
+	border-bottom: 1px dashed #ccc;
+}
+#tabContent6 ul li:first-child{height: 35px;}
+/* 时间轴 */
+.axis .sTop{height: 32px;}
+.sTop p{
+	width: 62px;
+	height: 32px;
+	line-height: 32px;
+	background: #00B9B4;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 3px 3px 5px rgba(33,194,190,.5);
+	margin: 0;
+	float: left;
+}
+.sTop .sDate{
+	width: 150px;
+	border: 1px solid #D2D2D2;
+	cursor: pointer;
+	float: right;
+}
+.sTop .sDate[readonly]{
+	background: url(images/icon-c.png) no-repeat 126px;
+	background-size: 16px;
+	cursor: pointer;
+}
+.axis ul{
+	height: calc(100% - 32px);
+	overflow-y: auto;
+	margin: 0;
+	padding-left: 30px;
+}
+.axis ul li{
+	padding: 25px 0 0 20px;
+	border-left: 1px solid #ccc;
+	position: relative;
+}
+.axis ul li span{
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	position: absolute;
+	top: 29px;
+	left: -6px;
+}
+.axis ul li p{
+	color: #666;
+	margin: 0;
+}
+/* tab term */
+.term{
+	height: 32px;
+	display: block;
+}
+.term p{
+	height: 32px;
+	margin: 0;
+	float: left;
+}
+.term p span{margin-right:20px;}
+.term select{
+	width: 150px;
+	height: 32px;
+	border: 1px solid #d2d2d2;
+	border-radius: 3px;
+	float: right;
+	margin-left: 15px;
+	cursor: pointer;
+}
+.term input{
+	width: 150px;
+	border: 1px solid #d2d2d2;
+	cursor: pointer;
+	float: right;
+	margin-left: 15px;
+}
+.term input[readonly]{
+	background: url(images/icon-c.png) no-repeat 126px;
+	background-size: 16px;
+	cursor: pointer;
+}
+/* tab2 */
+#tabContent2 > div{
+	height: calc(50% - 6px);
+	background: #fff;
+	padding: 15px;
+}
+#tabContent2 .histogram{margin-top: 12px;}
+#tabContent2 > div > div{
+	height: calc(100% - 32px);
+}
+/* tab3 */
+#tabContent3,#tabContent7{
+	background: #fff;
+	padding: 15px;
+}
+.tb-cale{
+	width: 100%;
+	height: calc(100% - 52px);
+	background: #fff;
+	margin-top: 20px;
+	overflow: scroll;
+	border-collapse: collapse;
+}
+.tb-cale th{
+	width: 14.2%;
+	color: #7a7a7a;
+	background: #e6eaf1;
+	padding: 10px;
+	border: 1px solid #ddd;
+	font-weight: normal;
+	text-align: center;
+}
+.tb-cale td{
+	text-align: center;
+	padding: 10px;
+	color: #4a4a4a;
+	border: 1px solid #ddd;
+	position: relative;
+}
+.tb-cale tr:nth-child(even){background: #f8f8fa;}
+.tb-cale .date{
+	display: inline-block;
+	color: #7a7a7a;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.tb-cale .sat .date,.tb-cale .sun .date{color: #F44336;}
+.tb-cale .val{
+	display: inline-block;
+	font-size: 10px;
+}
+#tabContent6 .rel p{
+	margin:0;
+	float:left;
+}
+#tabContent6 .rel div{
+	display:inline-block;
+	float: left;
+}
+#tabContent6 .rel div span{
+	padding:3px;
+	border:1px solid #00b9b4;
+	border-radius:5px;
+	cursor:pointer;
+	margin-right:10px;
+}
+#tabContent6 .rel select{
+	width:120px;
+	float:right;
+}
+#tabContent6 .rel button{
+	margin-left: 10px;
+	float:right;
+}
+@-webkit-keyframes zhuan{
+	from{
+		-webkit-transform: rotate(0deg);
+	}to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+.zhuan{-webkit-animation:zhuan 2s linear infinite;}
+
+select,input{
+	border-color: #d0dce4 !important;
+	color: #7a8ca0 !important;
+	outline: none !important;
+}
+
+.input-group{margin: 15px 0;}
+.input-group-btn button{min-width: 80px;}
+.form-control[readonly]{
+	background: #fff url(../images/icon-c.png) no-repeat 150px;
+	cursor: pointer;
+}
+
+/*  */
+#control_open{padding-right: 30px;}
+.layui-form-label{
+	width: 90px;
+	padding: 0;
+	line-height: 36px;
+}
+.layui-input-block{
+	display: flex;
+	align-items: center;
+}
+.layui-input-block .layui-form-switch{
+	margin: 0 ;
+	box-sizing: initial ;
+}

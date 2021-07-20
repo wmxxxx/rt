@@ -1,0 +1,521 @@
+﻿.calendar
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.calendar .left
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: calc(100% - 376px);
+    bottom: 0px;
+    border: 1px solid #D3D3D3;
+}
+.calendar .right
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 370px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.calendar .tbar
+{
+    position:relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    line-height: 34px;
+    font-size: 16px;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: #F0F0F0;
+}
+.calendar .view
+{
+    position: absolute;
+	left: 0px;
+	top: 43px;
+	right:0px;
+	bottom:45px;
+	border:0px;
+	padding:10px;
+	overflow:auto;
+}
+.calendar .foot
+{
+    position: absolute;
+	left: 0px;
+	height: 45px;
+	right:0px;
+	bottom:0px;
+	border:0px;
+	padding:10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.calendar .foot p
+{
+    padding-left: 10px;
+    color: #939090;
+    margin: 0 0 5px 0;
+}
+.calendar .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.calendar .view .month {
+    float: left;
+    margin: 10px;
+    height: 240px;
+    width: 300px;
+    border: 1px solid #E3E3E3;
+    background-color: #FAFAFA;
+}
+.calendar .view .month .title {
+    margin: 7px 13px 0px 13px;
+    height: 40px;
+    line-height: 18px;
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ff0000;
+    border-bottom: 1px solid #ccc;
+}
+.calendar .view .month .title .time{
+    float: right;
+    width: 200px;
+    height: 18px;
+    text-align: right;
+    line-height: 18px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #939090;
+}
+.calendar .view .month .day_tb {
+    width: 270px;
+    margin: 15px;
+    margin-top: 0;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.calendar .view .month .day_tb thead tr{
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ccc;
+}
+.calendar .view .month .day_tb tbody tr{
+  line-height: 22px;
+}
+.calendar .view .month .day_tb td:nth-child(6),
+.calendar .view .month .day_tb th:nth-child(6),
+.calendar .view .month .day_tb td:nth-child(7),
+.calendar .view .month .day_tb th:nth-child(7){
+   color: red;
+}
+.calendar .tbar .logo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.calendar .tbar .logo img{
+    width: 22px;
+    height: 22px;
+}
+.calendar .tbar .ddl {
+    position: relative;
+    float: right;
+    width: 125px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 130px;
+    font-family: Microsoft YaHei;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.calendar .tbar .btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.calendar .tbar .btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.calendar .win_date
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 280px;
+    height: 180px;
+    margin-left: -180px;
+    margin-top: -100px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.calendar .win_date .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.calendar .win_date .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.calendar .win_date .close:hover
+{
+    opacity:1;
+}
+.calendar .win_date .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.calendar .win_date .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.calendar .win_date .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.calendar .win_date .form .date_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 176px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    cursor: pointer;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+}
+.calendar .win_date .btn_workday
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 85px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.calendar .win_date .btn_workday:hover
+{
+    background-color:#0076d6;
+}
+.calendar .win_date .btn_holiday
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 125px;
+    width: 85px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.calendar .win_date .btn_holiday:hover
+{
+    background-color:#0076d6;
+}
+.calendar .win_time
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 325px;
+    height: 246px;
+    margin-left: -159px;
+    margin-top: -160px;
+    background-color: #FFFFFF;
+    cursor: move;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.calendar .win_time .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.calendar .win_time .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.calendar .win_time .close:hover
+{
+    opacity:1;
+}
+.calendar .win_time .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.calendar .win_time .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 10px;
+    bottom: 70px;
+}
+.calendar .win_time .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.calendar .win_time .form .date_input
+{
+	position: absolute;
+	top:0px;
+	left:70px;
+	height:28px;
+	font-family:微软雅黑;
+	padding-left:4px;
+	color:#000000;
+	cursor:pointer;
+	border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+}
+.calendar .win_time .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 27px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.calendar .win_time .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.calendar .win_time .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.calendar .win_time .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.calendar .right .page_title {
+    position: relative;
+    height: 30px;
+    font-size: 15px;
+    margin: 5px 16px 0px 16px;
+    line-height: 37px;
+}
+.calendar .right .row_line {
+    position: relative;
+    height: 5px;
+    margin: 0px 15px;
+    border-bottom: 1px solid #CACACA;
+}
+.calendar .right .ddl {
+    position: relative;
+    width: 246px;
+    height: 32px;
+    margin-left: 3px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    -moz-border-radius: 5px;
+    border: 1px solid #D4D4D4;
+}
+.calendar .right .form
+{
+	position: relative;
+    margin: 15px;
+}
+.calendar .right .form .item
+{
+    position: relative;
+    height: 25px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.calendar .right .form .date_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 120px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    cursor: pointer;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+}
+.calendar .right .form .text_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 246px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    line-height: 28px;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.calendar .right .okbtn
+{
+	position: relative;
+    float: right;
+    margin-top: 10px;
+    height: 28px;
+    right: 24px;
+    width: 70px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 28px;
+    cursor: pointer;
+    background-color: #408DD8;
+}
+.calendar .right .okbtn:hover
+{
+    background-color:#0076d6;
+}

@@ -1,0 +1,85 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	font-family: 'pingFangSC-Medium';
+}
+body::after{
+	content: "v2.3";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: #00000033;
+}
+.header{
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#main{
+	height: calc(100% - 80px);
+	overflow-y: auto;
+}
+#main .group{
+	margin: 0 0 20px 20px;
+	border: 1px solid #00B9B4;
+	border-bottom: 2px solid #00B9B4;
+	border-radius:5px;
+	float: left;
+}
+#main .group h3{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color:#00B9B4;
+	text-align: center;
+	padding: 0 10px 0 50px;
+}
+#main .group h3 ol{float: right;}
+#main .group h3 ol li{
+	width: 25px;
+	height: 35px;
+	background: no-repeat center;
+	float: left;
+	cursor: pointer;
+}
+#main .group ul{
+	width: 300px;
+	padding: 0 50px 20px;
+}
+#main .group ul li{
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #D0DCE4;
+	margin-top: -1px;
+}
+#main .group ul li span{
+	display:inline-block;
+	width: 100px;
+	text-align: center;
+	background: #eff2f7;
+	border-right: 1px solid #D0DCE4;
+	margin-right: 20px;
+}
+/* 无数据 */
+.x-nodata{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.x-nodata:before{
+	content:"暂无分组";
+	display:inline-block;
+	width:160px;
+	background:url(images/nodata.gif) no-repeat;
+	padding-top:160px;
+	text-align:center;
+}
+/* 修正 */
+#set_open .layui-input-inline{width: 240px;}

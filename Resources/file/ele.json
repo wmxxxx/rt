@@ -1,0 +1,124 @@
+[
+ {
+"F_EntityID": "597210778923",
+"F_EntityName": "一号变电所",
+"code":"E_001",
+ "data": [
+ {
+"F_PropertyID": "596195755607",
+"F_PropertyName": "变电所编号",
+"F_PropertyIdentifier": "RoomCode",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "E_001",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577463436560",
+"F_PropertyName": "负责人",
+"F_PropertyIdentifier": "PersonLiable",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596195607230",
+"F_PropertyName": "经度",
+"F_PropertyIdentifier": "xAxis",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "180",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596195634040",
+"F_PropertyName": "纬度",
+"F_PropertyIdentifier": "yAxis",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "528",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596753245473",
+"F_PropertyName": "地址",
+"F_PropertyIdentifier": "address",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596753182607",
+"F_PropertyName": "负责人电话",
+"F_PropertyIdentifier": "tel",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+}
+]
+},
+ {
+"F_EntityID": "597210802690",
+"F_EntityName": "二号变电所",
+"code":"E_002",
+ "data": [
+ {
+"F_PropertyID": "596195755607",
+"F_PropertyName": "变电所编号",
+"F_PropertyIdentifier": "RoomCode",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "E_002",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577463436560",
+"F_PropertyName": "负责人",
+"F_PropertyIdentifier": "PersonLiable",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596195607230",
+"F_PropertyName": "经度",
+"F_PropertyIdentifier": "xAxis",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "1055",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596195634040",
+"F_PropertyName": "纬度",
+"F_PropertyIdentifier": "yAxis",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "523",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596753245473",
+"F_PropertyName": "地址",
+"F_PropertyIdentifier": "address",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "596753182607",
+"F_PropertyName": "负责人电话",
+"F_PropertyIdentifier": "tel",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+}
+]
+}
+]

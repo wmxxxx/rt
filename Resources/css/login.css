@@ -1,0 +1,231 @@
+﻿.loginTime{
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	width: 300px;
+	margin: 0 0 0 -150px;
+	font-family: BebasNeue;
+	font-size: 60px;
+	letter-spacing:5px;
+	color: #ffffff;
+	opacity: 0.9;
+	text-shadow: #666 1px 1px 2px;
+	text-align: center;
+}
+.loginDate{
+	position: absolute;
+	left: 50%;
+	top: 66px;
+	width: 300px;
+	margin: 0 0 0 -150px;
+	font-family: Arial,Tahoma,微软雅黑;
+	font-size: 16px;
+	color: #ffffff;
+	opacity: 0.9;
+	text-shadow: #666 1px 1px 2px;
+	text-align: center;
+}
+.loginLoading{
+	position: absolute;
+	width: 124px;
+	height: 124px;
+	left: 50%;
+	top: 50%;
+	margin: -62px 0 0 -62px;
+	background: transparent url(/Resources/images/waiting.gif) no-repeat center center;
+	display:none;
+	z-index:999;
+}
+.loginForm{
+	position: absolute;
+	width: 600px;
+	height: 180px;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 0 -300px;
+	text-align: center;
+}
+.loginForm ul {
+	margin:0px;
+	padding:0px;
+}
+
+.loginForm li {
+	float:center;
+	width:180px;
+	height:100px;
+	display: inline-block;	
+    text-align: center;
+}
+.loginCancel{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 50%;
+	top: 100%;
+	margin: -90px 0 0 -42px;
+	background: transparent url(/Resources/images/loginCancel.png) no-repeat center top;
+	cursor:pointer;
+	line-height:18px;
+	text-align:center;
+	text-shadow: #666 1px 1px 2px;
+	opacity: 0.8;
+	color:#FFFFFF;
+	display:none;
+}
+
+.loginCancel:hover
+{
+    opacity: 1;
+}
+
+.loginSwitch{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 50%;
+	top: 100%;
+	margin: -90px 0 0 10px;
+	background: transparent url(/Resources/images/loginSwitch.png) no-repeat center top;
+	cursor:pointer;
+	line-height:18px;
+	text-align:center;
+	text-shadow: #666 1px 1px 2px;
+	opacity: 0.8;
+	color:#FFFFFF;
+	display:none;
+}
+
+.loginSwitch:hover
+{
+    opacity: 1;
+}
+.loginHome{
+	position: absolute;
+	left: 40px;
+	bottom:10px;
+	width:20px;
+	height: 20px;
+	cursor:pointer;
+	opacity:0.7;
+}
+.loginHome:hover
+{
+    opacity:1;
+}
+.loginHome img{
+	width:20px;
+	height: 18px;
+}
+.startingVer{
+	position: absolute;
+    left: 50%;
+    bottom: 0px;
+    margin: 0px 0 0 -150px;
+    width: 300px;
+    height: 25px;
+    font-family: Arial,Tahoma,微软雅黑;
+    font-size: 10.5px;
+    color: #fafafa;
+    opacity: 0.8;
+    text-shadow: #666 1px 1px 2px;
+    text-align: center;
+}
+.loginBubble{
+	background: #fdfdfd;
+	background: -moz-linear-gradient(#fdfdfd, #f7f7f7) repeat scroll 0 0 transparent;
+	background: -webkit-linear-gradient(#fdfdfd, #f7f7f7) repeat scroll 0 0 transparent;
+	border-radius: 100% 100% 100% 100%;
+	-moz-border-radius: 100% 100% 100% 100%;
+	-webkit-border-radius: 100% 100% 100% 100%;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	height: 98px;
+	width: 98px;
+	z-index: 9;
+	margin: auto;
+	margin-bottom: 5px;
+	padding: 3px;
+	cursor: pointer;
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.loginBubble.disactive{
+	cursor: default;
+}
+
+.loginBubble img{
+	-moz-transition-duration:4s;
+	-moz-transition-timing-function:linear;
+	-moz-transition-delay:4s;
+	
+	border-radius: 100% 100% 100% 100%;
+	-moz-border-radius: 100% 100% 100% 100%;
+	-webkit-border-radius: 100% 100% 100% 100%;
+	height: 98px;
+	width: 98px;
+}
+
+.loginUser{
+	height: 24px;
+	color: white;
+	font-size: 14px;
+	line-height: 20px;
+	text-shadow: #666 1px 1px 2px;
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.loginPass{
+	height: 30px;
+	-webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.loginInfo{
+	height: 20px;
+	padding:5px;
+	color: red;
+	text-align: center;
+}
+.loginTextbox{
+	border: 1px solid #4189C3;
+	border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	font-family: "Lucida Grande","Lucida Sans Unicode",sans-serif;
+	height: 24px;
+	padding: 2px 26px 2px 5px;
+	width: 134px;
+	outline: none;
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.loginTextbox:focus{
+	box-shadow: 0 0 1px 2px #4189C3;
+	-webkit-box-shadow: 0 0 1px 2px #4189C3;
+	-moz-box-shadow: 0 0 1px 2px #4189C3;
+}
+
+.loginSubmit{
+	background: url("/Resources/images/input_submit.png") no-repeat scroll 0 0 transparent;
+	border: medium none;
+	height: 24px;
+	padding: 0;
+	position: absolute;
+	text-indent: -9999px;
+	width: 24px;
+	margin-left: 148px;
+    margin-top: -27px;
+	cursor: pointer;
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}

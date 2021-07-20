@@ -1,0 +1,1525 @@
+﻿MainPanel = function (container) {
+    return {
+        init: function () {
+            this.container = container;
+            this.timer = null;
+            this.isActive = false;
+            if (window.parent != window) $('#mainFrame', parent.document).find('.toolbar .title').text(parent.TUI.env.sys.name);
+            if (TUI.env.sys.frame == 1) {
+                $('#' + this.container).html(
+                    '<div class="leftbar">'
+                        + '<div class="nav_1"></div>'
+                        + '<div class="nav_2"></div>'
+                    + '</div>'
+                    + '<div id="centerPanel"></div>'
+                );
+            } else if (TUI.env.sys.frame == 2) {
+                $('#' + this.container).html(
+                    '<div class="leftbar2">'
+                        + '<div class="colbar" title="收缩导航"></div>'
+                        + '<div class="logo"></div>'
+                        + '<div class="navPanel"></div>'
+                    + '</div>'
+                    + '<div id="centerPanel" style="left:160px"></div>'
+                );
+                $('#' + this.container).find('.colbar').bind(TUI.env.ua.clickEventDown, function (e) {
+                    if ($(this).is('.exbar')) {
+                        $('#' + TUI.env.main.container).find('.leftbar2').animate({ width: 160 }, 300);
+                        $('#centerPanel').animate({ left: 160 }, 300);
+                        $(this).animate({ left: 126 }, 300, function () {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .menu');
+                            $.each(menus, function (n, menu) {
+                                $(menu).find('.arrow').show();
+                                if ($(menu).is('.active')) {
+                                    $(menu).next().show();
+                                    $(menu).find('.arrow').addClass("rotate");
+                                    $(menu).next().animate({
+                                        height: TUI.env.main.menus[$(menu).next().attr('id')]
+                                    }, 300, function () {
+                                    });
+                                }
+                            });
+                            $(this).toggleClass("exbar");
+                            $(this).attr("title", "收缩导航");
+                        });
+                    } else {
+                        $('#' + TUI.env.main.container).find('.leftbar2').animate({ width: 40 }, 300);
+                        $('#centerPanel').animate({ left: 40 }, 300);
+                        $(this).animate({ left: 6 }, 300, function () {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .menu');
+                            $.each(menus, function (n, menu) {
+                                $(menu).find('.arrow').hide();
+                                if ($(menu).is('.active')) {
+                                    $(menu).next().animate({
+                                        height: 0
+                                    }, 300, function () {
+                                        $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                        $(this).hide();
+                                    });
+                                }
+                            });
+                            $(this).toggleClass("exbar");
+                            $(this).attr("title", "展开导航");
+                        });
+                    }
+                });
+            } else if (TUI.env.sys.frame == 3) {
+                $('#' + this.container).html(
+                    '<div class="topbar">'
+                        + '<div class="home"></div>'
+                        + '<div class="sys_name">' + TUI.env.sys.name + '</div>'
+                        + '<ul class="navPanel"></ul>'
+                        + '<div class="alaram">'
+                            + '<div class="sum">99</div>'
+                            + '<div class="tip">'
+                                + '<ul>'
+                                    + '<li class=""><div class="num" style="background: #FF4931;">2</div><a class="rank">紧急</a></li>'
+                                    + '<li class=""><div class="num" style="background: #FF8833;">3</div><a class="rank">重要</a></li>'
+                                    + '<li class=""><div class="num" style="background: #FFD939;">4</div><a class="rank">次要</a></li>'
+                                    + '<li class=""><div class="num" style="background: #60B0FF;">99</div><a class="rank">提示</a></li>'
+                                + '</ul>'
+                            + '</div>'
+                        + '</div>'
+                        + '<div class="head">'
+                            + '<div class="uname">' + TUI.env.us.id + '</div>'
+                            + '<div class="utype">' + TUI.env.us.type_name + '</div>'
+                            + '<div class="bubble"><img src="/Php/user/userHead.php?userId=' + TUI.env.us.id + '"/></div>'
+                        + '</div>'
+                        + '<div class="close"><div class="btn">退出</div></div>'
+                    + '</div>'
+                    + '<div class="leftbar3">'
+                        + '<div class="colbar" title="收缩导航"></div>'
+                        + '<ul class="navPanel"></ul>'
+                    + '</div>'
+                    + '<div id="centerPanel" style="left:160px;top:50px"></div>'
+                );
+                $('#' + this.container).find('.topbar .home').bind(TUI.env.ua.clickEventDown, function (e) {
+                    if (top.location == self.location) {
+                        window.location.href = "about:blank";
+                        window.close();
+                    } else {
+                        if (parent.TUI.env.main.open_type == '1') {
+                            parent.TUI.env.main.closeSystem();
+                        } else if (parent.TUI.env.main.open_type == '2') {
+                            parent.TUI.env.build.closeSystem();
+                        }
+                    }
+                });
+                $('#' + this.container).find('.topbar .alaram').bind(TUI.env.ua.clickEventDown, function (e) {
+                    $(this).find('.tip').toggleClass("active");
+                });
+                $('#' + this.container).find('.topbar .close').bind(TUI.env.ua.clickEventDown, function (e) {
+                    if (top.location == self.location) {
+                        window.close();
+                    } else {
+                        if (parent.TUI.env.main.open_type == '1') {
+                            parent.TUI.env.main.closeSystem();
+                        } else if (parent.TUI.env.main.open_type == '2') {
+                            parent.TUI.env.build.closeSystem();
+                        }
+                    }
+                });
+                $('#' + this.container).find('.colbar').bind(TUI.env.ua.clickEventDown, function (e) {
+                    if ($(this).is('.exbar')) {
+                        $('#' + TUI.env.main.container).find('.leftbar3').animate({ width: 160 }, 300);
+                        $('#centerPanel').animate({ left: 160 }, 300);
+                        $(this).animate({ left: 130 }, 300, function () {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                            $.each(menus, function (n, menu) {
+                                $(menu).find('.arrow').show();
+                                if ($(menu).is('.active')) {
+                                    $(menu).next('ul').show();
+                                    $(menu).find('.arrow').addClass("rotate");
+                                    $(menu).next('ul').animate({
+                                        height: TUI.env.main.menus[$(menu).next().attr('id')]
+                                    }, 300, function () {
+                                    });
+                                }
+                            });
+                            $(this).toggleClass("exbar");
+                            $(this).attr("title", "收缩导航");
+                            $('#' + TUI.env.main.container).find('.leftbar3').unbind();
+                        });
+                        TUI.env.main.nav_switch = 'ex';
+                    } else {
+                        $('#' + TUI.env.main.container).find('.leftbar3').animate({ width: 44 }, 300);
+                        $('#centerPanel').animate({ left: 44 }, 300);
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                        $.each(menus, function (n, menu) {
+                            $(menu).find('.arrow').hide();
+                            if ($(menu).is('.active')) {
+                                $(menu).next('ul').animate({
+                                    height: 0
+                                }, 300, function () {
+                                    $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                    $(this).hide();
+                                });
+                            }
+                        });
+                        $(this).animate({ left: 12 }, 300, function () {
+                            $(this).toggleClass("exbar");
+                            $(this).attr("title", "展开导航");
+
+                            $('#' + TUI.env.main.container).find('.leftbar3').bind('mouseenter', function (e) {
+                                if (TUI.env.main.nav_switch == 'col') {
+                                    $('#' + TUI.env.main.container).find('.leftbar3').animate({ width: 160 }, 300);
+                                    $('#' + TUI.env.main.container).find('.colbar').animate({ left: 130 }, 300, function () {
+                                        var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                                        $.each(menus, function (n, menu) {
+                                            $(menu).find('.arrow').show();
+                                            if ($(menu).is('.active')) {
+                                                $(menu).next('ul').show();
+                                                $(menu).find('.arrow').addClass("rotate");
+                                                $(menu).next('ul').animate({
+                                                    height: TUI.env.main.menus[$(menu).next().attr('id')]
+                                                }, 300, function () {
+                                                });
+                                            }
+                                        });
+                                    });
+                                }
+                            });
+                            $('#' + TUI.env.main.container).find('.leftbar3').bind('mouseleave', function (e) {
+                                if (TUI.env.main.nav_switch == 'col') {
+                                    $('#' + TUI.env.main.container).find('.leftbar3').animate({ width: 44 }, 300);
+                                    var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                                    $.each(menus, function (n, menu) {
+                                        $(menu).find('.arrow').hide();
+                                        if ($(menu).is('.active')) {
+                                            $(menu).next('ul').animate({
+                                                height: 0
+                                            }, 300, function () {
+                                                $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                                $(this).hide();
+                                            });
+                                        }
+                                    });
+                                    $('#' + TUI.env.main.container).find('.colbar').animate({ left: 12 }, 300);
+                                }
+                            });
+                        });
+                        TUI.env.main.nav_switch = 'col';
+                    }
+                });
+            }
+            $('#centerPanel').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                if (TUI.env.sys.frame == 1) {
+                    $('#' + e.data.handler.container).find('.leftbar').animate({ width: 44 }, 300);
+                    $(this).animate({ left: 44, right: 0 }, 300);
+                } else if (TUI.env.sys.frame == 3) {
+                    var menus = $('#' + e.data.handler.container).find('.topbar .navPanel .menu');
+                    $.each(menus, function (n, menu) {
+                        if ($(menu).is('.active')) {
+                            $(menu).find('.item').animate({
+                                height: 0
+                            }, 300, function () {
+                                $(this).parent().find('.arrow').removeClass("rotate");
+                                $(this).hide();
+                            });
+                        }
+                    });
+                    if ($('#' + e.data.handler.container).find('.topbar .alaram .tip').is('.active')) {
+                        $('#' + e.data.handler.container).find('.topbar .alaram .tip').toggleClass("active");
+                    }
+                }
+            });
+            if (sys_type == "1") this.initWin();
+            this.loadMenu();
+        },
+        initWin: function () {
+            $('#' + this.container).append(
+                '<div class="win">'
+                    + '<div class="title"><span class="title_name">菜单配置</span><div class="close" title="关闭"><img src="/Resources/images/close.png"/></div></div>'
+                    + '<div class="form">'
+                        + '<div class="item">菜单标识：<input id="b_menu_tag" type="text"/></div>'
+                        + '<div class="item">菜单名称：<input id="b_menu_name" type="text"/></div>'
+                        + '<div class="item">菜单简称：<input id="b_menu_abbr" type="text"/></div>'
+                        + '<div class="item">菜单徽标：<input id="b_menu_logo" name="b_menu_logo" type="file" accept="image/*" style="padding-top:2px"></div>'
+                        + '<div class="item">显示序号：<input id="b_menu_index" type="text"/></div>'
+                        + '<div class="item">功能分组: '
+                            + '<select id="b_fun_type" class="ddl" style="color:#A9A9A9">'
+                                + '<option value="" style="color:#A9A9A9" selected>功能分组...</option>'
+                            + '</select>'
+                        + '</div>'
+                        + '<div class="item">功能名称: '
+                            + '<select id="b_fun_name" class="ddl" style="color:#A9A9A9">'
+                                + '<option value="" style="color:#A9A9A9" selected>功能名称...</option>'
+                            + '</select>'
+                        + '</div>'
+                    + '</div>'
+                    + '<div class="okbtn"></div>'
+                    + '<div class="delbtn">删&nbsp;除</div>'
+                + '</div>'
+            );
+            $.ajax({
+                url: "/Php/build/getFunctionTypeList.php",
+                type: "post",
+                async: true,
+                context: this,
+                dataType: "json",
+                success: function (resObj) {
+                    for (var i = 0; i < resObj.length; i++) {
+                        $('#b_fun_type').append('<option value ="' + resObj[i].F_FunctionTypeNo + '" style="color:#000000">' + resObj[i].F_FunctionTypeName + '</option>');
+                    }
+                }
+            });
+            $('#b_fun_type').bind('change', function (e) {
+                if ($(this).val() == "") {
+                    $(this).css({ color: '#A9A9A9' });
+                    $('#b_fun_name').html('');
+                    $('#b_fun_name').css({ color: '#A9A9A9' });
+                    $('#b_fun_name').append('<option value="" style="color:#A9A9A9" selected>功能名称...</option>');
+                } else {
+                    $(this).css({ color: '#000000' });
+                    TUI.env.main.loadFunction($(this).val(), '');
+                }
+            });
+            $('#b_fun_name').bind('change', function (e) {
+                if ($(this).val() == "") {
+                    $(this).css({ color: '#A9A9A9' });
+                } else {
+                    $(this).css({ color: '#000000' });
+                }
+            });
+            $('#' + this.container).find('.win .title .close').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                $('#' + e.data.handler.container).find('.win').fadeOut(500);
+            });
+            $('#' + this.container).find('.win .cancelbtn').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                $('#' + e.data.handler.container).find('.win').fadeOut(500);
+            });
+            $('#' + this.container).find('.win .okbtn').bind(TUI.env.ua.clickEventDown, function (e) {
+                if ($('#b_menu_tag').val() == "") {
+                    alert('请输入菜单标识！'); return;
+                }
+                if ($('#b_menu_name').val() == "") {
+                    alert('请输入菜单名称！'); return;
+                }
+                if ($('#b_menu_abbr').val() == "") {
+                    alert('请输入菜单简称！'); return;
+                }
+                if (TUI.env.main.operFlg == '1' && TUI.env.main.typeFlg == '1') {
+                    if ($('#b_menu_logo').val() == "") {
+                        alert('请选择菜单徽标！'); return;
+                    }
+                }
+                if ($('#b_menu_index').val() == "") {
+                    alert('请输入显示序号！'); return;
+                }
+                if (TUI.env.main.typeFlg == '2') {
+                    if ($('#b_fun_name').val() == "") {
+                        alert('请选择关联功能！'); return;
+                    }
+                }
+                if ($('#b_menu_logo').val() != '') {
+                    $.ajaxFileUpload({
+                        url: "/Php/build/uploadLogo.php?frame=" + TUI.env.sys.frame + "&protag=" + TUI.env.sys.tag + "&tag=" + $('#b_menu_tag').val(),
+                        secureuri: false,
+                        fileElementId: 'b_menu_logo',
+                        dataType: 'xml',
+                        success: function (data, status) {
+
+                        }
+                    });
+                }
+                var pcode = 0;
+                if (TUI.env.main.typeFlg == '2') {
+                    if (TUI.env.sys.frame == 1) {
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar .nav_1 .menu');
+                        $.each(menus, function (n, menu) {
+                            if ($(menu).is('.active')) {
+                                pcode = $(menu).attr('id').split('_')[0];
+                            }
+                        });
+                    } else if (TUI.env.sys.frame == 2) {
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .menu');
+                        $.each(menus, function (n, menu) {
+                            if ($(menu).is('.active')) {
+                                pcode = $(menu).attr('id').split('_')[0];
+                            }
+                        });
+                    } else if (TUI.env.sys.frame == 3) {
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                        $.each(menus, function (n, menu) {
+                            if ($(menu).is('.active')) {
+                                pcode = $(menu).attr('id').split('_')[0];
+                            }
+                        });
+                        menus = $('#' + TUI.env.main.container).find('.topbar .navPanel .menu');
+                        $.each(menus, function (n, menu) {
+                            if ($(menu).is('.active')) {
+                                pcode = $(menu).attr('id').split('_')[0];
+                            }
+                        });
+                    }
+                }
+
+                $.ajax({
+                    url: "/Php/build/menuOperate.php",
+                    type: "post",
+                    async: true,
+                    dataType: "json",
+                    context: this,
+                    data: {
+                        oper: TUI.env.main.operFlg,
+                        type: TUI.env.main.typeFlg,
+                        prono: TUI.env.sys.no,
+                        protag: TUI.env.sys.tag,
+                        code: TUI.env.main.item.code,
+                        tag: $('#b_menu_tag').val(),
+                        name: $('#b_menu_name').val(),
+                        abbr: $('#b_menu_abbr').val(),
+                        index: $('#b_menu_index').val(),
+                        position: TUI.env.main.posFlg,
+                        parent: pcode,
+                        fun: $('#b_fun_name').val()
+                    },
+                    success: function (resObj) {
+                        $(this).parent().fadeOut(500);
+                        if (TUI.env.main.typeFlg == '1') {
+                            $('#centerPanel').trigger(TUI.env.ua.clickEventDown);
+                            TUI.env.main.loadMenu();
+                            if (TUI.env.sys.frame == 2) TUI.env.main.loadMenuByParent();
+                        } else if (TUI.env.main.typeFlg == '2') {
+                            if (TUI.env.sys.frame == 1) {
+                                var menus = $('#' + TUI.env.main.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        TUI.env.main.loadSubMenu($(menu).attr('id').split('_')[0]);
+                                    }
+                                });
+                            } else if (TUI.env.sys.frame == 2) {
+                                var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        TUI.env.main.loadMenuByParent($(menu).attr('id').split('_')[0]);
+                                    }
+                                });
+                            } else if (TUI.env.sys.frame == 3) {
+                                var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        TUI.env.main.loadMenuByParent($(menu).attr('id').split('_')[0]);
+                                    }
+                                });
+                                menus = $('#' + TUI.env.main.container).find('.topbar .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        TUI.env.main.loadMenuByParent($(menu).attr('id').split('_')[0]);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+            $('#' + this.container).find('.win .delbtn').bind(TUI.env.ua.clickEventDown, function (e) {
+                if (TUI.env.main.typeFlg == '1' && !TUI.env.main.item.leaf) {
+                    alert('请先删除子菜单！'); return;
+                }
+                if (confirm('确认删除菜单配置？')) {
+                    $.ajax({
+                        url: "/Php/build/menuOperate.php",
+                        type: "post",
+                        async: true,
+                        dataType: "json",
+                        context: this,
+                        data: {
+                            oper: '3',
+                            type: TUI.env.main.typeFlg,
+                            prono: TUI.env.sys.no,
+                            protag: TUI.env.sys.tag,
+                            code: TUI.env.main.item.code,
+                            tag: $('#b_menu_tag').val(),
+                            fun: $('#b_fun_name').val(),
+                            frame: TUI.env.sys.frame
+                        },
+                        success: function (resObj) {
+                            $(this).parent().fadeOut(500);
+                            if (TUI.env.main.typeFlg == '1') {
+                                $('#centerPanel').trigger(TUI.env.ua.clickEventDown);
+                                TUI.env.main.loadMenu();
+                            } else if (TUI.env.main.typeFlg == '2') {
+                                var menus = $('#' + TUI.env.main.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        TUI.env.main.loadSubMenu($(menu).attr('id').split('_')[0]);
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        },
+        load: function () {
+            var ajax1 = $.ajax({ url: "/Php/build/getSystemPlugin.php", type: "post", async: true, context: this, dataType: "json", data: { project: sys_no} });
+            var ajax2 = $.ajax({ url: "/Php/build/getProjectPlugins.php", type: "post", async: true, context: this, dataType: "json", data: { project: sys_no} });
+            $.when(ajax1, ajax2).done(function (resSet1, resSet2) {
+                if (resSet1[0].length > 0) {
+                    if (resSet1[0][0].F_GuideMode == 'html') {
+                        $('#' + container).html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + resSet1[0][0].F_PluginTag + '/?code=' + resSet1[0][0].F_PluginCode + '&fun=' + resSet1[0][0].F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + resSet1[0][0].F_EnvVar + '"></iframe>');
+                    } else if (resSet1[0][0].F_GuideMode == 'js') {
+                        try {
+                            $.include('/Plugins/' + resSet1[0][0].F_PluginTag + '/index.js');
+                            $.include('/Plugins/' + resSet1[0][0].F_PluginTag + '/index.css');
+                        } catch (e) {
+
+                        }
+                        eval('TUI.env.currPlugin = new ' + resSet1[0][0].F_PluginTag + '("' + container + '",{ code:' + resSet1[0][0].F_PluginCode + ',fun:' + resSet1[0][0].F_FunctionCode + ',app:' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (resSet1[0][0].F_EnvVar == '' ? '""' : resSet1[0][0].F_EnvVar) + '})');
+                        TUI.env.currPlugin.init();
+                    }
+                } else {
+                    TUI.env.main.init();
+                    for (var i = 0; i < resSet2[0].length; i++) {
+                        try {
+                            $.include('/Plugins/' + resSet2[0][i].F_PluginTag + '/index.js');
+                            $.include('/Plugins/' + resSet2[0][i].F_PluginTag + '/index.css');
+                        } catch (e) {
+                            continue;
+                        }
+                    }
+                    if (active_tag == '') {
+                        $.ajax({
+                            url: "/Php/build/getGuidePlugin.php",
+                            type: "post",
+                            async: true,
+                            context: this,
+                            dataType: "json",
+                            data: {
+                                project: sys_no
+                            },
+                            success: function (result) {
+                                if (result.length > 0) {
+                                    if (result[0].F_GuideMode == 'html') {
+                                        $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + result[0].F_PluginTag + '/?code=' + result[0].F_PluginCode + '&fun=' + result[0].F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + result[0].F_EnvVar + '"></iframe>');
+                                    } else if (result[0].F_GuideMode == 'js') {
+                                        eval('TUI.env.currPlugin = new ' + result[0].F_PluginTag + '("centerPanel",{ code:' + result[0].F_PluginCode + ',fun:' + result[0].F_FunctionCode + ',app:' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (result[0].F_EnvVar == '' ? '""' : result[0].F_EnvVar) + '})');
+                                        TUI.env.currPlugin.init();
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        $.ajax({
+                            url: "/Php/build/getActivePlugin.php",
+                            type: "post",
+                            async: true,
+                            context: this,
+                            dataType: "json",
+                            data: {
+                                project: sys_no,
+                                tag: active_tag
+                            },
+                            success: function (result) {
+                                if (result.length > 0) {
+                                    if (result[0].F_GuideMode == 'html') {
+                                        $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + result[0].F_PluginTag + '/?code=' + result[0].F_PluginCode + '&fun=' + result[0].F_FunctionCode + '&app=' + sys_no + '&node=' + active_node + '&user=' + TUI.env.us.code + '&env=' + result[0].F_EnvVar + '"></iframe>');
+                                    } else if (result[0].F_GuideMode == 'js') {
+                                        eval('TUI.env.currPlugin = new ' + result[0].F_PluginTag + '("centerPanel",{ code:' + result[0].F_PluginCode + ',fun:' + result[0].F_FunctionCode + ',node:' + active_node + ',app:' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (result[0].F_EnvVar == '' ? '""' : result[0].F_EnvVar) + '})');
+                                        TUI.env.currPlugin.init();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        },
+        loadFunction: function (type, value) {
+            $.ajax({
+                url: "/Php/build/getFunctionList.php",
+                type: "post",
+                async: true,
+                dataType: "json",
+                data: {
+                    type: type
+                },
+                success: function (resObj) {
+                    $('#b_fun_name').empty();
+                    $('#b_fun_name').append('<option value="" style="color:#A9A9A9" selected>功能名称...</option>');
+                    for (var i = 0; i < resObj.length; i++) {
+                        $('#b_fun_name').append('<option value ="' + resObj[i].F_FunctionCode + '" style="color:#000000">' + resObj[i].F_FunctionName + '</option>');
+                    }
+                    if (value != 'null-null' && value != '') {
+                        $('#b_fun_name').css({ color: '#000000' });
+                        $('#b_fun_name').val(value);
+                    } else {
+                        $('#b_fun_name').css({ color: '#A9A9A9' });
+                    }
+                }
+            });
+        },
+        loadMenu: function () {
+            $.ajax({
+                url: "/Php/build/getProjectMenu.php",
+                type: "post",
+                async: true,
+                context: this,
+                dataType: "json",
+                data: {
+                    project: sys_no
+                },
+                success: function (resSet) {
+                    if (TUI.env.sys.frame == 1) {
+                        var menuPanel = $('#' + this.container).find('.leftbar .nav_1');
+                        menuPanel.empty();
+                        for (var i = 0; i < resSet.length; i++) {
+                            menuPanel.append(
+                                '<div id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="menu" title="' + resSet[i].F_MenuName + '">'
+                                    + '<div class="logo" style="background:url(Resources/images/nav/' + TUI.env.sys.frame + '/' + resSet[i].F_MenuTag + '.png);background-position:0px 0px"></div>'
+                                    + '<div class="name">' + resSet[i].F_MenuAbbr + '</div>'
+                                    + '<div class="arrow"></div>'
+                                + '</div>'
+                            );
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                                var id = $(this).attr('id');
+                                var menus = $('#' + e.data.handler.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (id != $(menu).attr('id')) {
+                                        $(menu).removeClass("active");
+                                        $(menu).find('.arrow').removeClass("active");
+                                        $(menu).find('.logo').css('background-position', '0px 0px');
+                                        $(menu).find('.name').css('color', '#FFFFFF');
+                                    }
+                                });
+                                $(this).addClass('active');
+                                $(this).find('.logo').css('background-position', '28px 0px');
+                                $(this).find('.name').css('color', '#CBD8E5');
+                                if (sys_type == "1") {
+                                    TUI.env.main.timer = setTimeout(function () {
+                                        $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                        $("#b_menu_name").val(e.data.record.F_MenuName);
+                                        $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                        $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                        TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                        if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                            $('#b_fun_type').css({ color: '#000000' });
+                                        } else {
+                                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        }
+
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '2';
+                                        TUI.env.main.typeFlg = '1';
+                                        TUI.env.main.item = {
+                                            code: e.data.record.F_MenuCode,
+                                            leaf: !e.data.record.F_IsHasChild
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    }, 1500);
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                                if (!TUI.env.main.isActive) {
+                                    if (sys_type == "1") {
+                                        TUI.env.main.loadSubMenu(e.data.record.F_MenuCode);
+                                        $(this).parent().parent().animate({ width: 88 }, 300);
+                                        $('#centerPanel').animate({ left: 88, right: -44 }, 300);
+                                    } else {
+                                        if (e.data.record.F_IsHasChild) {
+                                            TUI.env.main.loadSubMenu(e.data.record.F_MenuCode);
+                                            $(this).parent().parent().animate({ width: 88 }, 300);
+                                            $('#centerPanel').animate({ left: 88, right: -44 }, 300);
+                                        } else {
+                                            $('#centerPanel').trigger(TUI.env.ua.clickEventDown);
+                                        }
+                                    }
+                                    if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                        if (e.data.record.F_GuideMode == 'js') {
+                                            eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app:' + sys_no + ',tree:' + (e.data.record.F_TreeNo == '' ? '""' : e.data.record.F_TreeNo) + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                            TUI.env.currPlugin.init();
+                                        } else if (e.data.record.F_GuideMode == 'html') {
+                                            $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&tree=' + e.data.record.F_TreeNo + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                        }
+
+                                        $(this).find('.arrow').addClass("active");
+                                    }
+                                    clearTimeout(TUI.env.main.timer);
+                                } else {
+                                    clearTimeout(TUI.env.main.timer);
+                                    TUI.env.main.isActive = false;
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseover', { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (!$(menu).is('.active')) {
+                                        $(menu).find('.logo').css('background-position', '0px 0px');
+                                        $(menu).find('.name').css('color', '#FFFFFF');
+                                    }
+                                });
+                                $(this).find('.logo').css('background-position', '28px 0px');
+                                $(this).find('.name').css('color', '#CBD8E5');
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseleave', { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (!$(menu).is('.active')) {
+                                        $(menu).find('.logo').css('background-position', '0px 0px');
+                                        $(menu).find('.name').css('color', '#FFFFFF');
+                                    }
+                                });
+                            });
+                        }
+                        if (sys_type == "1") {
+                            menuPanel.append('<div id="menu_plus" class="menu" title="添加一级菜单">' + '<div class="plus">+</div>' + '</div>');
+                            $('#menu_plus').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    $(menu).removeClass("active");
+                                    $(menu).find('.arrow').removeClass("active");
+                                });
+                                $(this).addClass('active');
+                                $('#centerPanel').trigger(TUI.env.ua.clickEventDown);
+                                $("#b_menu_tag").val('');
+                                $("#b_menu_name").val('');
+                                $("#b_menu_abbr").val('');
+                                $("#b_menu_logo").val('');
+                                $("#b_menu_index").val('');
+                                $("#b_fun_type").val('');
+                                $("#b_fun_name").val('');
+                                $('#b_fun_type').css({ color: '#A9A9A9' });
+                                $('#b_fun_name').css({ color: '#A9A9A9' });
+                                $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                TUI.env.main.operFlg = '1';
+                                TUI.env.main.typeFlg = '1';
+                                TUI.env.main.posFlg = 'v';
+                                TUI.env.main.item = {
+                                    code: null,
+                                    leaf: true
+                                };
+                                TUI.env.main.isActive = true;
+                            });
+                        }
+                    } else if (TUI.env.sys.frame == 2) {
+                        var menuPanel = $('#' + this.container).find('.leftbar2 .navPanel');
+                        menuPanel.empty();
+                        for (var i = 0; i < resSet.length; i++) {
+                            menuPanel.append(
+                                '<div id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="menu" title="' + resSet[i].F_MenuName + '">'
+                                    + '<div class="ul">'
+                                        + '<div class="icon" style="background:url(Resources/images/nav/' + TUI.env.sys.frame + '/' + resSet[i].F_MenuTag + '.png);background-position:0px 0px"></div>'
+                                        + '<div class="name">' + resSet[i].F_MenuName + '</div>'
+                                    + '</div>'
+                                    + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<div class="arrow"></div>' : '')
+                                + '</div>'
+                                + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<div id="' + resSet[i].F_MenuCode + '_ul" class="itemul"></div>' : '')
+                            );
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                                var id = $(this).attr('id');
+                                var menus = $('#' + e.data.handler.container).find('.leftbar2 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (id != $(menu).attr('id') && $(menu).is('.active')) {
+                                        $(menu).removeClass("active");
+                                        $(menu).next('.itemul').animate({
+                                            height: 0
+                                        }, 300, function () {
+                                            $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                            $(this).hide();
+                                        });
+                                    }
+                                });
+                                $(this).addClass('active');
+                                if (sys_type == "1") {
+                                    TUI.env.main.timer = setTimeout(function () {
+                                        $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                        $("#b_menu_name").val(e.data.record.F_MenuName);
+                                        $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                        $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                        TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                        if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                            $('#b_fun_type').css({ color: '#000000' });
+                                        } else {
+                                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        }
+
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '2';
+                                        TUI.env.main.typeFlg = '1';
+                                        TUI.env.main.item = {
+                                            code: e.data.record.F_MenuCode,
+                                            leaf: !e.data.record.F_IsHasChild
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    }, 1500);
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                                if (!TUI.env.main.isActive) {
+                                    if (e.data.record.F_IsHasChild == 1 || sys_type == "1") {
+                                        if ($(this).next('.itemul').is(":hidden")) {
+                                            $(this).next('.itemul').show();
+                                            $(this).next('.itemul').animate({
+                                                height: TUI.env.main.menus[$(this).next().attr('id')]
+                                            }, 300, function () {
+                                                $(this).prev('.menu').find('.arrow').addClass("rotate");
+                                            });
+                                        } else {
+                                            $(this).next('.itemul').animate({
+                                                height: 0
+                                            }, 300, function () {
+                                                $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                                $(this).hide();
+                                            });
+                                        }
+                                    }
+                                    if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                        if (e.data.record.F_GuideMode == 'js') {
+                                            eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app: ' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                            TUI.env.currPlugin.init();
+                                        } else if (e.data.record.F_GuideMode == 'html') {
+                                            $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                        }
+                                    }
+                                    clearTimeout(TUI.env.main.timer);
+                                } else {
+                                    clearTimeout(TUI.env.main.timer);
+                                    TUI.env.main.isActive = false;
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            });
+                        }
+                        if (sys_type == "1") {
+                            menuPanel.append(
+                                '<div id="menu_plus" class="menu">'
+                                    + '<div class="ul"><div class="plus" title="添加一级菜单">+</div></div>'
+                                + '</div>'
+                            );
+                            $('#menu_plus').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar2 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    $(menu).removeClass("active");
+                                });
+                                $(this).addClass('active');
+                                $("#b_menu_tag").val('');
+                                $("#b_menu_name").val('');
+                                $("#b_menu_abbr").val('');
+                                $("#b_menu_logo").val('');
+                                $("#b_menu_index").val('');
+                                $("#b_fun_type").val('');
+                                $("#b_fun_name").val('');
+                                $('#b_fun_type').css({ color: '#A9A9A9' });
+                                $('#b_fun_name').css({ color: '#A9A9A9' });
+                                $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                TUI.env.main.operFlg = '1';
+                                TUI.env.main.typeFlg = '1';
+                                TUI.env.main.posFlg = 'v';
+                                TUI.env.main.item = {
+                                    code: null,
+                                    leaf: true
+                                };
+                                TUI.env.main.isActive = true;
+                            });
+                        }
+                        this.loadMenuByParent();
+                    } else if (TUI.env.sys.frame == 3) {
+                        var menuPanel = $('#' + this.container).find('.leftbar3 .navPanel');
+                        var topPanel = $('#' + this.container).find('.topbar .navPanel');
+                        menuPanel.empty();
+                        topPanel.empty();
+                        for (var i = 0; i < resSet.length; i++) {
+                            if (resSet[i].F_MenuPosition == 'v') {
+                                menuPanel.append(
+                                    '<li id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="menu" title="' + resSet[i].F_MenuName + '">'
+                                        + '<div class="text" style="background:url(Resources/images/nav/' + TUI.env.sys.frame + '/' + resSet[i].F_MenuTag + '.png) no-repeat;background-position: center left 6px;">' + resSet[i].F_MenuName + '</div>'
+                                        + '<div class="side"></div>'
+                                        + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<div class="arrow"></div>' : '')
+                                    + '</li>'
+                                    + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<ul id="' + resSet[i].F_MenuCode + '_ul" class="item"></ul>' : '')
+                                );
+                            } else if (resSet[i].F_MenuPosition == 'h') {
+                                topPanel.append(
+                                    '<li id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="menu" title="' + resSet[i].F_MenuName + '">'
+                                        //+ '<div class="text" style="background:url(Resources/images/nav/' + TUI.env.sys.frame + '/' + resSet[i].F_MenuTag + '.png) no-repeat;background-position: center left 6px;">' + resSet[i].F_MenuName + '</div>'
+                                        + '<div class="text">' + resSet[i].F_MenuName + '</div>'
+                                        + '<div class="side"></div>'
+                                        + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<div class="arrow"></div>' : '')
+                                        + (resSet[i].F_IsHasChild == 1 || sys_type == "1" ? '<ul id="' + resSet[i].F_MenuCode + '_ul" class="item"></ul>' : '')
+                                    + '</li>'
+                                );
+                            }
+
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                                var id = $(this).attr('id');
+                                var menus = $('#' + e.data.handler.container).find('.leftbar3 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (id != $(menu).attr('id') && $(menu).is('.active')) {
+                                        $(menu).removeClass("active");
+                                        $(menu).find('.side').hide();
+
+                                        $(menu).next('ul').animate({
+                                            height: 0
+                                        }, 300, function () {
+                                            $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                            $(this).hide();
+                                        });
+                                    }
+                                });
+                                menus = $('#' + e.data.handler.container).find('.topbar .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    if (id != $(menu).attr('id') && $(menu).is('.active')) {
+                                        $(menu).removeClass("active");
+                                        $(menu).find('.side').hide();
+
+                                        $(menu).find('.item').animate({
+                                            height: 0
+                                        }, 300, function () {
+                                            $(this).parent().find('.arrow').removeClass("rotate");
+                                            $(this).hide();
+                                        });
+                                    }
+                                });
+                                $(this).addClass('active');
+                                $(this).find('.side').css({ 'display': 'block' });
+                                if (sys_type == "1") {
+                                    TUI.env.main.timer = setTimeout(function () {
+                                        $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                        $("#b_menu_name").val(e.data.record.F_MenuName);
+                                        $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                        $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                        TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                        if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                            $('#b_fun_type').css({ color: '#000000' });
+                                        } else {
+                                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        }
+
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '2';
+                                        TUI.env.main.typeFlg = '1';
+                                        TUI.env.main.item = {
+                                            code: e.data.record.F_MenuCode,
+                                            leaf: !e.data.record.F_IsHasChild
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    }, 1500);
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                                if (!TUI.env.main.isActive) {
+                                    if (e.data.record.F_IsHasChild == 1 || sys_type == "1") {
+                                        if (e.data.record.F_MenuPosition == 'v') {
+                                            if ($(this).next('ul').is(":hidden")) {
+                                                $(this).next('ul').show();
+                                                $(this).next('ul').animate({
+                                                    height: TUI.env.main.menus[$(this).next().attr('id')]
+                                                }, 300, function () {
+                                                    $(this).prev('.menu').find('.arrow').addClass("rotate");
+                                                });
+                                            } else {
+                                                $(this).next('ul').animate({
+                                                    height: 0
+                                                }, 300, function () {
+                                                    $(this).prev('.menu').find('.arrow').removeClass("rotate");
+                                                    $(this).hide();
+                                                });
+                                            }
+                                        } else if (e.data.record.F_MenuPosition == 'h') {
+                                            if ($(this).find('.item').is(":hidden")) {
+                                                $(this).find('.item').show();
+                                                $(this).find('.item').animate({
+                                                    height: TUI.env.main.menus[$(this).find('.item').attr('id')]
+                                                }, 300, function () {
+                                                    $(this).parent().find('.arrow').addClass("rotate");
+                                                });
+                                            } else {
+                                                $(this).find('.item').animate({
+                                                    height: 0
+                                                }, 300, function () {
+                                                    $(this).parent().find('.arrow').removeClass("rotate");
+                                                    $(this).hide();
+                                                });
+                                            }
+                                        }
+                                    }
+                                    if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                        if (e.data.record.F_GuideMode == 'js') {
+                                            eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app: ' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                            TUI.env.currPlugin.init();
+                                        } else if (e.data.record.F_GuideMode == 'html') {
+                                            $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                        }
+                                    }
+                                    clearTimeout(TUI.env.main.timer);
+                                } else {
+                                    clearTimeout(TUI.env.main.timer);
+                                    TUI.env.main.isActive = false;
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            });
+                        }
+                        if (sys_type == "1") {
+                            menuPanel.append(
+                                '<li id="menu_plus" class="menu">'
+                                    + '<div class="text"><div class="plus" title="添加一级菜单">+</div></div>'
+                                + '</li>'
+                            );
+                            topPanel.append(
+                                '<li id="top_menu_plus" class="menu">'
+                                    + '<div class="text"><div class="plus" title="添加一级菜单">+</div></div>'
+                                + '</li>'
+                            );
+                            $('#menu_plus').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar3 .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    $(menu).removeClass("active");
+                                });
+                                $(this).addClass('active');
+                                $("#b_menu_tag").val('');
+                                $("#b_menu_name").val('');
+                                $("#b_menu_abbr").val('');
+                                $("#b_menu_logo").val('');
+                                $("#b_menu_index").val('');
+                                $("#b_fun_type").val('');
+                                $("#b_fun_name").val('');
+                                $('#b_fun_type').css({ color: '#A9A9A9' });
+                                $('#b_fun_name').css({ color: '#A9A9A9' });
+                                $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                TUI.env.main.operFlg = '1';
+                                TUI.env.main.typeFlg = '1';
+                                TUI.env.main.posFlg = 'v';
+                                TUI.env.main.item = {
+                                    code: null,
+                                    leaf: true
+                                };
+                                TUI.env.main.isActive = true;
+                            });
+                            $('#top_menu_plus').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                                var menus = $('#' + e.data.handler.container).find('.topbar .navPanel .menu');
+                                $.each(menus, function (n, menu) {
+                                    $(menu).removeClass("active");
+                                });
+                                $(this).addClass('active');
+                                $("#b_menu_tag").val('');
+                                $("#b_menu_name").val('');
+                                $("#b_menu_abbr").val('');
+                                $("#b_menu_logo").val('');
+                                $("#b_menu_index").val('');
+                                $("#b_fun_type").val('');
+                                $("#b_fun_name").val('');
+                                $('#b_fun_type').css({ color: '#A9A9A9' });
+                                $('#b_fun_name').css({ color: '#A9A9A9' });
+                                $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                TUI.env.main.operFlg = '1';
+                                TUI.env.main.typeFlg = '1';
+                                TUI.env.main.posFlg = 'h';
+                                TUI.env.main.item = {
+                                    code: null,
+                                    leaf: true
+                                };
+                                TUI.env.main.isActive = true;
+                            });
+                        }
+                        this.loadMenuByParent();
+                    }
+                }
+            });
+        },
+        loadSubMenu: function (menu) {
+            $.ajax({
+                url: "/Php/build/getProjectSubMenu.php",
+                type: "post",
+                async: true,
+                context: this,
+                dataType: "json",
+                data: {
+                    project: TUI.env.sys.no,
+                    menu: menu
+                },
+                success: function (resSet) {
+                    var menuPanel = $('#' + this.container).find('.leftbar .nav_2');
+                    menuPanel.empty();
+                    for (var i = 0; i < resSet.length; i++) {
+                        menuPanel.append(
+                            '<div id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="menu" title="' + resSet[i].F_MenuName + '">'
+                                + '<div class="logo" style="background:url(Resources/images/nav/' + TUI.env.sys.frame + '/' + resSet[i].F_MenuTag + '.png);background-position:0px 0px"></div>'
+                                + '<div class="name">' + resSet[i].F_MenuAbbr + '</div>'
+                            + '</div>'
+                        );
+                        $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                            if (sys_type == "1") {
+                                TUI.env.main.timer = setTimeout(function () {
+                                    $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                    $("#b_menu_name").val(e.data.record.F_MenuName);
+                                    $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                    $("#b_menu_logo").val('');
+                                    $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                    $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                    TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                    if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                        $('#b_fun_type').css({ color: '#000000' });
+                                    } else {
+                                        $('#b_fun_type').css({ color: '#A9A9A9' });
+                                    }
+                                    $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                    $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                    $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                    TUI.env.main.operFlg = '2';
+                                    TUI.env.main.typeFlg = '2';
+                                    TUI.env.main.item = {
+                                        code: e.data.record.F_MenuCode,
+                                        leaf: true
+                                    };
+                                    TUI.env.main.isActive = true;
+                                }, 1500);
+                            }
+                        });
+                        $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                            if (!TUI.env.main.isActive) {
+                                var menus = $('#' + e.data.handler.container).find('.leftbar .nav_1 .menu');
+                                $.each(menus, function (n, menu) {
+                                    if ($(menu).is('.active')) {
+                                        $(menu).find('.arrow').addClass("active");
+                                    } else {
+                                        $(menu).find('.arrow').removeClass("active");
+                                    }
+                                });
+                                if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                    if (e.data.record.F_GuideMode == 'js') {
+                                        eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app:' + sys_no + ',tree:' + (e.data.record.F_TreeNo == '' ? '""' : e.data.record.F_TreeNo) + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                        TUI.env.currPlugin.init();
+                                    } else if (e.data.record.F_GuideMode == 'html') {
+                                        $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&tree=' + e.data.record.F_TreeNo + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                    }
+                                }
+                                $('#centerPanel').trigger(TUI.env.ua.clickEventDown);
+                                clearTimeout(TUI.env.main.timer);
+                            } else {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            }
+                        });
+                        $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                            clearTimeout(TUI.env.main.timer);
+                            TUI.env.main.isActive = false;
+                        });
+                        $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseover', { handler: this }, function (e) {
+                            var menus = $('#' + e.data.handler.container).find('.leftbar .nav_2 .menu');
+                            $.each(menus, function (n, menu) {
+                                $(menu).find('.logo').css('background-position', '0px 0px');
+                                $(menu).find('.name').css('color', '#A9B0BD');
+                            });
+                            $(this).find('.logo').css('background-position', '28px 0px');
+                            $(this).find('.name').css('color', '#017BC2');
+                        });
+                    }
+                    if (sys_type == "1") {
+                        menuPanel.append('<div id="submenu_plus" class="menu" title="添加二级菜单">' + '<div class="plus">+</div>' + '</div>');
+                        $('#submenu_plus').bind(TUI.env.ua.clickEventDown, { handler: this }, function (e) {
+                            $("#b_menu_tag").val('');
+                            $("#b_menu_name").val('');
+                            $("#b_menu_abbr").val('');
+                            $("#b_menu_logo").val('');
+                            $("#b_menu_index").val('');
+                            $("#b_fun_type").val('');
+                            $("#b_fun_name").val('');
+                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                            $('#b_fun_name').css({ color: '#A9A9A9' });
+                            $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                            $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                            $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                            TUI.env.main.operFlg = '1';
+                            TUI.env.main.typeFlg = '2';
+                            TUI.env.main.posFlg = 'v';
+                            TUI.env.main.item = {
+                                code: null,
+                                leaf: true
+                            };
+                            TUI.env.main.isActive = true;
+                        });
+                    }
+                }
+            });
+        },
+        loadMenuByParent: function (parent) {
+            $.ajax({
+                url: "/Php/build/getProjectMenuByPId.php",
+                type: "post",
+                async: true,
+                context: this,
+                dataType: "json",
+                data: {
+                    project: sys_no,
+                    parent: parent ? parent : ''
+                },
+                success: function (resSet) {
+                    for (var i = 0; i < resSet.length; i++) {
+                        $('#' + resSet[i].F_ParentCode + '_ul').empty();
+                    }
+                    if (TUI.env.sys.frame == 2) {
+                        for (var i = 0; i < resSet.length; i++) {
+                            $('#' + resSet[i].F_ParentCode + '_ul').append(
+                                '<div id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="item" title="' + resSet[i].F_MenuName + '">'
+                                    + '<div class="v1"></div>'
+                                    + '<div class="h1"></div>'
+                                    + '<div class="name">' + resSet[i].F_MenuName + '</div>'
+                                    + '<div class="v2"></div>'
+                                + '</div>'
+                            );
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                                if (sys_type == "1") {
+                                    TUI.env.main.timer = setTimeout(function () {
+                                        $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                        $("#b_menu_name").val(e.data.record.F_MenuName);
+                                        $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                        $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                        TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                        if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                            $('#b_fun_type').css({ color: '#000000' });
+                                        } else {
+                                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        }
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '2';
+                                        TUI.env.main.typeFlg = '2';
+                                        TUI.env.main.item = {
+                                            code: e.data.record.F_MenuCode,
+                                            leaf: true
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    }, 1500);
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                                if (!TUI.env.main.isActive) {
+                                    var menus = $('#' + e.data.handler.container).find('.leftbar2 .navPanel .itemul .item .name');
+                                    $.each(menus, function (n, menu) {
+                                        if ($(menu).is('.active')) {
+                                            $(menu).removeClass("active");
+                                        }
+                                    });
+                                    $(this).find('.name').addClass("active");
+                                    if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                        if (e.data.record.F_GuideMode == 'js') {
+                                            eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app: ' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                            TUI.env.currPlugin.init();
+                                        } else if (e.data.record.F_GuideMode == 'html') {
+                                            $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                        }
+                                    }
+                                    clearTimeout(TUI.env.main.timer);
+                                } else {
+                                    clearTimeout(TUI.env.main.timer);
+                                    TUI.env.main.isActive = false;
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            });
+                        }
+                        if (sys_type == "1") {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .itemul');
+                            $.each(menus, function (n, menu) {
+                                if ($('#' + $(menu).attr('id') + '_plus').length == 0) {
+                                    $(menu).append(
+                                        '<div id="' + $(menu).attr('id') + '_plus" class="item" title="添加二级菜单">'
+                                            + '<div class="v1"></div>'
+                                            + '<div class="h1"></div>'
+                                            + '<div class="name" style="font-size: 20px;">+</div>'
+                                        + '</div>'
+                                    );
+                                    $('#' + $(menu).attr('id') + '_plus').bind(TUI.env.ua.clickEventDown, function (e) {
+                                        $("#b_menu_tag").val('');
+                                        $("#b_menu_name").val('');
+                                        $("#b_menu_abbr").val('');
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val('');
+                                        $("#b_fun_type").val('');
+                                        $("#b_fun_name").val('');
+                                        $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        $('#b_fun_name').css({ color: '#A9A9A9' });
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '1';
+                                        TUI.env.main.typeFlg = '2';
+                                        TUI.env.main.posFlg = 'v';
+                                        TUI.env.main.item = {
+                                            code: null,
+                                            leaf: true
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    });
+                                }
+                            });
+                        } else {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .itemul');
+                            $.each(menus, function (n, menu) {
+                                $(menu).find('.item:last').children().last().remove();
+                            });
+                        }
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar2 .navPanel .itemul');
+                        $.each(menus, function (n, menu) {
+                            if (!TUI.env.main.menus) {
+                                TUI.env.main.menus = [];
+                            }
+                            $(menu).css({ 'height': 'auto' });
+                            TUI.env.main.menus[$(menu).attr('id')] = $(menu).height();
+                            if (!$(menu).prev().is('.active')) {
+                                $(menu).height(0);
+                                $(menu).hide();
+                            }
+                        });
+                    } else if (TUI.env.sys.frame == 3) {
+                        for (var i = 0; i < resSet.length; i++) {
+                            $('#' + resSet[i].F_ParentCode + '_ul').append(
+                                '<li id="' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag + '" class="submenu">' + resSet[i].F_MenuName + '</li>'
+                            );
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventDown, { handler: this, record: resSet[i] }, function (e) {
+                                if (sys_type == "1") {
+                                    TUI.env.main.timer = setTimeout(function () {
+                                        $("#b_menu_tag").val(e.data.record.F_MenuTag);
+                                        $("#b_menu_name").val(e.data.record.F_MenuName);
+                                        $("#b_menu_abbr").val(e.data.record.F_MenuAbbr);
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val(e.data.record.F_MenuIndex);
+                                        $("#b_fun_type").val(e.data.record.F_FunctionTypeNo);
+                                        TUI.env.main.loadFunction(e.data.record.F_FunctionTypeNo, e.data.record.F_FunctionCode + '-' + e.data.record.F_PluginTag);
+                                        if (e.data.record.F_FunctionTypeNo != null && e.data.record.F_FunctionTypeNo != '') {
+                                            $('#b_fun_type').css({ color: '#000000' });
+                                        } else {
+                                            $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        }
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('修&nbsp;改');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').show();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '2';
+                                        TUI.env.main.typeFlg = '2';
+                                        TUI.env.main.item = {
+                                            code: e.data.record.F_MenuCode,
+                                            leaf: true
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    }, 1500);
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind(TUI.env.ua.clickEventUp, { handler: this, record: resSet[i] }, function (e) {
+                                if (!TUI.env.main.isActive) {
+                                    var menus = $('#' + e.data.handler.container).find('.leftbar3 .navPanel .item .submenu');
+                                    $.each(menus, function (n, menu) {
+                                        if ($(menu).is('.active')) {
+                                            $(menu).removeClass("active");
+                                        }
+                                    });
+                                    menus = $('#' + e.data.handler.container).find('.topbar .navPanel .item .submenu');
+                                    $.each(menus, function (n, menu) {
+                                        if ($(menu).is('.active')) {
+                                            $(menu).removeClass("active");
+                                        }
+                                    });
+                                    $(this).addClass("active");
+                                    if (e.data.record.F_MenuPosition == 'h') {
+                                        $(this).parent().animate({
+                                            height: 0
+                                        }, 300, function () {
+                                            $(this).parent().find('.arrow').removeClass("rotate");
+                                            $(this).hide();
+                                        });
+                                    }
+                                    if (e.data.record.F_PluginTag != null && e.data.record.F_PluginTag != '') {
+                                        if (e.data.record.F_GuideMode == 'js') {
+                                            eval('TUI.env.currPlugin = new ' + e.data.record.F_PluginTag + '("centerPanel",{ code:' + e.data.record.F_PluginCode + ',fun:' + e.data.record.F_FunctionCode + ',app: ' + sys_no + ', user:' + TUI.env.us.code + ',env:' + (e.data.record.F_EnvVar == '' ? '""' : e.data.record.F_EnvVar) + '})');
+                                            TUI.env.currPlugin.init();
+                                        } else if (e.data.record.F_GuideMode == 'html') {
+                                            $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + e.data.record.F_PluginTag + '/?code=' + e.data.record.F_PluginCode + '&fun=' + e.data.record.F_FunctionCode + '&app=' + sys_no + '&user=' + TUI.env.us.code + '&env=' + e.data.record.F_EnvVar + '"></iframe>');
+                                        }
+                                    }
+                                    clearTimeout(TUI.env.main.timer);
+                                } else {
+                                    clearTimeout(TUI.env.main.timer);
+                                    TUI.env.main.isActive = false;
+                                }
+                            });
+                            $('#' + resSet[i].F_MenuCode + '_' + resSet[i].F_MenuTag).bind('mouseout', function (e) {
+                                clearTimeout(TUI.env.main.timer);
+                                TUI.env.main.isActive = false;
+                            });
+                        }
+
+                        if (sys_type == "1") {
+                            var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .item');
+                            $.each(menus, function (n, menu) {
+                                if ($('#' + $(menu).attr('id') + '_plus').length == 0) {
+                                    $(menu).append(
+                                        '<li id="' + $(menu).attr('id') + '_plus" class="submenu" style="font-size: 20px;" title="添加二级菜单">+</li>'
+                                    );
+                                    $('#' + $(menu).attr('id') + '_plus').bind(TUI.env.ua.clickEventDown, function (e) {
+                                        $("#b_menu_tag").val('');
+                                        $("#b_menu_name").val('');
+                                        $("#b_menu_abbr").val('');
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val('');
+                                        $("#b_fun_type").val('');
+                                        $("#b_fun_name").val('');
+                                        $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        $('#b_fun_name').css({ color: '#A9A9A9' });
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '1';
+                                        TUI.env.main.typeFlg = '2';
+                                        TUI.env.main.posFlg = 'v';
+                                        TUI.env.main.item = {
+                                            code: null,
+                                            leaf: true
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    });
+                                }
+                            });
+                            menus = $('#' + TUI.env.main.container).find('.topbar .navPanel .item');
+                            $.each(menus, function (n, menu) {
+                                if ($('#' + $(menu).attr('id') + '_plus').length == 0) {
+                                    $(menu).append(
+                                        '<li id="' + $(menu).attr('id') + '_plus" class="submenu" style="font-size: 20px;" title="添加二级菜单">+</li>'
+                                    );
+                                    $('#' + $(menu).attr('id') + '_plus').bind(TUI.env.ua.clickEventDown, function (e) {
+                                        $("#b_menu_tag").val('');
+                                        $("#b_menu_name").val('');
+                                        $("#b_menu_abbr").val('');
+                                        $("#b_menu_logo").val('');
+                                        $("#b_menu_index").val('');
+                                        $("#b_fun_type").val('');
+                                        $("#b_fun_name").val('');
+                                        $('#b_fun_type').css({ color: '#A9A9A9' });
+                                        $('#b_fun_name').css({ color: '#A9A9A9' });
+                                        $('#' + TUI.env.main.container).find('.win .okbtn').html('添&nbsp;加');
+                                        $('#' + TUI.env.main.container).find('.win .delbtn').hide();
+                                        $('#' + TUI.env.main.container).find('.win').fadeIn(500);
+                                        TUI.env.main.operFlg = '1';
+                                        TUI.env.main.typeFlg = '2';
+                                        TUI.env.main.posFlg = 'h';
+                                        TUI.env.main.item = {
+                                            code: null,
+                                            leaf: true
+                                        };
+                                        TUI.env.main.isActive = true;
+                                    });
+                                }
+                            });
+                        }
+                        var menus = $('#' + TUI.env.main.container).find('.leftbar3 .navPanel .item');
+                        $.each(menus, function (n, menu) {
+                            if (!TUI.env.main.menus) {
+                                TUI.env.main.menus = [];
+                            }
+                            $(menu).css({ 'height': 'auto' });
+                            TUI.env.main.menus[$(menu).attr('id')] = $(menu).height();
+                            if (!$(menu).prev().is('.active')) {
+                                $(menu).height(0);
+                                $(menu).hide();
+                            }
+                        });
+                        menus = $('#' + TUI.env.main.container).find('.topbar .navPanel .item');
+                        $.each(menus, function (n, menu) {
+                            if (!TUI.env.main.menus) {
+                                TUI.env.main.menus = [];
+                            }
+                            $(menu).css({ 'height': 'auto' });
+                            TUI.env.main.menus[$(menu).attr('id')] = $(menu).height();
+                            if (!$(menu).parent().is('.active')) {
+                                $(menu).height(0);
+                                $(menu).hide();
+                            }
+                        });
+                    }
+                }
+            });
+        },
+        activeProject: function (pro_tag, pro_no) {
+            window.open('http://' + location.host + '/Project/' + pro_tag + '/?appid=' + pro_no);
+        },
+        activeFunction: function (fun_tag, node) {
+            $.ajax({
+                url: "/Php/build/getFunctionInfo.php",
+                type: "post",
+                async: true,
+                context: this,
+                dataType: "json",
+                data: {
+                    pro: sys_no,
+                    fun: fun_tag
+                },
+                success: function (result) {
+                    if (result.length > 0) {
+                        if ($('#' + result[0].F_MenuCode + '_' + result[0].F_MenuTag).length > 0) {
+                            $('#' + result[0].F_MenuCode + '_' + result[0].F_MenuTag).trigger(TUI.env.ua.clickEventDown, { data: node });
+                            $('#' + result[0].F_MenuCode + '_' + result[0].F_MenuTag).trigger(TUI.env.ua.clickEventUp, { data: node });
+                        } else {
+                            if (result[0].F_GuideMode == 'html') {
+                                $('#centerPanel').html('<iframe width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="0" src="/Plugins/' + result[0].F_PluginTag + '/?code=' + result[0].F_PluginCode + '&fun=' + result[0].F_FunctionCode + '&app=' + sys_no + '&tree=' + result[0].F_TreeNo + '&node=' + node + '&user=' + TUI.env.us.code + '&env=' + result[0].fun.F_EnvVar + '"></iframe>');
+                            } else if (result[0].F_GuideMode == 'js') {
+                                eval('TUI.env.currPlugin = new ' + result[0].F_PluginTag + '("centerPanel",{ code:' + result[0].F_PluginCode + ',fun:' + result[0].F_FunctionCode + ',node:' + node + ',app:' + sys_no + ',tree:' + (result[0].F_TreeNo == '' ? '""' : result[0].F_TreeNo) + ', user:' + TUI.env.us.code + ',env:' + (result[0].F_EnvVar == '' ? '""' : result[0].F_EnvVar) + '})');
+                                TUI.env.currPlugin.init();
+                            }
+                        }
+                    }
+                }
+            });
+        },
+        activeProAndFun: function (pro_tag, pro_no, fun_tag, node) {
+            window.open('http://' + location.host + '/Project/' + pro_tag + '/?appid=' + pro_no + '&tag=' + fun_tag + '&node=' + node);
+        }
+    };
+}
+
+$(document).ready(function () {
+    var ajax1 = $.ajax({ url: "/Php/login/mysso.php?time=" + new Date().getTime(),type: 'post',dataType: "json" });
+    var ajax2 = $.ajax({ url: "/Php/build/getProjectByNo.php",type: 'post',dataType: "json",data: { project: sys_no }});
+    $.when(ajax1, ajax2).done(function (result1, result2) {
+        if (result1[0].status) {
+            TUI.env.us = result1[0]; 
+            TUI.env.sys = {
+                no: result2[0][0].F_ProjectNo,
+                tag: result2[0][0].F_ProjectTag,
+                name: result2[0][0].F_ProjectName,
+                abbr: result2[0][0].F_ProjectAbbr,
+                frame: result2[0][0].F_ProjectFrame
+            }
+            TUI.env.main = new MainPanel("mainPanel");
+            TUI.env.main.load();
+            if (window.parent != window) {
+                parent.TUI.env.sys.parent.fadeIn(500);
+            }
+            document.title = result2[0][0].F_ProjectName;
+        } else {
+            top.location.href = "/";
+        }
+    });
+    document.body.onselectstart = document.body.oncontextmenu = function () { return false; }
+});

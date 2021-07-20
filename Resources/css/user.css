@@ -1,0 +1,439 @@
+﻿.user{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+}
+.user .info
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 350px;
+    height: 250px;
+    margin-left: -175px;
+    margin-top: -150px;
+    background-color: #FFFFFF;
+    display: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+.user .info .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.user .info .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.user .info .close:hover
+{
+    opacity:1;
+}
+.user .info .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.user .info .form
+{
+	position: absolute;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 70px;
+}
+.user .info .form .item
+{
+	position: relative;
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.user .info .form .item input
+{
+	position: absolute;
+    top: 0px;
+    left: 80px;
+    height: 28px;
+    width: 224px;
+    font-size: 10pt;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.user .info .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.user .info .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.user .info .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.user .info .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.user .head
+{
+    position:absolute;
+	left:50%;
+	top:50%;
+	width:350px;
+	height:160px;
+	margin-left:-175px;
+	margin-top:-120px;
+    display:none;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+.user .head .title
+{
+    position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:28px;
+	font-size:11pt;
+	padding-left:10px;
+	padding-top:7px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.user .head .close
+{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.user .head .close:hover
+{
+    opacity:1;
+}
+.user .head .close img
+{
+    width:30px;
+    height:30px;
+}
+.user .head .uploadbtn
+{
+	position: absolute;
+    bottom: 25px;
+    left: 30px;
+    height: 30px;
+    right: 30px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.user .head .uploadbtn:hover
+{
+    background-color:#0076d6;
+}
+.user .head .pic
+{
+	position: absolute;
+    top: 55px;
+    left: 30px;
+    height: 60px;
+    right: 30px;
+}
+.user .head .pic input
+{
+	position: absolute;
+	top:0px;
+	left:0px;
+	height:29px;
+	width: 289px;
+	font-size:10pt;
+	font-family:微软雅黑;
+	padding-top:2px;
+	padding-left:2px;
+	color:#666666;
+	border: 1px solid #D4D4D4;
+	cursor:pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.user .pass
+{
+    position:absolute;
+	left:50%;
+	top:50%;
+	width:350px;
+	height:200px;
+	margin-left:-175px;
+	margin-top:-150px;
+    display:none;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+.user .pass .title
+{
+    position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:28px;
+	font-size:11pt;
+	padding-left:10px;
+	padding-top:7px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.user .pass .close
+{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.user .pass .close:hover
+{
+    opacity:1;
+}
+.user .pass .close img
+{
+    width:30px;
+    height:30px;
+}
+.user .pass .okbtn
+{
+	position: absolute;
+    bottom: 25px;
+    left: 30px;
+    height: 30px;
+    right: 30px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor:pointer;
+}
+.user .pass .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.user .pass .pass1
+{
+	position: absolute;
+    top: 50px;
+    left: 30px;
+    height: 40px;
+    right: 30px;
+}
+.user .pass .pass1 input
+{
+	position: absolute;
+	top:0px;
+	left:0px;
+	height: 32px;
+	width: 289px;
+	background-image: url(/Resources/images/pass-bg.png)!important; 
+    background-size:100% 100%;
+	outline: none;
+	font-size:10pt;
+	border: 0px solid #4189C3;
+	padding:0px 0px 0px 30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.user .pass .pass2
+{
+	position: absolute;
+    top: 95px;
+    left: 30px;
+    height: 40px;
+    right: 30px;
+}
+.user .pass .pass2 input
+{
+	position: absolute;
+	top:0px;
+	left:0px;
+	height: 32px;
+	width: 289px;
+	background-image: url(/Resources/images/pass-bg.png)!important; 
+    background-size:100% 100%;
+	outline: none;
+	font-size:10pt;
+	border: 0px solid #4189C3;
+	padding:0px 0px 0px 30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.user .kanban
+{
+    position:absolute;
+	left:50%;
+	top:50%;
+	width:350px;
+	height:160px;
+	margin-left:-175px;
+	margin-top:-120px;
+    display:none;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+.user .kanban .title
+{
+    position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:28px;
+	font-size:11pt;
+	padding-left:10px;
+	padding-top:7px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.user .kanban .close
+{
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.user .kanban .close:hover
+{
+    opacity:1;
+}
+.user .kanban .close img
+{
+    width:30px;
+    height:30px;
+}
+.user .kanban .okbtn
+{
+	position: absolute;
+    bottom: 25px;
+    left: 30px;
+    height: 30px;
+    right: 30px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.user .kanban .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.user .kanban .fun
+{
+	position: absolute;
+    top: 55px;
+    left: 30px;
+    height: 60px;
+    right: 30px;
+}
+.user .kanban .fun .ddl
+{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 290px;
+    font-family: 微软雅黑;
+    color: #666666;
+    border: 1px solid #D4D4D4;
+    cursor: pointer;
+}

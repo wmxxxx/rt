@@ -1,0 +1,477 @@
+﻿.role
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.role .tbar
+{
+    position: absolute;
+    left: 202px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #E5E5E5;
+    border-left: 1px solid #EEEEEE;
+    background-color: #F0F0F0;
+}
+.role .view1
+{
+    position: absolute;
+    left: 202px;
+    top: 45px;
+    width: 222px;
+    bottom: 0px;
+    overflow: auto;
+}
+.role .view1 .tree_tbar{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 222px;
+    height: 30px;
+    bottom: 0px;
+    overflow: auto;
+}
+.role .view1 .tree_tbar .ddl {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 222px;
+    height: 100%;
+    font-size: 10pt;
+    font-family: 微软雅黑;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #EEEEEE;
+    background-color: #f1f3f8;
+}
+.role .view1 .tree_panel{
+	position: absolute;
+    left: 0px;
+    top: 32px;
+    width: 210px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #EEEEEE;
+    background-color: #f1f3f8;
+}
+.role .view2
+{
+    position: absolute;
+    left: 426px;
+    top: 45px;
+    right: 224px;
+    bottom: 0px;
+    padding: 5px;
+    overflow: auto;
+    border: 1px solid #EEEEEE;
+}
+.role .view2 .selected {
+    border: 2px #2d89ef solid;
+}
+.role .view2 .selected:after {
+    width: 0;
+    height: 0;
+    border-top: 40px solid #2d89ef;
+    border-left: 40px solid transparent;
+    position: absolute;
+    display: block;
+    right: 0;
+    content: "";
+    top: 0;
+    z-index: 1001;
+}
+.role .view2 .selected:before {
+    position: absolute;
+    content: "+";
+    color: #fff;
+    right: 2px;
+    top: -3px;
+    font-family: 黑体;
+    font-size: 18pt;
+    font-weight: bold;
+    z-index: 1002;
+}
+.role .view2 .sys_box
+{
+    position:relative;
+    margin-left:10px;
+    margin-top:10px;
+    float:left;
+	width:120px;
+	height:120px;
+	cursor:pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.role .view2 .sys_box:hover
+{
+    -moz-box-shadow: 1px 1px 2px #666;
+    -webkit-box-shadow: 1px 1px 2px #666;
+    box-shadow: 1px 1px 2px #666;
+}
+.role .view2 .sys_box .logo_m
+{
+    position: absolute;
+    top: 16px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+}
+.role .view2 .sys_box .logo_i {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+}
+.role .view2 .sys_box .logo_k {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 90px;
+    height: 90px;
+}
+.role .view2 .sys_box .logo_d {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 90px;
+    height: 90px;
+}
+.role .view2 .sys_box .name_m
+{
+    position:absolute;
+    bottom:15px;
+    left:0px;
+    right:0px;
+    height:25px;
+    color:#FFFFFF;
+    font-size:11pt;
+    text-align:center;
+}
+.role .view2 .sys_box .name_i {
+    position: absolute;
+    bottom: 7px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    color: #192988;
+    font-size: 11pt;
+    text-align: center;
+}
+.role .view2 .sys_box .name_k {
+    position: absolute;
+    bottom: 2px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    color: #192988;
+    font-size: 10pt;
+    text-align: center;
+}
+.role .view2 .sys_box .name_d {
+    position: absolute;
+    bottom: 6px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    color: #ffffff;
+    font-size: 10pt;
+    text-align: center;
+}
+.role .view3
+{
+    position: absolute;
+    right: 0px;
+    top: 45px;
+    width: 200px;
+    bottom: 0px;
+    padding: 10px;
+    overflow: auto;
+    border: 1px solid #EEEEEE;
+    background-color: #f1f3f8;
+}
+.role .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.role .left{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    bottom: 0px;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+.role .left .list
+{
+    position: relative;
+    margin-top: 15px;
+}
+.role .left .list .group
+{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    color: #626262;
+    padding-left: 60px;
+    padding-top: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    border-left: 7px solid #0076D6;
+    background-color: #f2f3f8;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.role .left .group .icon {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/Resources/images/n_account.png)!important;
+}
+.role .left .list .item
+{
+    position: relative;
+    height: 20px;
+    padding-top: 8px;
+    color: #adb8c1;
+    cursor: pointer;
+    font-size: 10pt;
+    text-align: center;
+}
+.role .left .list .item:hover
+{
+    color:#0076D6;
+}
+.role .left .list .item active
+{
+    color:#0076D6;
+}
+.role .left .list .item .edit{
+    position:relative;
+    margin-left:5px;
+    height: 15px;
+    width: 15px;
+    opacity:0.3;
+}
+.role .left .list .item .edit:hover{
+    opacity:1;
+}
+.role .left .list .item .del{
+    position:relative;
+    margin-left:3px;
+    padding:1px;
+    height: 13px;
+    width: 13px;
+    opacity:0.3;
+}
+.role .left .list .item .del:hover{
+    opacity:1;
+}
+.role .left .active
+{
+    color:#0076D6 !important;
+}
+.role .tbar .logo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.role .tbar .logo img{
+    width: 22px;
+    height: 22px;
+}
+.role .tbar .btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.role .tbar .btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.role .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -140px;
+    width: 24px;
+    height: 280px;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 15pt;
+    color: #A9A9A9;
+}
+.role .win
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 250px;
+    margin-left: -180px;
+    margin-top: -140px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+    z-index:9999;
+}
+.role .win .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.role .win .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.role .win .close:hover
+{
+    opacity:1;
+}
+.role .win .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.role .win .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.role .win .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.role .win .form .item input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 256px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.role .win .form .item .ddl {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 256px;
+    font-family: 微软雅黑;
+    -moz-border-radius: 3px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.role .win .okbtn
+{
+    position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.role .win .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.role .win .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.role .win .cancelbtn:hover
+{
+    background-color:#0076d6;
+}

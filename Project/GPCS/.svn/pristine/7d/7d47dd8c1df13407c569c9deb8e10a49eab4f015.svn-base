@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="cycle">
+		<div class="header">
+			<button type="button" class="layui-btn layui-btn-lg">
+				周期模型 
+				<i class="layui-icon layui-icon-addition"></i>   
+			</button>
+		</div>
+		<div class="main"></div>
+	</div>
+	<div class="action">
+		<div class="header">
+			<button type="button" class="layui-btn layui-btn-lg">
+				动作模型 
+				<i class="layui-icon layui-icon-addition"></i>   
+			</button>
+		</div>
+		<div class="main"></div>
+	</div>
+</body>
+</html>
+<script type="text/html" id="cycle_tpl">
+	<div class="layui-form-item">
+		<label class="layui-form-label">模型名称</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" autocomplete="off" value={{d.F_name}}>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">开始日期</label>
+		<div class="layui-input-block">
+			<input class="layui-input layui-form-date" type="text" id="start" value={{d.F_start}} readOnly>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">结束日期</label>
+		<div class="layui-input-block">
+			<input class="layui-input layui-form-date" type="text" id="end" value={{d.F_end}} readOnly>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">循环模式</label>
+		<div class="layui-input-block">
+			<select lay-filter="type">
+				<option value="0" {{d.F_type_val == "0" ? "selected" : ""}}>日循环模式</option>
+				<option value="1" {{d.F_type_val != "0" ? "selected" : ""}}>自定义模式</option>
+			</select>
+		</div>
+	</div>
+	<div class="layui-form-item day" style="margin-left:60px;display:{{d.F_type_val == "0" ? "none" : "block"}};">
+		<input type="checkbox" lay-skin="primary" title="周一" value="1" {{d.F_type_val.indexOf("1") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周二" value="2" {{d.F_type_val.indexOf("2") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周三" value="3" {{d.F_type_val.indexOf("3") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周四" value="4" {{d.F_type_val.indexOf("4") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周五" value="5" {{d.F_type_val.indexOf("5") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周六" value="6" {{d.F_type_val.indexOf("6") != -1 ? "checked" : ""}}>
+		<input type="checkbox" lay-skin="primary" title="周日" value="7" {{d.F_type_val.indexOf("7") != -1 ? "checked" : ""}}>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">节假日模式</label>
+		<div class="layui-input-block">
+			<input type="radio" name="day" value="0" title="默认" {{d.F_day == 0 ? "checked" : ""}}>
+			<input type="radio" name="day" value="1" title="工作日" {{d.F_day == 1 ? "checked" : ""}}>
+			<input type="radio" name="day" value="2" title="节假日" {{d.F_day == 2 ? "checked" : ""}}>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="action_tpl">
+	<div class="layui-form-item">
+		<label class="layui-form-label">模型名称</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" autocomplete="off" value={{d.action.F_name}}>
+		</div>
+	</div>
+	<table width="100%" id="table">
+		<thead>
+			<tr>
+				<th style="width:95px;">执行时间</th>
+				<th style="width:120px;">执行命令</th>
+				<th>命令参数</th>
+				<th style="width:80px;">轮询周期(分)</th>
+				<th style="width:80px;">轮询次数</th>
+				<th style="width:80px;"><button type="button" class="layui-btn layui-btn-xs">添加</button></th>
+			</tr> 
+		</thead>
+		<tbody>
+			{{# d.action.sub.forEach(ele => {}}
+				<tr>
+					<td>
+						<input type="text" class="layui-input pd0" autocomplete="off" placeholder="时" style="width:35px;display:inline-block;" value={{ele.F_time.split(":")[0]}}>
+						:
+						<input type="text" class="layui-input pd0" autocomplete="off" placeholder="分" style="width:35px;display:inline-block;" value={{ele.F_time.split(":")[1]}}>
+					</td>
+					<td>
+						<select lay-filter="control">
+							{{# for(var com in d.common){}}
+								<option value={{d.common[com].F_code}} {{d.common[com].F_code == ele.F_command_id ? "selected" : ""}}>{{d.common[com].F_name}}</option>
+							{{# }}}
+						</select>
+					</td>
+					<td>
+						<input type="text" class="layui-input pd0 setAttr" autocomplete="off" placeholder="设置命令参数" value='{{ele.F_value}}'>
+					</td>
+					<td>
+						<input type="text" class="layui-input pd0" autocomplete="off" placeholder=0 value={{ele.F_poll_time}}>
+					</td>
+					<td>
+						<input type="text" class="layui-input pd0" autocomplete="off" placeholder=0 value={{ele.F_poll_num}}>
+					</td>
+					<td>
+						<button type="button" class="layui-btn layui-btn-danger layui-btn-xs" onclick=$(this).parents("tr").remove();>删除</button>
+					</td>
+				</tr>
+			{{# });}}
+		</tbody>
+	  </table>
+</script>
+<script type="text/html" id="control_tpl">
+	<tr>
+		<td>
+			<input type="text" class="layui-input pd0" autocomplete="off" placeholder="时" style="width:35px;display:inline-block;">
+			:
+			<input type="text" class="layui-input pd0" autocomplete="off" placeholder="分" style="width:35px;display:inline-block;">
+		</td>
+		<td>
+			<select lay-filter="control">
+				{{# for(var com in d.common){}}
+					<option value={{d.common[com].F_code}}>{{d.common[com].F_name}}</option>
+				{{# }}}
+			</select>
+		</td>
+		<td>
+			<input type="text" class="layui-input pd0 setAttr" autocomplete="off" placeholder="设置命令参数">
+		</td>
+		<td>
+			<input type="text" class="layui-input pd0" autocomplete="off" placeholder=0>
+		</td>
+		<td>
+			<input type="text" class="layui-input pd0" autocomplete="off" placeholder=0>
+		</td>
+		<td>
+			<button type="button" class="layui-btn layui-btn-danger layui-btn-xs" onclick=$(this).parents("tr").remove();>删除</button>
+		</td>
+	</tr>
+</script>

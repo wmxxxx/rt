@@ -1,0 +1,343 @@
+﻿.file
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.file .tbar
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: #F0F0F0;
+}
+.file .tbar .btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.file .tbar .btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.file .tbar .nav
+{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    right: 110px;
+    height: 26px;
+    margin: 0px;
+    padding: 0px;
+}
+.file .tbar .nav li
+{
+    position: relative;
+    margin: 0px;
+    float: left;
+    height: 100%;
+    line-height: 26px;
+    color: #333333;
+    font-size: 14px;
+    list-style-type: none;
+}
+.file .tbar .nav li .hicon
+{
+    position: relative;
+    width: 24px;
+    height: 26px;
+    cursor: pointer;
+    padding: 0px 5px;
+    margin-right:5px;
+    border:1px solid #F0F0F0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/Resources/images/book/folder.png) center no-repeat;
+    background-size:100% 100%;
+}
+.file .tbar .nav li .hicon:hover
+{
+    border:1px solid #45E1A4;
+    background-color:#CCE8FF;
+}
+.file .tbar .nav li .ditem
+{
+    position: relative;
+    float: left;
+    height: 26px;
+    line-height: 24px;
+    cursor: pointer;
+    padding: 0px 5px;
+    border:1px solid #F0F0F0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.file .tbar .nav li .ditem.active
+{
+    border:1px solid #45E1A4;
+    background-color:#CCE8FF;
+}
+.file .tbar .nav li .ditem:hover
+{
+    border:1px solid #45E1A4;
+    background-color:#E5F3FF;
+}
+.file .view
+{
+    position: absolute;
+	left: 0px;
+	top: 43px;
+	right:0px;
+	bottom:0px;
+	border:0px;
+    margin: 0px;
+	padding:10px;
+	overflow:auto;
+}
+.file .view .item
+{
+    position: relative;
+    margin: 10px 0px 0px 20px;
+    float: left;
+    width: 160px;
+    height: 140px;
+    cursor: pointer;
+    color: #f2f2f2;
+    text-align:center;
+    border:1px solid #ffffff;
+    list-style-type: none;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+.file .view .item.active
+{
+    background-color:#CCE8FF;
+    border:1px solid #45E1A4;
+}
+.file .view .item .download {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    display:none;
+    background: url(/Resources/images/wechat/btn_download.png) center no-repeat;
+    background-size:100% 100%;
+}
+.file .view .item .download:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+.file .view .item .del {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    display:none;
+    background: url(/Resources/images/wechat/btn_del.png) center no-repeat;
+    background-size:100% 100%;
+}
+.file .view .item .del:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+.file .view .item .logo
+{
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.file .view .item .name
+{
+    position: absolute;
+    top: 95px;
+    left: -1px;
+    right: 10px;
+    height: 44px;
+    width: 160px;
+    font-size: 10pt;
+    color: #333333;
+    text-align: center;
+    outline: none;
+    border: 0px;
+    line-height:20px;
+    font-family: Microsoft YaHei;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    background-color: transparent;
+}
+.file .view .item:hover
+{
+    color:#45e1a4;
+    border:1px solid #45E1A4;
+    background-color:#E5F3FF;
+}
+.file .view .item:hover .download{
+    display:block;
+}
+.file .view .item:hover .del{
+    display:block;
+}
+.file .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.file .win
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 140px;
+    margin-left: -180px;
+    margin-top: -100px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+    z-index:100000;
+}
+.file .win .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    font-weight: bold;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.file .win .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.file .win .close:hover
+{
+    opacity:1;
+}
+.file .win .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.file .win .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.file .win .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 3px;
+    padding-top: 5px;
+    font-size: 11pt;
+    color: #666666;
+}
+.file .win .form .item input
+{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 28px;
+    width: 326px;
+    font-size: 10pt;
+    font-family: 微软雅黑;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.file .win .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 24px;
+    right: 20px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 6px;
+    cursor: pointer;
+}
+.file .win .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.file .win .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 24px;
+    right: 110px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 6px;
+    cursor: pointer;
+}
+.file .win .cancelbtn:hover
+{
+    background-color:#0076d6;
+}

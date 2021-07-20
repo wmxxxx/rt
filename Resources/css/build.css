@@ -1,0 +1,1791 @@
+﻿.build{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+    background-color:#FFFFFF;
+}
+.build .tbar
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: #F0F0F0;
+}
+.build .view
+{
+    position: absolute;
+	left: 0px;
+	top: 43px;
+	right:0px;
+	bottom:0px;
+	border:0px;
+	padding:10px;
+	overflow:auto;
+}
+.build .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.build .tbar .logo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.build .tbar .logo img{
+    width: 22px;
+    height: 22px;
+}
+.build .tbar .add_btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.build .tbar .add_btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.build .view .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -20px;
+    width: 330px;
+    height: 40px;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 25pt;
+    color: #A9A9A9;
+}
+.build .view table
+{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+.build .view table th
+{
+    font-size:14px;
+    padding:8px;
+    color:#333;
+    border-bottom:0px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+}
+.build .view table td
+{
+    position:relative;
+    padding:8px;
+    color:#333;
+    vertical-align: middle;
+    line-height: 20px;
+    border:1px solid #ddd;
+}
+.build .view table td .img
+{
+    width:26px;
+    height:26px;
+    cursor:pointer;
+    margin-bottom: 5px;
+}
+.build .view table td .img:hover
+{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.build .view table td .box_d
+{
+    height: 80px;
+    width: 80px;
+    background-color:#000000;
+}
+.build .view table td .box_ik
+{
+    height: 80px;
+    width: 80px;
+}
+.build .view table td .box
+{
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    cursor:pointer;
+}
+.build .view table td .box:hover
+{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.build .view table td .cover_bg 
+{
+    position:absolute;
+    top:100%;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    opacity:0.8;
+    display:none;
+    background-color:#333333;
+}
+.build .view table td .btn_set {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 66px;
+    height: 26px;
+    margin-left: -33px;
+    margin-top: -13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    line-height: 26px;
+    font-size: 9pt;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+    opacity:0.8;
+}
+.build .view table td .btn_set:hover 
+{
+    opacity:1;
+}
+.build .view table td .btn_upload {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 66px;
+    height: 26px;
+    margin-left: -33px;
+    margin-top: -13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    line-height: 26px;
+    font-size: 9pt;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+}
+.build .view table td .btn_upload:hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.build .view table td .btn_color {
+    position: relative;
+    height: 30px;
+    width: 80px;
+    font-size: 9pt;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+}
+.build .view table td .btn_color:hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.build .view table td .clsbtn {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 16px;
+    height: 16px;
+    padding: 1px;
+    cursor:pointer;
+    border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+    background-color: #F30404;
+    display: none;
+}
+.build .view table td .clsbtn img {
+    width: 16px;
+    height: 16px;
+}
+.build .view table td .clsbtn:hover
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.build .view table tr.active
+{
+    background-color:#f9f9f9;
+}
+.build .view table tr:hover
+{
+    background-color:#f5f5f5;
+}
+.build .view table td .menu1 {
+    position: relative;
+    float: left;
+    width: 44px;
+    height: 94px;
+    background-color: #017bc2;
+}
+.build .view table td .menu1 .logo {
+    position: relative;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+.build .view table td .menu1 .name {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+.build .view table td .item1 {
+    position: relative;
+    float: left;
+    width: 44px;
+    height: 94px;
+    background-color: #EFF0F1;
+}
+.build .view table td .item1 .logo {
+    position: relative;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+.build .view table td .item1 .name {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    height: 20px;
+    color: #A9B0BD;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+.build .view table td .menu2 {
+    position: relative;
+    width: 88px;
+    height: 34px;
+    padding: 0px 3px;
+    text-align: center;
+    background-color: #434343;
+    border-left: 4px solid #00bab5;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .view table td .menu2 .logo {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.build .view table td .menu2 .name {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #F4F4F4;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+.build .view table td .item2 {
+    position: relative;
+    float: left;
+    width: 88px;
+    height: 30px;
+    background-color: #333333;
+}
+.build .view table td .item2 .v1{
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 0px;
+    height: 15px;
+    border-left: 1px dashed #585858;
+}
+.build .view table td .item2 .v2{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    width: 0px;
+    height: 15px;
+    border-left: 1px dashed #585858;
+}
+.build .view table td .item2 .h1{
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    width: 14px;
+    height: 0px;
+    border-top: 1px dashed #585858;
+}
+.build .view table td .item2 .name{
+    position: absolute;
+    left: 42px;
+    top: 5px;
+    width: 30px;
+    height: 20px;
+    font-size: 12px;
+    color: #8B8B8B;
+}
+.build .view table td .item2 .name.active{
+    color: #00bab5 !important;
+}
+.build .view table td .menu3 {
+    position: relative;
+    width: 88px;
+    height: 34px;
+    padding: 0px 3px;
+    text-align: center;
+    background-color: #333E51;
+    border-left: 4px solid #00cccc;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .view table td .menu3 .logo {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.build .view table td .menu3 .name {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #F4F4F4;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+.build .view table td .item3 {
+    position: relative;
+    float: left;
+    width: 88px;
+    height: 30px;
+    background-color: #242F44;
+}
+.build .view table td .item3 .name{
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    right: 0px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0.6;
+}
+.build .view table td .item3 .name.active{
+    color: #00cccc !important;
+}
+.build .pre_panel {
+    position: absolute;
+    left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	z-index:1;
+	display:none;
+}
+.build .pre_panel .back{
+    position: absolute;
+    right: 10px;
+	top: 10px;
+	width:32px;
+	height:32px;
+	cursor:pointer;
+	z-index:1;
+	border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+}
+.build .pre_panel .back:hover{
+   -moz-box-shadow: 0px 0px 1px #666;
+    -webkit-box-shadow: 0px 0px 1px #666;
+    box-shadow: 0px 0px 1px #666;
+}
+.build .pre_panel img
+{
+    position: absolute;
+    top:4px;
+    left:4px;
+	width:24px;
+	height:24px;
+}
+.build .cov_panel {
+    position: absolute;
+    left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	z-index:2;
+	display:none;
+}
+.build .cov_panel .logo{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 90px;
+	height: 90px;
+	margin-left:-45px;
+	margin-top:-45px;
+}
+.build .cov_panel .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 120px;
+	height: 120px;
+	margin-left:-60px;
+	margin-top:-80px;
+}
+.build .win_config
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 436px;
+    margin-left: -180px;
+    margin-top: -220px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_config .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_config .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_config .close:hover
+{
+    opacity:1;
+}
+.build .win_config .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_config .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_config .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.build .win_config .form .item input
+{
+	position: absolute;
+	top:0px;
+	left:70px;
+	height:28px;
+	width: 256px;
+	font-family:微软雅黑;
+	padding-left:4px;
+	color:#000000;
+	border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_config .form .item .ddl {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 256px;
+    font-family: 微软雅黑;
+    -moz-border-radius: 3px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_config .form .item textarea
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 72px;
+    width: 256px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_config .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_config .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_config .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_config .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_cover
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 140px;
+    margin-left: -180px;
+    margin-top: -140px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_cover .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_cover .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_cover .close:hover
+{
+    opacity:1;
+}
+.build .win_cover .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_cover .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_cover .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 3px;
+    padding-top: 5px;
+    font-size: 11pt;
+    color: #666666;
+}
+.build .win_cover .form .item input
+{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 28px;
+    width: 320px;
+    font-size: 10pt;
+    font-family: 微软雅黑;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_cover .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_cover .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_cover .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_cover .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_color
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 150px;
+    margin-left: -180px;
+    margin-top: -140px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_color .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_color .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_color .close:hover
+{
+    opacity:1;
+}
+.build .win_color .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_color .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_color .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 3px;
+    padding-top: 5px;
+    font-size: 11pt;
+    color: #666666;
+}
+.build .win_color .form .item input
+{
+	position:relative;
+    height: 28px;
+    width: 256px;
+    font-size: 10pt;
+    font-family: 微软雅黑;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_color .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_color .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_color .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_color .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_model
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 580px;
+    height: 514px;
+    margin-left: -300px;
+    margin-top: -260px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_model .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_model .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_model .close:hover
+{
+    opacity:1;
+}
+.build .win_model .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_model .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_model .form .l_tree {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 260px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_model .form .l_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_model .form .tree_panel
+{
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 10px;
+    overflow: auto;
+}
+.build .win_model .form .msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -90px;
+    margin-top: -12px;
+    width: 180px;
+    height: 24px;
+    font-family: Microsoft YaHei;
+    font-size: 10pt;
+    color: #A9A9A9;
+    text-align: center;
+}
+.build .win_model .form .ul_tree {
+    position: absolute;
+    left: 10px;
+    top: 210px;
+    width: 260px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_model .form .ul_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_model .form .model_panel {
+    position: absolute;
+    left: 275px;
+    top: 5px;
+    width: 258px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_model .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_model .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_model .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_model .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_eparam
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 580px;
+    height: 514px;
+    margin-left: -300px;
+    margin-top: -260px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_eparam .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_eparam .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_eparam .close:hover
+{
+    opacity:1;
+}
+.build .win_eparam .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_eparam .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_eparam .form .t_tree {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 260px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_eparam .form .t_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_eparam .form .tree_panel
+{
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 10px;
+    overflow: auto;
+}
+.build .win_eparam .form .msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -90px;
+    margin-top: -12px;
+    width: 180px;
+    height: 24px;
+    font-family: Microsoft YaHei;
+    font-size: 10pt;
+    color: #A9A9A9;
+    text-align: center;
+}
+.build .win_eparam .form .p_tree {
+    position: absolute;
+    left: 275px;
+    top: 5px;
+    width: 258px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_eparam .form .p_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_eparam .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_eparam .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_eparam .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_eparam .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_dparam
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 580px;
+    height: 514px;
+    margin-left: -300px;
+    margin-top: -260px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_dparam .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_dparam .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_dparam .close:hover
+{
+    opacity:1;
+}
+.build .win_dparam .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_dparam .form
+{
+	position: absolute;
+    top: 45px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.build .win_dparam .form .t_tree {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 260px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_dparam .form .t_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_dparam .form .tree_panel
+{
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 10px;
+    overflow: auto;
+}
+.build .win_dparam .form .msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -90px;
+    margin-top: -12px;
+    width: 180px;
+    height: 24px;
+    font-family: Microsoft YaHei;
+    font-size: 10pt;
+    color: #A9A9A9;
+    text-align: center;
+}
+.build .win_dparam .form .p_tree {
+    position: absolute;
+    left: 275px;
+    top: 5px;
+    width: 258px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+}
+.build .win_dparam .form .p_tree .title_name
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 10pt;
+    padding-left: 10px;
+    padding-top: 6px;
+	background-color:#F7F7F7;
+}
+.build .win_dparam .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_dparam .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_dparam .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_dparam .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_frame
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 378px;
+    height: 234px;
+    margin-left: -189px;
+    margin-top: -146px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.build .win_frame .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_frame .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_frame .close:hover
+{
+    opacity:1;
+}
+.build .win_frame .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_frame .form
+{
+	position: absolute;
+    top: 50px;
+    left: 20px;
+    right: 20px;
+    bottom: 70px;
+}
+.build .win_frame .form .selected {
+    border: 2px #2d89ef solid !important;
+}
+.build .win_frame .form .selected:after {
+    width: 0;
+    height: 0;
+    border-top: 40px solid #2d89ef;
+    border-left: 40px solid transparent;
+    position: absolute;
+    display: block;
+    right: 0;
+    content: "";
+    top: 0;
+    z-index: 1001;
+}
+.build .win_frame .form .selected:before {
+    position: absolute;
+    content: "+";
+    color: #fff;
+    right: 2px;
+    top: -3px;
+    font-family: 黑体;
+    font-size: 18pt;
+    font-weight: bold;
+    z-index: 1002;
+}
+.build .win_frame .form .frame
+{
+	position: relative;
+    float: left;
+    height: 94px;
+    margin: 0px 10px;
+    width: 88px;
+    padding: 1px;
+    font-size: 11pt;
+    color: #666666;
+    cursor: pointer;
+    border: 1px solid #DDDDDD;
+}
+.build .win_frame .form .frame:hover
+{
+    -moz-box-shadow: 1px 1px 2px #666;
+    -webkit-box-shadow: 1px 1px 2px #666;
+    box-shadow: 1px 1px 2px #666;
+}
+.build .win_frame .form .frame .des {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.build .win_frame .form .frame .menu1 {
+    position: relative;
+    float: left;
+    width: 44px;
+    height: 94px;
+    background-color: #017bc2;
+}
+.build .win_frame .form .frame .menu1 .logo {
+    position: relative;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+.build .win_frame .form .frame .menu1 .name {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+.build .win_frame .form .frame .item1 {
+    position: relative;
+    float: left;
+    width: 44px;
+    height: 94px;
+    background-color: #EFF0F1;
+}
+.build .win_frame .form .frame .item1 .logo {
+    position: relative;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+.build .win_frame .form .frame .item1 .name {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    height: 20px;
+    color: #A9B0BD;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+.build .win_frame .form .frame .menu2 {
+    position: relative;
+    width: 88px;
+    height: 34px;
+    padding: 0px 3px;
+    text-align: center;
+    background-color: #434343;
+    border-left: 4px solid #00bab5;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_frame .form .frame .menu2 .logo {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.build .win_frame .form .frame .menu2 .name {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #F4F4F4;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+.build .win_frame .form .frame .item2 {
+    position: relative;
+    float: left;
+    width: 88px;
+    height: 30px;
+    background-color: #333333;
+}
+.build .win_frame .form .frame .item2 .v1{
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 0px;
+    height: 15px;
+    border-left: 1px dashed #585858;
+}
+.build .win_frame .form .frame .item2 .v2{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    width: 0px;
+    height: 15px;
+    border-left: 1px dashed #585858;
+}
+.build .win_frame .form .frame .item2 .h1{
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    width: 14px;
+    height: 0px;
+    border-top: 1px dashed #585858;
+}
+.build .win_frame .form .frame .item2 .name{
+    position: absolute;
+    left: 42px;
+    top: 5px;
+    width: 30px;
+    height: 20px;
+    font-size: 12px;
+    color: #8B8B8B;
+}
+.build .win_frame .form .frame .item2 .name.active{
+    color: #00bab5 !important;
+}
+.build .win_frame .form .frame .menu3 {
+    position: relative;
+    width: 88px;
+    height: 34px;
+    padding: 0px 3px;
+    text-align: center;
+    background-color: #333E51;
+    border-left: 4px solid #00cccc;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.build .win_frame .form .frame .menu3 .logo {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.build .win_frame .form .frame .menu3 .name {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #F4F4F4;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+}
+.build .win_frame .form .frame .item3 {
+    position: relative;
+    float: left;
+    width: 88px;
+    height: 30px;
+    background-color: #242F44;
+}
+.build .win_frame .form .frame .item3 .name{
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    right: 0px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0.6;
+}
+.build .win_frame .form .frame .item3 .name.active{
+    color: #00cccc !important;
+}
+.build .win_frame .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_frame .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_frame .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_frame .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.build .win_menu
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 620px;
+    height: 514px;
+    margin-left: -310px;
+    margin-top: -260px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.build .win_menu .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.build .win_menu .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.build .win_menu .close:hover
+{
+    opacity:1;
+}
+.build .win_menu .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.build .win_menu .form
+{
+	position: absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom: 70px;
+    overflow: auto;
+    border-bottom: 1px solid #DDDDDD;
+}
+.build .win_menu .form .menu_tree {
+    position:relative;
+    left: 10px;
+    top: 5px;
+    width: 520px;
+    height: 350px;
+    overflow: auto;
+    padding:0px;
+    border: 1px solid #D3D3D3;
+}
+.build .win_menu .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.build .win_menu .cancelbtn:hover
+{
+    background-color:#0076d6;
+}

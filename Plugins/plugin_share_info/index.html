@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div id="header" class="layui-form">
+		<div class="layui-form-item" style="width:300px;">
+			<input type="text" class="layui-input layui-form-date" id="time" readOnly>
+		</div>
+		<div class="layui-form-item" id="result">
+			<select>
+				<option value="">违规类型(全部)</option>
+				<option value="1">开机时间违规</option>
+				<option value="2">制冷下限违规</option>
+				<option value="3">制热上限违规</option>
+			</select>
+		</div>
+		<div class="layui-form-item" id="repeat">
+			<select>
+				<option value="">去除重复设备</option>
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</select>
+		</div>
+		<div class="layui-form-item">
+			<input type="text" class="layui-input" id="name" autocomplete="off" placeholder="设备名称">
+		</div>
+		<div class="layui-form-item">
+			<button class="layui-btn layui-btn-normal layui-btn-sm">查询</button>
+		</div>
+	</div>
+	<div class="main">
+		<table id="table" lay-filter="main"></table>
+	</div>
+</body>
+</html>
+<script type="text/html" id="type">
+	{{#
+		var type = '开机时间违规';
+		if(d.F_type == 2){
+			type = '制冷下限违规';
+		}else if(d.F_type == 3){
+			type = '制热上限违规';
+		}
+	}}
+	{{type}}
+</script>
+<script type="text/html" id="sub_oper">
+	<a class="btn-a" lay-event="node" style="color:#00B9B4;">设备</a>
+</script>
+<script type="text/html" id="info_tpl">
+	{{# console.log(d)}}
+	<pre class="layui-code" lay-title="发送">{{JSON.stringify(JSON.parse(d.F_content),null,4)}}</pre>
+	<pre class="layui-code" lay-title="返回">{{d.F_back == "" ? "" : JSON.stringify(JSON.parse(d.F_back),null,4)}}</pre>
+</script>

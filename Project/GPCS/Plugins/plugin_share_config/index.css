@@ -1,0 +1,33 @@
+/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(images/bg.png);
+	padding: 30px;
+}
+.block{
+	height: 160px;
+	background: #00aba9;
+	border-radius: 3px;
+	box-shadow: 5px 5px 10px #00000052;
+	cursor: pointer;
+}
+.block:hover{background: #1e88e5;}
+.block .logo{height: 130px;}
+.block h5{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 15px;
+	color: #fff;
+}
+#main{overflow: hidden;}
+#main .layui-form{padding: 20px;}
+#main .layui-form .layui-form-label{width: 100px;}
+#main .layui-form .layui-input-block{
+	width: 280px;
+	margin-left: 130px;
+}

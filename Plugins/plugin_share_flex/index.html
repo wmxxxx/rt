@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="main"></div>
+</body>
+</html>
+<script type="text/html" id="temphum_tpl">
+	<div class="layui-form-item">
+		<label class="layui-form-label">开机温度范围</label>
+		<div class="layui-input-inline" style="width: 100px;">
+			<input type="text" autocomplete="off" class="layui-input" value={{d.F_start.split("-")[0]}}>
+		</div>
+		<div class="layui-form-mid">-</div>
+		<div class="layui-input-inline" style="width: 100px;">
+			<input type="text" autocomplete="off" class="layui-input" value={{d.F_start.split("-")[1]}}>
+		</div>
+		<div class="layui-form-mid layui-word-aux">℃</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">设定温度范围</label>
+		<div class="layui-input-inline" style="width: 100px;">
+			<input type="text" autocomplete="off" class="layui-input" value={{d.F_end.split("-")[0]}}>
+		</div>
+		<div class="layui-form-mid">-</div>
+		<div class="layui-input-inline" style="width: 100px;">
+			<input type="text" autocomplete="off" class="layui-input" value={{d.F_end.split("-")[1]}}>
+		</div>
+		<div class="layui-form-mid layui-word-aux">℃</div>
+	</div>
+	<div class="layui-form-item" style="display:none;">
+		<label class="layui-form-label">关联分组</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" autocomplete="off" value={{d.F_name}}>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="group_tpl">
+	<div>管理分组名称</div>
+	<ul>
+		{{# d.group.forEach(ele => {}}
+			<li>
+				<input type="checkbox" lay-skin="primary" title={{ele.F_name}} value={{ele.F_id}} {{d.now.F_name.indexOf(ele.F_id) != -1 ? "checked" : ""}}>
+			</li>
+		{{# });}}
+	</ul>
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>水表组件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="style.css" rel="stylesheet">
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src='WMeterPanel.js'></script>
+</head>
+<body>
+	<div id="demo"></div>
+    <div id="demo2"></div>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+		 	// 节点id
+			var device_str=597153517476;
+
+
+			var demo=WMeterPanel.init({id:'demo',node:device_str,height:300});
+			var demo2=WMeterPanel.init({id:'demo2',node:device_str,height:200});
+		});
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="header">
+		<button type="button" class="layui-btn layui-btn-lg">
+			管理分组 
+			<i class="layui-icon layui-icon-addition"></i>   
+		</button>
+	</div>
+	<div id="main"></div>
+</body>
+</html>
+<script type="text/html" id="set_tpl">
+	<div class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">分组名称</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" id="name" autocomplete="off" value={{d.F_name}}>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">分组编号</label>
+			<div class="layui-input-inline">
+				<input type="text" class="layui-input" id="num" autocomplete="off" value={{d.F_code}}>
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="group_tpl">
+	{{# d.forEach(ele => {}}
+		<div class="group" id={{ele.F_id}}>
+			<h3>
+				{{ele.F_name}}
+				<ol>
+					<li style="background-image: url(images/edit.png);" class="edit"></li>
+					<li style="background-image: url(images/rel.png);" class="rel"></li>
+					<li style="background-image: url(images/del.png);" class="del"></li>
+				</ol>
+			</h3>
+			<ul>
+				<li><span>分组编号</span>{{ele.F_code}}</li>
+				<li><span>关联设备</span>{{ele.num}}</li>
+				<li><span>创建时间</span>{{ele.F_init_time}}</li>
+			</ul>
+		</div>
+	{{# });}}
+</script>

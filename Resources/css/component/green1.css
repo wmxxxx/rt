@@ -1,0 +1,195 @@
+/***************************************************common开始*********************************************************/
+.form-group {
+    margin: 0 2px;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    height: 28px;
+    font-size: 12px;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #00B9B4 !important;
+}
+
+.layui-none {
+    background: url(/Resources/images/component/nodata.gif) center center no-repeat;
+    height: 100%;
+    font-size: 0;
+}
+
+/***************************************************common结束*********************************************************/
+
+/***************************************************layer开始**********************************************************/
+body .layui-layer-title {
+    background: linear-gradient(to right, #00BAB4, #88DAD0);
+    padding: 0 20px 0 20px;
+    color: #fff;
+}
+
+body .layui-layer-ico {
+    background: url(/Resources/images/component/newicon.png);
+}
+
+body .layui-layer-content {
+    overflow: hidden;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+body .layui-layer-setwin {
+    top: 12px;
+}
+
+body .layui-layer-btn {
+    border-top: 1px solid #E9E7E7
+}
+
+body .layui-layer-btn a {
+    height: 28px;
+    font-size: 12px;
+    background: #EFF2F7;
+}
+
+body .layui-layer-btn .layui-layer-btn0 {
+    background: #E6F8F7;
+    border-color: #00B9B4;
+    color: #00B9B4;
+}
+
+body .layui-layer-btn .layui-layer-btn1 {
+    background: #EFF2F7;
+}
+
+.layui-layer-setwin .layui-layer-close1 {
+    background-position: 0px -40px !important;
+}
+
+/***************************************************layer结束**********************************************************/
+
+/*****************************************************btn开始**********************************************************/
+.layui-btn-sm {
+    height: 28px;
+    line-height: 28px;
+}
+
+.layui-btn-normal {
+    background-color: #00B9B4 !important;
+}
+
+.layui-btn-action {
+    background-color: #e6f8f7 !important;
+    border: 1px solid #00B9B4;
+    color: #00B9B4;
+    box-sizing: content-box;
+    height: 26px;
+    line-height: 26px;
+}
+
+.layui-btn:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    color: black;
+}
+
+/*****************************************************btn结束**********************************************************/
+
+/****************************************************form开始**********************************************************/
+.layui-form-select dl dd.layui-this {
+    background-color: #00B9B4;
+    color: #fff;
+}
+
+.layui-form-select {
+    font-size: 12px;
+}
+
+.layui-form-date {
+    background: url(/Resources/images/component/time.png) right center no-repeat;
+    background-position: right 10px bottom calc(50% - 0px);
+}
+
+.layui-form-label {
+    float: left;
+    display: block;
+    padding: 4px 15px;
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+}
+
+.layui-form-radio {
+    line-height: 28px;
+    margin: 0px 10px 0 0;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.layui-form-radio > i {
+    font-size: 14px;
+}
+
+/****************************************************form结束**********************************************************/
+
+/***************************************************table开始**********************************************************/
+.layui-table-body .btn-a {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.layui-table-body .btn-a-normal {
+    color: #00B9B4;
+}
+
+.layui-table-view .layui-table td, .layui-table-view .layui-table th {
+    padding: 8px 0;
+}
+
+.layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even) {
+    background-color: #eff2f7;
+}
+
+/***************************************************table结束**********************************************************/
+
+/***************************************************other开始**********************************************************/
+/*wdatepicker*/
+.reatgreen-Wdate {
+    border: #00B9B4 1px solid;
+    height: 30px;
+    width: 120px;
+    padding-left: 20px;
+    background: #fff url(/Resources/images/component/date.png) no-repeat right;
+}
+
+/*form*/
+.form-label {
+    height: 30px;
+    line-height: 250%;
+}
+
+/*button*/
+.rt-control {
+    text-align: center;
+    width: 100%;
+}
+
+.rt-input {
+    height: 30px;
+}
+
+.rt-select {
+    height: 30px;
+}
+
+.rt-btn {
+    height: 30px;
+}
+
+.btn-query {
+
+}
+
+/***************************************************other结束**********************************************************/

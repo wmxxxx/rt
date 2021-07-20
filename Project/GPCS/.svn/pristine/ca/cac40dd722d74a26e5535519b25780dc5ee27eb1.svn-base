@@ -1,0 +1,502 @@
+﻿#plugin_share_map {
+	width: 100%;
+	height: 100%;
+	background-color: #f0f3f8;
+	color: #333;
+	font-family: 'Microsoft YaHei'
+}
+/*-----------------config-panel---------------*/
+#plugin_share_map #config-panel{
+	margin-top: 50px;
+	display: none;
+}
+#plugin_share_map #tool-bar {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	right: 0;
+	height: 50px;
+	z-index: 9999;
+}
+#plugin_share_map #map-switch {
+	padding: 10px 20px;
+}
+#plugin_share_map .map-list {
+	display: none;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	height: 24px;
+	line-height: 24px;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+#plugin_share_map .map-list.active{
+	display: inline-block;
+}
+#plugin_share_map .map-item{
+	display: inline-block;
+	margin-right: 10px;
+	padding: 0 10px;
+	cursor: pointer;
+}
+#plugin_share_map .map-item.active{
+	color:#00bab5;
+}
+#plugin_share_map #config-bar {
+	padding: 10px 20px;
+	border-top: 1px solid #ddd;
+}
+#plugin_share_map #coordinate {
+	float: right;
+	margin: 10px 20px;
+}
+#plugin_share_map #x-axis,
+#plugin_share_map #y-axis {
+	margin: 0 10px;
+	width: 60px;
+	padding: 2px 10px;
+}
+#plugin_share_map #map-bg {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	right: 200px;
+	bottom: 0;
+	background: #fff;
+}
+#plugin_share_map #tree-panel {
+	position: absolute;
+	top: 100px;
+	right: 0;
+	width: 200px;
+	bottom: 0;
+	background: #fff;
+	border-left: 1px solid #ddd;
+}
+#plugin_share_map #map-nodes {
+	height: calc(100% - 50px);
+}
+#plugin_share_map #tree-panel .panel-ft {
+	text-align: center;
+	border-top: 1px solid #ddd;
+	padding-top: 10px;
+}
+/*-----------------map-panel---------------*/
+#plugin_share_map #map-panel{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+}   
+/*---------------------------btn-------------------------------*/
+#plugin_share_map .btn {
+	border: 0;
+	height: 26px;
+	width: 26px;
+	border-radius: 4px;
+}
+#plugin_share_map .close-btn{
+	background: transparent url('images/close.png') no-repeat center/100% 100%;
+}
+#plugin_share_map .set-btn{
+	width: 26px;
+	height: 26px;
+	float: right;
+	margin: 13px 20px;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid #00BAB5;
+}
+#plugin_share_map #close-config{
+	background: #00BAB5 url('images/close.png') no-repeat center/100% 100%;
+}
+#plugin_share_map #open-config{
+	background: #00BAB5 url(images/set.png) no-repeat center/20px 20px;
+}
+/*-------------------------tab-bar-----------------------*/
+#plugin_share_map .tab-bar {
+	display: inline-block;
+	vertical-align: middle;
+}
+#plugin_share_map .tab-btn {
+	background: #fff;
+	border: 1px solid #00bab5;
+	color: #7a7a7a;
+	height: 26px;
+	cursor: pointer;
+	padding: 0 10px;
+}
+#plugin_share_map .tab-btn.active {
+	background: #c9eff1;
+	color: #00bab5;
+	border-color: #00bab5;
+}
+#plugin_share_map #map-opt {
+	display: inline-block;
+}
+#plugin_share_map #year-list {
+	height: 26px;
+	margin-right: 10px;
+	border: 1px solid #f3f8f0;
+	border-radius: 4px;
+	background: #f0f3f8;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+#plugin_share_map #map-bar {
+	position: absolute;
+	top: 0;
+	left: 60px;
+	right: 0;
+	padding: 10px;
+	text-align: right;
+}
+#plugin_share_map #root-panel{
+	position: absolute;
+	top: 50px;
+	right: 0;
+	bottom: 0;
+	width: 234px;
+	overflow: auto;
+	z-index: 1000;
+	padding-left: 16px;
+	transition: right .5s;
+	-moz-transition: right .5s;
+	-webkit-transition: right .5s;
+	-o-transition: right .5s;
+} 
+#plugin_share_map #root-panel .toggle-btn {
+	position: absolute;
+	top: 200px;
+	left: 0;
+	height: 26px;
+	width: 16px;
+	border: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background: #00bab5 url('images/left.png') no-repeat center/60% 60%;
+}
+#plugin_share_map #root-panel .toggle-btn.active{
+	background: #00bab5 url('images/right.png') no-repeat center/60% 60%;
+}
+#plugin_share_map #map-time-line {
+	height: 50px;
+	position: absolute;
+	left: 20px;
+	right: 290px;
+	bottom: 20px;
+}
+
+
+
+
+/*----------------自定义--------------------------*/
+/*-------------------------------KPI---------------------------*/
+#plugin_share_map #KPI-modal {
+	display: none;
+}
+#plugin_share_map .KPI-list {
+	padding: 0 10px;
+	list-style: none;
+	margin: 0;
+	background: #ffffff8f;
+	overflow: hidden;
+}
+#plugin_share_map #KPI-modal .KPI-item {
+	width: 16.66%;
+	float: left;
+}
+#plugin_share_map .card {
+	background: #f0f3f8;
+	height: 80px;
+	margin: 10px 5px;
+	padding: 10px 20px;
+	border-radius: 4px;
+}
+#plugin_share_map #root-panel .card {
+	height: auto;
+}
+#plugin_share_map .card h5 {
+	margin: 0;
+	color: #7a7a7a;
+}
+#plugin_share_map .card label {
+	color: #7a7a7a;
+	margin-right: 10px;
+}
+#plugin_share_map .card .data{
+	margin-top: 15px;
+}
+#plugin_share_map .card .val {
+	font-size: 1.2rem;
+	color: #00bab5;
+}
+#plugin_share_map .card .unit {
+	color: #7a7a7a;
+	margin-left: 5px;
+	font-size: 0.5rem;
+}
+/*--------------------------------modal--------------------------*/
+#plugin_share_map .modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(1,1,1,0.5);
+}
+#plugin_share_map .modal-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 80%;
+	height: 500px;
+	display: grid;
+	grid-template-rows: 40px auto;
+}
+#plugin_share_map .modal-hd {
+	margin: 0;
+	background: #00bab5;
+	padding: 10px 20px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	color: #fff;
+}
+#plugin_share_map .modal-hd .title {
+	margin: 0;
+}
+#plugin_share_map .modal-hd .close-btn{
+	float: right;
+}
+#plugin_share_map .modal-bd {
+	background: #fff;
+	padding: 20px;
+	overflow: auto;
+}
+/*---------------------------chart----------------------*/
+#plugin_share_map .chart-wrap{
+	margin: 20px 10px;
+}
+#plugin_share_map .chart-wrap .title {
+	float: left;
+	margin: 0;
+}
+#plugin_share_map .chart-opt {
+	text-align: right;
+}
+#plugin_share_map .chart {
+	height: 250px;
+}
+/*---------------------------------------------------------------*/
+#plugin_share_map #map-tip {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	background-color: #fff;
+	padding: 10px 14px;
+	border-radius: 4px;
+	border: 1px solid #00cccc;
+}
+#plugin_share_map .tip-icon{
+	float: left;
+	margin: 20px 10px;
+}
+#plugin_share_map .tip-title {
+	margin: 0;
+	padding-left: 100px;
+}
+#plugin_share_map .tip-data {
+	margin: 10px 0;
+	color: #7a7a7a;
+	padding-left: 100px;
+	width: 200px;
+}
+#plugin_share_map .tip-data .val{
+	font-size: 1.2rem;
+	margin: 0 5px;
+	color: #333;
+}
+#plugin_share_map .progress {
+	margin-top: 20px;
+	height: 10px;
+	background: lightblue;
+	background: -webkit-linear-gradient(left,#72D695 60%, #FFC76C);
+	background: -o-linear-gradient(left,#72D695 60%, #FFC76C);
+	background: -moz-linear-gradient(left,#72D695 60%, #FFC76C);
+	background: linear-gradient(left,#72D695 60%, #FFC76C);
+	border-radius: 5px;
+}
+#plugin_share_map .rest {
+	height: 8px;
+	width: 20%;
+	float: right;
+	background: #fff;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border: 1px solid #00cccc;
+}
+
+
+::-webkit-scrollbar {//滚动条的宽度
+	width:5px;
+	height:9px;
+}
+::-webkit-scrollbar-thumb {//滚动条的设置
+	background-color:#dddddd;
+	background-clip:padding-box; /*背景被裁剪到内边距框   content-box 背景裁剪到内容框*/
+	min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color:#bbb;
+}
+::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+	background-color:#f8f8f8;
+}
+
+/*block start*/
+.x-block{
+	border: 1px solid #ececec;
+	background: #fff;
+	box-sizing: border-box;
+	cursor: pointer;
+	box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+}
+.x-block.active{border-color: #017cc2;}
+.x-block h2{
+	height: 35px;
+	line-height: 35px;
+	margin: 0;
+	padding: 0 9px;
+	font-size: 14px;
+	border-bottom: 1px dashed #ececec;
+	display: flex;
+	justify-content: space-between;
+}
+.x-block > div{
+	height: 87px;
+	padding-left: 80px;
+	text-align: center;
+	font-size: 12px;
+	background: no-repeat 10px center;
+	background-size: 60px 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	overflow: hidden;
+}
+.x-block > div div{
+	width: 100px;
+	height: 60px;
+}
+.x-block > div div p{
+	line-height: 28px;
+	margin: 0;
+}
+.x-block ul{
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	background: #f2f2f2;
+}
+.x-block ul li{
+	width: 50%;
+	text-align: center;
+	float: left;
+	box-sizing: border-box;
+list-style:none;
+}
+.x-block ul span{color:#00bab5;}
+.x-block.small > div{
+	padding-left: 91px;
+	background: no-repeat 18px center;
+	background-blend-mode: lighten;
+	background-size: 71px 54px;
+	justify-content: center;
+}
+.x-block.small > div div{width: 140px;}
+/*block end*/
+
+#show-panel *{margin:0;padding:0;list-style: none;}
+#show-panel{
+	width: 0;
+	background: #ffffff;
+	position: absolute;
+	top: 50px;
+	right: 0;
+	border-radius: 10px 0 0 10px;
+	transition: width 0.3s;
+}
+#show-panel.w350{width: 300px;}
+#show-panel > div{
+	padding: 10px 0 0 10px;
+	box-sizing: border-box;
+}
+#show-panel h2{
+	line-height: 25px;
+	padding-left: 10px;
+	border-left: 5px solid #00bab5;
+	margin: 0;
+}
+#show-panel h2 span{font-size:12px;}
+#show-panel ul{overflow: hidden;}
+#show-panel .binfo li{
+	padding: 10px;
+	padding-left: 30px;
+}
+#show-panel .rinfo li,#show-panel .einfo li{
+	width: 50%;
+	padding: 10px 0;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+	position:relative;
+}
+#show-panel .rinfo li i{
+	background: url(images/next.png) no-repeat;
+	display: inline-block;
+	width:17px;
+	height:16px;
+	position:absolute;
+	top:36px;
+	right:26px;
+	cursor:pointer;
+}
+#show-panel .rinfo li span{
+	color: #00B9B4;
+	font-size: 20px;
+}
+#show-panel .einfo li{
+	padding-left: 30px;
+	font-size: 16px;
+	text-align: initial;
+	width:100%;
+	background:url(images/go.png) no-repeat 235px;
+	cursor:pointer;
+}
+#show-panel .einfo li p{
+	width:35px;
+	height:63px;
+	line-height:63px;
+	background:#EEF2F8;
+	border-radius:3px;
+	text-align: center;
+	float:left;
+	margin-right:25px;
+}
+#show-panel .einfo li div{
+	float:left;
+}
+#show-panel .einfo li div span{
+	display:block;
+}

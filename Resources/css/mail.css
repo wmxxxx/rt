@@ -1,0 +1,842 @@
+﻿.mail
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+    font-family: Microsoft YaHei;
+	background-color: #ffffff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mail .menu
+{
+    position: absolute;
+	left: 0px;
+	top: 43px;
+	bottom:0px;
+	width:240px;
+	background-color: #ffffff;
+	border-right:1px solid #D3D3D3;
+}
+.mail .menu .logo
+{
+    position: absolute;
+	left: 88px;
+	top: 23px;
+	width:65px;
+	height:65px;
+    background: url(/Resources/images/mail/logo.png) no-repeat;
+}
+.mail .menu .smail
+{
+    position: absolute;
+	left: 20px;
+	top: 112px;
+	right:20px;
+	height:30px;
+	font-size:12px;
+	color:#808080;
+}
+.mail .menu .smail span
+{
+	font-size:14px;
+	color:#1a1a1a;
+}
+.mail .menu .sname
+{
+    position: absolute;
+	left: 20px;
+	top: 142px;
+	right:20px;
+	height:20px;
+	font-size:12px;
+	color:#808080;
+}
+.mail .menu .sname span
+{
+	font-size:14px;
+	color:#1a1a1a;
+}
+.mail .menu .newmail
+{
+    position: absolute;
+	left: 45px;
+	top: 194px;
+	width:150px;
+	height:50px;
+	font-size:16px;
+	line-height:48px;
+	padding-left:45px;
+	color:#008ce2;
+	cursor:pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border:1px solid #008ce2;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-box-shadow: 0px 0px 1px #008ce2;
+    -webkit-box-shadow: 0px 0px 1px #008ce2;
+    box-shadow: 0px 0px 1px #008ce2;
+    background: url(/Resources/images/mail/new.png) center left 20px no-repeat #cfefff;
+}
+.mail .menu .newmail:hover
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.mail .menu .sentmail
+{
+    position: absolute;
+	left: 45px;
+	top: 262px;
+	width:150px;
+	height:50px;
+	font-size:16px;
+	line-height:48px;
+	padding-left:45px;
+	color:#00bab5;
+	cursor:pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border:1px solid #00bab5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-box-shadow: 0px 0px 1px #00bab5;
+    -webkit-box-shadow: 0px 0px 1px #00bab5;
+    box-shadow: 0px 0px 1px #00bab5;
+    background: url(/Resources/images/mail/send.png) center left 20px no-repeat #cffffb;
+}
+.mail .menu .sentmail:hover
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.mail .menu .deletedmail
+{
+    position: absolute;
+	left: 45px;
+	top: 330px;
+	width:150px;
+	height:50px;
+	font-size:16px;
+	line-height:48px;
+	padding-left:45px;
+	color:#808080;
+	cursor:pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border:1px solid #808080;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-box-shadow: 0px 0px 1px #808080;
+    -webkit-box-shadow: 0px 0px 1px #808080;
+    box-shadow: 0px 0px 1px #808080;
+    background: url(/Resources/images/mail/del.png) center left 20px no-repeat #e6e6e6;
+}
+.mail .menu .deletedmail:hover
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.mail .menu .outbox
+{
+    position: absolute;
+	left: 45px;
+	top: 398px;
+	width:150px;
+	height:50px;
+	font-size:16px;
+	line-height:48px;
+	padding-left:45px;
+	color:#fbb444;
+	cursor:pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border:1px solid #fbb444;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-box-shadow: 0px 0px 1px #fbb444;
+    -webkit-box-shadow: 0px 0px 1px #fbb444;
+    box-shadow: 0px 0px 1px #fbb444;
+    background: url(/Resources/images/mail/outbox.png) center left 20px no-repeat #ffe9cc;
+}
+.mail .menu .outbox:hover
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.mail .menu .active
+{
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.mail .tbar
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    background-color: #F0F0F0;
+}
+.mail .tbar .set
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    background: url(/Resources/images/mail/set.png) no-repeat;
+}
+.mail .tbar .set:hover
+{
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+.mail .tbar .text_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+}
+.mail .tbar .date_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+    background: url(/Resources/images/calendar.png) center right no-repeat #FFFFFF;
+}
+.mail .tbar .ddl {
+    position: relative;
+    float: right;
+    width: 125px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 130px;
+    font-family: Microsoft YaHei;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.mail .tbar .btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.mail .tbar .btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.mail .thead
+{
+    position: absolute;
+    left: 240px;
+    top: 42px;
+    right: 0px;
+    height: 36px;
+}
+.mail .view
+{
+    position: absolute;
+	left: 240px;
+	top: 80px;
+	right:0px;
+	bottom:41px;
+	border:0px;
+	overflow:auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mail .view .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -20px;
+    width: 330px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 20pt;
+    color: #A9A9A9;
+}
+.mail table
+{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+.mail table th
+{
+    font-size:14px;
+    padding:8px;
+    color:#333;
+    border-bottom:0px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+}
+.mail table td
+{
+    padding:8px;
+    color:#333;
+    vertical-align: top;
+    line-height: 20px;
+    word-break:break-all;
+    border:1px solid #ddd;
+}
+.mail table td .img
+{
+    width:26px;
+    height:26px;
+    cursor:pointer;
+}
+.mail table td .img:hover
+{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.mail table tr.active
+{
+    background-color:#f9f9f9;
+}
+.mail table tr:hover
+{
+    background-color:#f5f5f5;
+}
+.mail .footer
+{
+    position: absolute;
+    left: 240px;
+    bottom: 0px;
+    right: 0px;
+    height: 41px;
+    border-top: 1px solid #D3D3D3;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mail .footer .fbar
+{
+    position: relative;
+    margin: auto;
+    width: 594px;
+    height: 100%;
+    padding: 7px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mail .footer .fbar .plbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 28px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 10pt;
+    color: #333333;
+    border: 1px solid #CCCCCC;
+}
+.mail .footer .fbar .plbox.active
+{
+    color:#ffffff;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+}
+.mail .footer .fbar .pbbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 28px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10pt;
+    color: #333333;
+    cursor:pointer;
+    border: 1px solid #CCCCCC;
+}
+.mail .footer .fbar .pbbox:hover
+{
+    color:#ffffff;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+}
+.mail .footer .fbar .plabel
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 15px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 10pt;
+    color: #333333;
+}
+.mail .footer .fbar .btn
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10pt;
+    color: #ffffff;
+    cursor:pointer;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.mail .footer .fbar .btn:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+.mail .win_set
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 284px;
+    margin-left: -180px;
+    margin-top: -150px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.mail .win_set .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor:move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.mail .win_set .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.mail .win_set .close:hover
+{
+    opacity:1;
+}
+.mail .win_set .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.mail .win_set .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.mail .win_set .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.mail .win_set .form .item .text_input
+{
+	position: absolute;
+    top: 0px;
+    left: 80px;
+    height: 24px;
+    width: 240px;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    color: #000000;
+    border: 1px solid #D4D4D4;
+}
+.mail .win_set .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_set .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.mail .win_set .testbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_set .testbtn:hover
+{
+    background-color:#0076d6;
+}
+.mail .win_mail
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 700px;
+    height: 460px;
+    margin-left: -350px;
+    margin-top: -240px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.mail .win_mail .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor:move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.mail .win_mail .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.mail .win_mail .close:hover
+{
+    opacity:1;
+}
+.mail .win_mail .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.mail .win_mail .form
+{
+	position: absolute;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 70px;
+}
+.mail .win_mail .form .item
+{
+	position: relative;
+    height: 25px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+}
+.mail .win_mail .form .item .text_input
+{
+	position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 590px;
+    cursor: auto;
+    font-family: 微软雅黑;
+    padding-left: 4px;
+    line-height:26px;
+    border: 1px solid #D4D4D4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.mail .win_mail .form .item .text_input a:hover
+{
+    background-color:#9BCAEF;
+}
+.mail .win_mail .form .item .text_input .active
+{
+    background-color:#9BCAEF;
+}
+.mail .win_mail .form .item .user_add
+{
+	position: absolute;
+    top: 0px;
+    left: 631px;
+    height: 28px;
+    width: 29px;
+    cursor: auto;
+    font-family: 微软雅黑;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    border: 1px solid #D4D4D4;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    opacity: 0.6;
+}
+.mail .win_mail .form .item .user_add:hover
+{
+	opacity: 1;
+}
+.mail .win_mail .form .item .ke-container
+{
+	margin-left: 70px;
+	margin-top: -22px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mail .win_mail .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_mail .okbtn:hover
+{
+    background-color:#0076d6;
+}
+.mail .win_mail .cancelbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_mail .cancelbtn:hover
+{
+    background-color:#0076d6;
+}
+.mail .win_addr
+{
+    position: absolute;
+    width: 300px;
+    height: 340px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display:none;
+}
+.mail .win_addr .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 25px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor:move;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.mail .win_addr .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.mail .win_addr .close:hover
+{
+    opacity:1;
+}
+.mail .win_addr .close img
+{
+    width: 28px;
+    height: 28px;
+}
+.mail .win_addr .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+.mail .win_addr .okbtn_addr
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 20px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_addr .okbtn_addr:hover
+{
+    background-color:#0076d6;
+}
+.mail .win_addr .cancelbtn_addr
+{
+	position: absolute;
+    bottom: 20px;
+    height: 30px;
+    right: 110px;
+    width: 70px;
+	background-color:#408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    cursor: pointer;
+}
+.mail .win_addr .cancelbtn_addr:hover
+{
+    background-color:#0076d6;
+}

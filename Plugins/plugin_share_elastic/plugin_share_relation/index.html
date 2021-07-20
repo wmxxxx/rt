@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div id="header" class="layui-form"></div>
+	<div class="main">
+		<table id="table" lay-filter="main"></table>
+	</div>
+</body>
+</html>
+<script type="text/html" id="header_tpl">
+	<div class="layui-form-item">
+		<select lay-filter="group">
+			<option value="">管理分组(全部)</option>
+			{{# $.each(d.group,function(i,k){}}
+				<option value={{k.F_id}}>{{k.F_name}}</option>
+			{{# });}}
+		</select>
+	</div>
+	<div class="layui-form-item">
+		<select lay-filter="cycle">
+			<option value="">周期模型(全部)</option>
+			{{# $.each(d.cycle,function(i,k){}}
+				<option value={{k.F_id}}>{{k.F_name}}</option>
+			{{# });}}
+		</select>
+	</div>
+	<div class="layui-form-item">
+		<select lay-filter="action">
+			<option value="">动作模型(全部)</option>
+			{{# $.each(d.action,function(i,k){}}
+				<option value={{k.F_id}}>{{k.F_name}}</option>
+			{{# });}}
+		</select>
+	</div>
+	<div class="layui-form-item">
+		<button class="layui-btn layui-btn-normal layui-btn-sm">查询</button>
+	</div>
+	<div class="layui-form-item">
+		<button class="layui-btn layui-btn-action layui-btn-sm">策略关联</button>
+	</div>
+</script>
+<script type="text/html" id="set_tpl">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label">策略名称</label>
+			<div class="layui-input-inline" style="width:280px;">
+				<input type="text" class="layui-input name" autocomplete="off" value={{d.edit.F_name ? d.edit.F_name : ''}}>
+			</div>
+		</div>
+		<div class="layui-inline">
+			<div class="layui-input-inline isopen">
+				<input type="checkbox" title="是否启用" lay-filter="open" {{d.edit.F_open ? 'checked' : ''}}>
+			</div>
+		</div>
+		<div class="layui-inline">
+			<div class="layui-input-inline ispush">
+				<input type="checkbox" title="消息推送" lay-filter="push" {{d.edit.F_push ? 'checked' : ''}}>
+			</div>
+		</div>
+	</div>
+	<div class="block {{d.edit.F_push ? 'push' : ''}}">
+		<div class="user">
+			<h3>推送人员</h3>
+			<ul>
+				{{# $.each(d.user,function(i,k){}}
+					<li><input type="checkbox" lay-skin="primary" title={{k.F_UserName}} name={{k.F_UserCode}} {{d.edit.F_user_id && d.edit.F_user_id.indexOf(k.F_UserCode) != -1 ? 'checked' : ''}}></li>
+				{{# });}}
+			</ul>
+		</div>
+		<div class="group">
+			<h3>管理分组</h3>
+			<ul>
+				{{# $.each(d.group,function(i,k){}}
+					<li><input type="checkbox" lay-skin="primary" title={{k.F_name}} name={{k.F_id}} {{d.edit.F_group_id && d.edit.F_group_id.indexOf(k.F_id) != -1 ? 'checked' : ''}}></li>
+				{{# });}}
+			</ul>
+		</div>
+		<div class="cycle">
+			<h3>周期模型</h3>
+			<ul>
+				{{# $.each(d.cycle,function(i,k){}}
+					<li><input type="radio" name="cycle" lay-filter="cycle" value={{k.F_id}} title={{k.F_name}} {{k.F_id == d.edit.F_cycle_id ? 'checked' : ''}}></li>
+				{{# });}}
+			</ul>
+		</div>
+		<div class="action">
+			<h3>动作模型</h3>
+			<ul>
+				{{# $.each(d.action,function(i,k){}}
+					<li><input type="radio" name="action" lay-filter="action" value={{k.F_id}} title={{k.F_name}} {{k.F_id == d.edit.F_action_id ? 'checked' : ''}}></li>
+				{{# });}}
+			</ul>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="open">
+	{{d.F_open ? '启用' : '停用'}}
+</script>
+<script type="text/html" id="push">
+	{{d.F_push ? '启用' : '未启用'}}
+</script>
+<script type="text/html" id="oper">
+	<a class="btn-a" lay-event="edit"  style="color:#04a9ed;">修改</a>
+	<a class="btn-a" lay-event="del" style="color:#FF5722;">删除</a>
+</script>

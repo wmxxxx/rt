@@ -1,0 +1,1366 @@
+﻿html 
+{
+    padding:0px;
+    margin:0px;
+    border:0px;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	width: 100%;
+	height: 100%;
+	max-height:100%;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	overflow: hidden;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+    height:2px;
+}
+::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: #D9E0E5;
+}
+::-webkit-scrollbar-corner {
+    background-color: #D9E0E5;
+}
+#mainPanel{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font: 12px Arial,Tahoma,微软雅黑;
+	cursor: default;
+	z-index: 0;
+}
+#mainPanel #centerPanel {
+    position: absolute;
+    left: 44px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #FFFFFF;
+}
+#mainPanel .leftbar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 44px;
+    bottom: 0px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+#mainPanel .leftbar .nav_1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 44px;
+    bottom: 0px;
+    overflow:auto;
+    background-color: #017bc2;
+}
+#mainPanel .leftbar .nav_1 .menu
+{
+    position:relative;
+    width:44px;
+    height:68px;
+    cursor:pointer;
+}
+#mainPanel .leftbar .nav_1 .menu:hover
+{
+    background-color:#006396;
+}
+#mainPanel .leftbar .nav_1 .menu.active
+{
+    background-color:#006396;
+}
+#mainPanel .leftbar .nav_1 .menu .logo
+{
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+#mainPanel .leftbar .nav_1 .menu .logo img
+{
+    width:28px;
+    height:28px
+}
+#mainPanel .leftbar .nav_1 .menu .name
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    height: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+#mainPanel .leftbar .nav_1 .menu .arrow
+{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 0;
+    height: 0;
+}
+#mainPanel .leftbar .nav_1 .menu .arrow.active
+{
+    border-right: 6px solid #FFFFFF;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+#mainPanel .leftbar .nav_1 .menu .plus
+{
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 24pt;
+    color: #FFFFFF;
+    text-align: center;
+}
+#mainPanel .leftbar .nav_2 {
+    position: absolute;
+    left: 44px;
+    top: 0px;
+    width: 44px;
+    bottom: 0px;
+    overflow:auto;
+    background-color: #EFF0F1;
+}
+#mainPanel .leftbar .nav_2 .menu
+{
+    position:relative;
+    left:0px;
+    right:0px;
+    height:68px;
+    cursor:pointer;
+}
+#mainPanel .leftbar .nav_2 .menu .logo
+{
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 28px;
+    height: 28px;
+}
+#mainPanel .leftbar .nav_2 .menu .logo img
+{
+    width:28px;
+    height:28px
+}
+#mainPanel .leftbar .nav_2 .menu .name
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    height: 12px;
+    color: #A9B0BD;
+    text-align: center;
+    line-height: 12px;
+    font-size: 12px;
+}
+#mainPanel .leftbar .nav_2 .menu .plus
+{
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    font-size: 24pt;
+    line-height: 44px;
+    color: #A5AAB4;
+}
+#mainPanel .leftbar .nav_2 .menu .plus:hover
+{
+    color: #147ABC;
+}
+#mainPanel .leftbar2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 160px;
+    bottom: 0px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background: url(/Resources/images/frame/2-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .leftbar2 .colbar{
+    position: absolute;
+    left: 124px;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+    background: url(/Resources/images/frame/2-colbar.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    opacity: 0.6;
+    cursor: pointer;
+}
+#mainPanel .leftbar2 .colbar:hover{
+    opacity: 1;
+}
+#mainPanel .leftbar2 .exbar{
+    background: url(/Resources/images/frame/2-expbar.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .leftbar2 .logo{
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    width: 160px;
+    height: 106px;
+    background: url(/Resources/images/frame/2-logo.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .leftbar2 .navPanel{
+    position: absolute;
+    left: 0px;
+    top: 132px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+#mainPanel .leftbar2 .navPanel .menu{
+    position: relative;
+    height: 60px;
+    width: 100%;
+    padding: 15px 0px;
+    cursor:pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #434343;
+}
+#mainPanel .leftbar2 .navPanel .menu:hover{
+    border-left: 4px solid #00bab5;
+    background-color: #434343;
+}
+#mainPanel .leftbar2 .navPanel .menu.active{
+    border-left: 4px solid #00bab5;
+    background-color: #434343;
+}
+#mainPanel .leftbar2 .navPanel .menu .ul{
+    position: relative;
+    margin: auto;
+    height: 30px;
+    width: 125px;
+}
+#mainPanel .leftbar2 .navPanel .menu .plus{
+    position: relative;
+    height: 30px;
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    color: #F4F4F4;
+    cursor: pointer;
+}
+#mainPanel .leftbar2 .navPanel .menu .icon{
+    position: relative;
+    float:left;
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+}
+#mainPanel .leftbar2 .navPanel .menu .name{
+    position: relative;
+    float: left;
+    height: 30px;
+    margin-left: 8px;
+    line-height: 32px;
+    width: 82px;
+    color: #F4F4F4;
+    font-size: 14px;
+}
+#mainPanel .leftbar2 .navPanel .menu .arrow{
+    position: absolute;
+    right: 18px;
+    top: 26px;
+    height: 7px;
+    width: 12px;
+    background: url(/Resources/images/frame/2-arrow-d.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .leftbar2 .navPanel .menu .arrow.rotate
+{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+}
+#mainPanel .leftbar2 .navPanel .itemul {
+    position: relative;
+    width: 200px;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item {
+    position: relative;
+    height: 36px;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .v1{
+    position: absolute;
+    left: 54px;
+    top: 0px;
+    width: 0px;
+    height: 18px;
+    border-left: 1px dashed #585858;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .v2{
+    position: absolute;
+    left: 54px;
+    top: 18px;
+    width: 0px;
+    height: 18px;
+    border-left: 1px dashed #585858;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .h1{
+    position: absolute;
+    left: 54px;
+    top: 18px;
+    width: 18px;
+    height: 0px;
+    border-top: 1px dashed #585858;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .name{
+    position: absolute;
+    left: 80px;
+    top: 10px;
+    width: 74px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #8B8B8B;
+    cursor:pointer;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .name.active{
+    color: #00bab5 !important;
+}
+#mainPanel .leftbar2 .navPanel .itemul .item .name:hover{
+    color: #00bab5 !important;
+}
+#mainPanel .topbar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    height: 50px;
+    background: #00B9B4;
+}
+#mainPanel .topbar .tip{
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    margin-left: -140px;
+    width: 280px;
+    height: 38px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    display: none;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+#mainPanel .topbar .tip.active{
+    display:block;
+}
+#mainPanel .topbar .tip:before{
+	position: absolute;
+    top: -8px;
+    left: 133px;
+    display: inline-block !important;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ccc;
+    border-left: 8px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+#mainPanel .topbar .tip:after{
+	position: absolute;
+    top: -7px;
+    left: 134px;
+    display: inline-block !important;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
+    border-left: 7px solid transparent;
+    content: '';
+}
+#mainPanel .topbar .tip ul{
+	position: absolute;
+    padding: 0px 10px;
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+#mainPanel .topbar .tip ul li{
+	position: relative;
+    float: left;
+    width: 65px;
+    height: 38px;
+    display: list-item;
+    list-style: none;
+    text-shadow: none;
+    text-align: -webkit-match-parent;
+}
+#mainPanel .topbar .tip ul li .num{
+	position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 20px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFEFE;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+#mainPanel .topbar .tip ul li .rank
+{
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    height: 38px;
+    color: #242f44;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+    text-decoration: none;
+    background: transparent;
+}
+#mainPanel .topbar .home{
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    width:30px;
+    height: 30px;
+    opacity:0.8;
+    cursor:pointer;
+    background: url(/Resources/images/frame/3-home.png) no-repeat;
+}
+#mainPanel .topbar .home:hover{
+    opacity:1;
+}
+#mainPanel .topbar .sys_name{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 300px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+#mainPanel .topbar .navPanel{
+    position: absolute;
+    left: 344px;
+    top: 1px;
+    right: 250px;
+    height: 48px;
+    margin: 0px;
+    padding: 0px;
+}
+#mainPanel .topbar .navPanel .menu{
+    position: relative;
+    margin-left: -1px;
+    float: left;
+    height: 48px;
+    width: 140px;
+    cursor: pointer;
+    list-style: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#mainPanel .topbar .navPanel .menu:hover{
+    background-color: #00AFAE;
+}
+#mainPanel .topbar .navPanel .menu.active{
+    background-color: #00AFAE;
+    opacity: 1;
+}
+#mainPanel .topbar .navPanel .menu:hover .side{
+    display:block;
+}
+#mainPanel .topbar .navPanel .menu .side{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 0px;
+    display:none;
+    background: #00cccc;
+}
+#mainPanel .topbar .navPanel .menu .text{
+    position: relative;
+    margin: auto;
+    width: 140px;
+    height: 48px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 48px;
+    padding-left: 0px;
+    text-align:center;
+    box-sizing: border-box;
+}
+#mainPanel .topbar .navPanel .menu .text:hover{
+    opacity:1;
+}
+#mainPanel .topbar .navPanel .menu .text.active{
+    opacity:1;
+}
+#mainPanel .topbar .navPanel .menu .plus{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: 28px;
+    line-height: 48px;
+}
+#mainPanel .topbar .navPanel .menu .arrow{
+    position: absolute;
+    right: 18px;
+    top: 21px;
+    height: 7px;
+    width: 12px;
+    background: url(/Resources/images/frame/3-arrow-d.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .topbar .navPanel .menu .arrow.rotate
+{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+}
+#mainPanel .topbar .navPanel .item {
+    position: relative;
+    margin: 2px 0px 0px 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px 1px rgba(1, 88, 99, 0.28);
+    -webkit-box-shadow: 0px 1px 10px 1px rgba(1, 88, 99, 0.28);
+    -moz-box-shadow: 0px 1px 10px 1px rgba(1, 88, 99, 0.28);
+    z-index: 1;
+}
+#mainPanel .topbar .navPanel .item .submenu {
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #7a8ca0;
+    cursor: pointer;
+    font-size: 14px;
+    list-style: none;
+    cursor:pointer;
+}
+#mainPanel .topbar .navPanel .item .submenu:hover {
+    color: #242f44;
+}
+#mainPanel .topbar .navPanel .item .submenu.active {
+    color:#00cccc !important
+}
+#mainPanel .topbar .config {
+    position: absolute;
+    right: 275px;
+    top: 18px;
+    height: 20px;
+    width: 20px;
+    opacity: 0.9;
+    cursor: pointer;
+    background: url(/Resources/images/frame/config.png) no-repeat;
+    z-index: 1;
+}
+#mainPanel .topbar .config:hover {
+    opacity:1;
+}
+#mainPanel .topbar .help {
+    position: absolute;
+    right: 240px;
+    top: 18px;
+    height: 20px;
+    width: 20px;
+    opacity: 0.9;
+    cursor: pointer;
+    background: url(/Resources/images/frame/help.png) no-repeat;
+    z-index: 1;
+}
+#mainPanel .topbar .help:hover {
+    opacity:1;
+}
+#mainPanel .topbar .alaram {
+    position: absolute;
+    right: 200px;
+    top: 18px;
+    height: 20px;
+    width: 20px;
+    opacity: 0.9;
+    cursor: pointer;
+    background: url(/Resources/images/frame/3-alarm.png) no-repeat;
+    z-index: 1;
+}
+#mainPanel .topbar .alaram:hover {
+    opacity:1;
+}
+#mainPanel .topbar .alaram .sum{
+    position: absolute;
+    right: -14px;
+    top: -5px;
+    height: 16px;
+    width: 25px;
+    color: #fff;
+    line-height: 16px;
+    text-align: center;
+    background: red;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    display:none;
+}
+#mainPanel .topbar .head {
+    position: absolute;
+    right: 75px;
+    top: 7px;
+    height: 36px;
+    width: 110px;
+    color: #fff;
+    text-align: right;
+}
+#mainPanel .topbar .head .uname {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+#mainPanel .topbar .head .utype {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    right: 40px;
+    height: 16px;
+    line-height: 16px;
+}
+#mainPanel .topbar .bubble {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 36px;
+    width: 36px;
+    background: #fff;
+    border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+#mainPanel .topbar .bubble img {
+    height: 36px;
+    width: 36px;
+    border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+}
+#mainPanel .topbar .close {
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    height: 34px;
+    width: 34px;
+    padding: 1px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+}
+#mainPanel .topbar .close:hover {
+    opacity:1;
+}
+#mainPanel .topbar .close .btn {
+    margin: auto;
+    height: 34px;
+    width: 34px;
+    color: #fff;
+    text-align: center;
+    line-height: 34px;
+    background: #00B9B4;
+    border-radius: 100% 100% 100% 100%;
+    -moz-border-radius: 100% 100% 100% 100%;
+    -webkit-border-radius: 100% 100% 100% 100%;
+}
+#mainPanel .leftbar3 {
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 160px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #242f44;
+    z-index:9999;
+}
+#mainPanel .leftbar3 .colbar{
+    position: absolute;
+    left: 130px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    opacity: 0.9;
+    cursor: pointer;
+    background-size: 100% 100%;
+    background: url(/Resources/images/frame/3-colbar.png) no-repeat;
+}
+#mainPanel .leftbar3 .colbar:hover{
+    opacity: 1;
+}
+#mainPanel .leftbar3 .exbar{
+    background-size: 100% 100%;
+    background: url(/Resources/images/frame/3-expbar.png) no-repeat;
+}
+#mainPanel .leftbar3 .navPanel{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#mainPanel .leftbar3 .navPanel .menu{
+    position: relative;
+    height: 56px;
+    width:100%;
+    cursor: pointer;
+    list-style: none;
+    border-top:1px solid #212A3A;
+    border-bottom: 1px solid #2E394C;
+}
+#mainPanel .leftbar3 .navPanel .menu:hover{
+    background-color: #333E51;
+}
+#mainPanel .leftbar3 .navPanel .menu:hover .side{
+    display:block;
+}
+#mainPanel .leftbar3 .navPanel .menu.active{
+    background-color: #333E51;
+}
+#mainPanel .leftbar3 .navPanel .menu .side{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 4px;
+    display:none;
+    background: #00cccc;
+}
+#mainPanel .leftbar3 .navPanel .menu .text{
+    position: relative;
+    margin: auto;
+    width: 130px;
+    height: 56px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 56px;
+    padding-left: 44px;
+    opacity: 0.9;
+    box-sizing: border-box;
+}
+#mainPanel .leftbar3 .navPanel .menu .text:hover{
+    opacity:1;
+}
+#mainPanel .leftbar3 .navPanel .menu .text.active{
+    opacity:1;
+}
+#mainPanel .leftbar3 .navPanel .menu .plus{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 28px;
+    line-height: 56px;
+}
+#mainPanel .leftbar3 .navPanel .menu .arrow{
+    position: absolute;
+    right: 14px;
+    top: 25px;
+    height: 7px;
+    width: 12px;
+    background: url(/Resources/images/frame/3-arrow-d.png) no-repeat;
+    background-size: 100% 100%;
+}
+#mainPanel .leftbar3 .navPanel .menu .arrow.rotate
+{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+}
+#mainPanel .leftbar3 .navPanel .item {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#mainPanel .leftbar3 .navPanel .item .submenu {
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.6;
+    cursor:pointer;
+    font-size: 14px;
+}
+#mainPanel .leftbar3 .navPanel .item .submenu:hover {
+    opacity: 1;
+}
+#mainPanel .leftbar3 .navPanel .item .submenu.active {
+    opacity: 1;
+    color:#00cccc !important;
+}
+#mainPanel .win
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 350px;
+    margin-left: -180px;
+    margin-top: -200px;
+    background-color:#FFFFFF;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index:9999;
+}
+#mainPanel .win .title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 31px;
+    font-size: 11pt;
+    padding-left: 10px;
+    padding-top: 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	background-color:#F7F7F7;
+	moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+#mainPanel .win .close
+{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    opacity:0.6;
+    cursor:pointer;
+}
+#mainPanel .win .close:hover
+{
+    opacity:1;
+}
+#mainPanel .win .close img
+{
+    width: 28px;
+    height: 28px;
+}
+#mainPanel .win .form
+{
+	position: absolute;
+    top: 40px;
+    left: 15px;
+    right: 15px;
+    bottom: 70px;
+}
+#mainPanel .win .form .item
+{
+	position: relative;
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 10pt;
+    color: #666666;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#mainPanel .win .form .item input
+{
+	position: absolute;
+	top:0px;
+	left:70px;
+	height:24px;
+	width: 250px;
+	font-family:微软雅黑;
+	padding-left:4px;
+	color:#000000;
+	box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+	border: 1px solid #D4D4D4;
+}
+#mainPanel .win .form .item .ddl {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    height: 28px;
+    width: 256px;
+    font-family: 微软雅黑;
+    -moz-border-radius: 3px;
+    border: 1px solid #D3D3D3;
+}
+#mainPanel .win .okbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 25px;
+    right: 20px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 5px;
+    cursor: pointer;
+}
+#mainPanel .win .okbtn:hover
+{
+    background-color:#0076d6;
+}
+#mainPanel .win .delbtn
+{
+	position: absolute;
+    bottom: 20px;
+    height: 25px;
+    right: 110px;
+    width: 70px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 5px;
+    cursor: pointer;
+}
+#mainPanel .win .delbtn:hover
+{
+    background-color:#0076d6;
+}
+#centerPanel #middlePanel {
+    position: absolute;
+    left: 201px;
+    top: 44px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    border: 1px solid #EEEEEE;
+}
+#centerPanel .nav {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    bottom: 0px;
+    overflow:auto;
+}
+#centerPanel .nav ul{
+	position: absolute;
+    padding: 0px;
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #F0F0F0;
+}
+#centerPanel .nav ul li{
+	display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+    text-shadow: none;
+    text-align: center;
+    font-size: 10pt;
+    padding: 8px 5px;
+    line-height: 18px;
+    cursor:pointer;
+}
+#centerPanel .nav ul li.active{
+	border-left: 2px solid #0076D6;
+    background-color: #FFFFFF;
+}
+#centerPanel .nav ul li:hover{
+	border-left: 2px solid #0076D6;
+    background-color: #FFFFFF;
+}
+#centerPanel .config {
+    position: absolute;
+    left: 31px;
+    top: 0px;
+    width: 210px;
+    bottom: 0px;
+    overflow:auto;
+    padding: 5px 0px !important;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-right: 1px solid #D3D3D3;
+}
+#centerPanel .config .c_tbar {
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    height: 30px;
+    right: 4px;
+}
+#centerPanel .config .c_tbar .ddl {
+    position: relative;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #666666;
+    width: 100%;
+    -moz-border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #D3D3D3;
+}
+#centerPanel .config .c_panel {
+    position: absolute;
+    left: 0px;
+    top: 34px;
+    bottom: 30px;
+    right: 0px;
+}
+#centerPanel .config .c_fbar {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    right: 0px;
+}
+#centerPanel .config .c_fbar .txt {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    height: 28px;
+    width: 148px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #666666;
+    padding: 0px 5px;
+    -moz-border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #D3D3D3;
+}
+#centerPanel .config .c_fbar .okbtn
+{
+	position: absolute;
+    top: 0px;
+    right: 4px;
+    height: 28px;
+    width: 50px;
+    background-color: #408DD8;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 28px;
+    cursor: pointer;
+}
+#centerPanel .config .c_fbar .okbtn:hover
+{
+    background-color:#0076d6;
+}
+#centerPanel .config .t_nav {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 30px;
+    right: 0px;
+}
+#centerPanel .config .t_nav ul{
+	position: absolute;
+    padding: 0px;
+    margin: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #F0F0F0;
+}
+#centerPanel .config .t_nav li{
+	float: left;
+	margin-left:1px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+    text-shadow: none;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 30px;
+    width: 103px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+#centerPanel .config .t_nav ul li.active{
+	border-top: 2px solid #0076D6;
+    background-color: #FFFFFF;
+}
+#centerPanel .config .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -140px;
+    width: 24px;
+    height: 280px;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 15pt;
+    color: #A9A9A9;
+}
+#centerPanel .config .t_panel {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+}
+#centerPanel .config .t_check {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 51px;
+    overflow:auto;
+    padding: 5px !important;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-bottom: 1px solid #D3D3D3;
+}
+#centerPanel .config .t_check .item {
+    position:relative;
+    height: 20px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+#centerPanel .config .t_custom {
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    overflow:auto;
+    padding: 5px !important;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+#centerPanel .config .t_conf {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 200px;
+    overflow: auto;
+    padding: 5px !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #D3D3D3;
+}
+#centerPanel .config .b_conf {
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    padding: 5px !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#centerPanel .config .b_conf table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+#centerPanel .config .b_conf table th
+{
+    font-size: 14px;
+    padding: 5px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 0px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#centerPanel .config .b_conf table td
+{
+    padding: 5px;
+    color: #333;
+    font-size: 14px;
+    vertical-align: middle;
+    line-height: 20px;
+    border: 1px solid #ddd;
+}
+#centerPanel .config .b_conf table td .ddl
+{
+	position: relative;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #666666;
+    width: 90px;
+    -moz-border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #D3D3D3;
+}
+#centerPanel .switch_l {
+    position: absolute;
+    top: 50%;
+    left: 228px;
+    height: 36px;
+    width: 12px;
+    line-height: 32px;
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    margin-top: -18px;
+    cursor:pointer;
+    z-index: 9999;
+    background-color: #408DD8;
+    border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px
+}
+#centerPanel .switch_r {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    height: 36px;
+    width: 12px;
+    line-height: 32px;
+    color: #FFFFFF;
+    font-size: 9px;
+    text-align: center;
+    margin-top: -18px;
+    cursor:pointer;
+    z-index: 9999;
+    background-color: #408DD8;
+    border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px
+}
+#centerPanel .switch_l:hover {
+    background-color: #0076D6;
+}
+#centerPanel .switch_r:hover {
+    background-color: #0076D6;
+}
+@font-face 
+{
+    font-family: 'led-digital';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Led/led.eot');
+	src: url('../font/Led/led.eot?#iefix') format('embedded-opentype'),
+	     url('../font/Led/led.woff') format('woff'),
+	     url('../font/Led/led.ttf') format('truetype');
+}
+@font-face 
+{
+    font-family: 'BebasNeue';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/BebasNeue/BebasNeue.otf');
+}
+@font-face {
+  font-family: 'pingFangSC-Medium';
+  src: url('../font/PingFang/PingFang Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'pingFangSC-Light';
+  src: url('../font/PingFang/PingFang Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'pingFangSC-Regular';
+  src: url('../font/PingFang/pingFangRegular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'LiquidCrystal';
+  src: url('../font/LiquidCrystal/LiquidCrystal.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Helvetica';
+  src: url('../font/Helvetica/Helvetica.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

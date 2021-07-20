@@ -1,0 +1,1110 @@
+[
+ {
+"F_EntityID": "577446824207",
+"F_EntityName": "办公楼",
+ "code":"B_001",
+ "data": [
+ {
+"F_PropertyID": "530707237477",
+"F_PropertyName": "建筑编码",
+"F_PropertyIdentifier": "IdentifyCode",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "B_001",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577271792793",
+"F_PropertyName": "高校建筑分类",
+"F_PropertyIdentifier": "BuildingCategory",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237603",
+"F_PropertyName": "建设年代",
+"F_PropertyIdentifier": "BuildYear",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "年",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237650",
+"F_PropertyName": "建设朝向",
+"F_PropertyIdentifier": "BuildDirection",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237680",
+"F_PropertyName": "地上层数",
+"F_PropertyIdentifier": "UpFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237710",
+"F_PropertyName": "地下层数",
+"F_PropertyIdentifier": "DownFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237540",
+"F_PropertyName": "坐标 经度",
+"F_PropertyIdentifier": "BuildLong",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "832",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237570",
+"F_PropertyName": "坐标 纬度",
+"F_PropertyIdentifier": "BuildLat",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "838",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237743",
+"F_PropertyName": "体型系数",
+"F_PropertyIdentifier": "BodyCoef",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237960",
+"F_PropertyName": "建筑地址",
+"F_PropertyIdentifier": "BuildAddress",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238260",
+"F_PropertyName": "能耗监测状态",
+"F_PropertyIdentifier": "MonitorStatus",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238307",
+"F_PropertyName": "开始监测日期",
+"F_PropertyIdentifier": "MonitorDate",
+"F_PropertyTypeID": "3",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "2016 08 30",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238463",
+"F_PropertyName": "建筑设计单位",
+"F_PropertyIdentifier": "BuildDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238497",
+"F_PropertyName": "建筑施工单位",
+"F_PropertyIdentifier": "BuildConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238527",
+"F_PropertyName": "监测设计单位",
+"F_PropertyIdentifier": "MonitorDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238557",
+"F_PropertyName": "监测实施单位",
+"F_PropertyIdentifier": "MonitorConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237993",
+"F_PropertyName": "建筑空调系统",
+"F_PropertyIdentifier": "AirType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238023",
+"F_PropertyName": "建筑采暖系统",
+"F_PropertyIdentifier": "HeatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238057",
+"F_PropertyName": "建筑结构形式",
+"F_PropertyIdentifier": "StruType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238087",
+"F_PropertyName": "建筑外墙材料",
+"F_PropertyIdentifier": "WallMatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238133",
+"F_PropertyName": "建筑外墙保温",
+"F_PropertyIdentifier": "WallWarmType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238163",
+"F_PropertyName": "建筑外窗类型",
+"F_PropertyIdentifier": "WallWinType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238197",
+"F_PropertyName": "建筑玻璃类型",
+"F_PropertyIdentifier": "GlassType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238227",
+"F_PropertyName": "窗框材料类型",
+"F_PropertyIdentifier": "WinFrameType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238367",
+"F_PropertyName": "常驻人员数",
+"F_PropertyIdentifier": "WorkingNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "595000405423",
+"F_PropertyName": "用能人数",
+"F_PropertyIdentifier": "UserNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "123",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577229780753",
+"F_PropertyName": "建筑面积",
+"F_PropertyIdentifier": "BuildingArea",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "㎡",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "3456",
+"F_PropertyText": ""
+}
+]
+},
+ {
+"F_EntityID": "577446841273",
+"F_EntityName": "第一教学楼",
+ "code":"B_002",
+ "data": [
+ {
+"F_PropertyID": "530707237477",
+"F_PropertyName": "建筑编码",
+"F_PropertyIdentifier": "IdentifyCode",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "B_002",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577271792793",
+"F_PropertyName": "高校建筑分类",
+"F_PropertyIdentifier": "BuildingCategory",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237603",
+"F_PropertyName": "建设年代",
+"F_PropertyIdentifier": "BuildYear",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "年",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237650",
+"F_PropertyName": "建设朝向",
+"F_PropertyIdentifier": "BuildDirection",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237680",
+"F_PropertyName": "地上层数",
+"F_PropertyIdentifier": "UpFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237710",
+"F_PropertyName": "地下层数",
+"F_PropertyIdentifier": "DownFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237540",
+"F_PropertyName": "坐标 经度",
+"F_PropertyIdentifier": "BuildLong",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "1077",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237570",
+"F_PropertyName": "坐标 纬度",
+"F_PropertyIdentifier": "BuildLat",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "724",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237743",
+"F_PropertyName": "体型系数",
+"F_PropertyIdentifier": "BodyCoef",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237960",
+"F_PropertyName": "建筑地址",
+"F_PropertyIdentifier": "BuildAddress",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238260",
+"F_PropertyName": "能耗监测状态",
+"F_PropertyIdentifier": "MonitorStatus",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238307",
+"F_PropertyName": "开始监测日期",
+"F_PropertyIdentifier": "MonitorDate",
+"F_PropertyTypeID": "3",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "2016 08 30",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238463",
+"F_PropertyName": "建筑设计单位",
+"F_PropertyIdentifier": "BuildDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238497",
+"F_PropertyName": "建筑施工单位",
+"F_PropertyIdentifier": "BuildConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238527",
+"F_PropertyName": "监测设计单位",
+"F_PropertyIdentifier": "MonitorDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238557",
+"F_PropertyName": "监测实施单位",
+"F_PropertyIdentifier": "MonitorConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237993",
+"F_PropertyName": "建筑空调系统",
+"F_PropertyIdentifier": "AirType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238023",
+"F_PropertyName": "建筑采暖系统",
+"F_PropertyIdentifier": "HeatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238057",
+"F_PropertyName": "建筑结构形式",
+"F_PropertyIdentifier": "StruType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238087",
+"F_PropertyName": "建筑外墙材料",
+"F_PropertyIdentifier": "WallMatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238133",
+"F_PropertyName": "建筑外墙保温",
+"F_PropertyIdentifier": "WallWarmType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238163",
+"F_PropertyName": "建筑外窗类型",
+"F_PropertyIdentifier": "WallWinType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238197",
+"F_PropertyName": "建筑玻璃类型",
+"F_PropertyIdentifier": "GlassType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238227",
+"F_PropertyName": "窗框材料类型",
+"F_PropertyIdentifier": "WinFrameType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238367",
+"F_PropertyName": "常驻人员数",
+"F_PropertyIdentifier": "WorkingNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "595000405423",
+"F_PropertyName": "用能人数",
+"F_PropertyIdentifier": "UserNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "20000",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577229780753",
+"F_PropertyName": "建筑面积",
+"F_PropertyIdentifier": "BuildingArea",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "㎡",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "12000",
+"F_PropertyText": ""
+}
+]
+},
+ {
+"F_EntityID": "577446849553",
+"F_EntityName": "第二教学楼",
+ "code":"B_003",
+ "data": [
+ {
+"F_PropertyID": "530707237477",
+"F_PropertyName": "建筑编码",
+"F_PropertyIdentifier": "IdentifyCode",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "B_003",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577271792793",
+"F_PropertyName": "高校建筑分类",
+"F_PropertyIdentifier": "BuildingCategory",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237603",
+"F_PropertyName": "建设年代",
+"F_PropertyIdentifier": "BuildYear",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "年",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237650",
+"F_PropertyName": "建设朝向",
+"F_PropertyIdentifier": "BuildDirection",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237680",
+"F_PropertyName": "地上层数",
+"F_PropertyIdentifier": "UpFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237710",
+"F_PropertyName": "地下层数",
+"F_PropertyIdentifier": "DownFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237540",
+"F_PropertyName": "坐标 经度",
+"F_PropertyIdentifier": "BuildLong",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "1094",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237570",
+"F_PropertyName": "坐标 纬度",
+"F_PropertyIdentifier": "BuildLat",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "690",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237743",
+"F_PropertyName": "体型系数",
+"F_PropertyIdentifier": "BodyCoef",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237960",
+"F_PropertyName": "建筑地址",
+"F_PropertyIdentifier": "BuildAddress",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238260",
+"F_PropertyName": "能耗监测状态",
+"F_PropertyIdentifier": "MonitorStatus",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238307",
+"F_PropertyName": "开始监测日期",
+"F_PropertyIdentifier": "MonitorDate",
+"F_PropertyTypeID": "3",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "2016 08 30",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238463",
+"F_PropertyName": "建筑设计单位",
+"F_PropertyIdentifier": "BuildDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238497",
+"F_PropertyName": "建筑施工单位",
+"F_PropertyIdentifier": "BuildConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238527",
+"F_PropertyName": "监测设计单位",
+"F_PropertyIdentifier": "MonitorDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238557",
+"F_PropertyName": "监测实施单位",
+"F_PropertyIdentifier": "MonitorConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237993",
+"F_PropertyName": "建筑空调系统",
+"F_PropertyIdentifier": "AirType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238023",
+"F_PropertyName": "建筑采暖系统",
+"F_PropertyIdentifier": "HeatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238057",
+"F_PropertyName": "建筑结构形式",
+"F_PropertyIdentifier": "StruType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238087",
+"F_PropertyName": "建筑外墙材料",
+"F_PropertyIdentifier": "WallMatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238133",
+"F_PropertyName": "建筑外墙保温",
+"F_PropertyIdentifier": "WallWarmType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238163",
+"F_PropertyName": "建筑外窗类型",
+"F_PropertyIdentifier": "WallWinType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238197",
+"F_PropertyName": "建筑玻璃类型",
+"F_PropertyIdentifier": "GlassType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238227",
+"F_PropertyName": "窗框材料类型",
+"F_PropertyIdentifier": "WinFrameType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238367",
+"F_PropertyName": "常驻人员数",
+"F_PropertyIdentifier": "WorkingNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "595000405423",
+"F_PropertyName": "用能人数",
+"F_PropertyIdentifier": "UserNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577229780753",
+"F_PropertyName": "建筑面积",
+"F_PropertyIdentifier": "BuildingArea",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "㎡",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+}
+]
+},
+ {
+"F_EntityID": "577446977830",
+"F_EntityName": "1#宿舍楼",
+ "code":"B_004",
+ "data": [
+ {
+"F_PropertyID": "530707237477",
+"F_PropertyName": "建筑编码",
+"F_PropertyIdentifier": "IdentifyCode",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "B_004",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577271792793",
+"F_PropertyName": "高校建筑分类",
+"F_PropertyIdentifier": "BuildingCategory",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237603",
+"F_PropertyName": "建设年代",
+"F_PropertyIdentifier": "BuildYear",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "年",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237650",
+"F_PropertyName": "建设朝向",
+"F_PropertyIdentifier": "BuildDirection",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237680",
+"F_PropertyName": "地上层数",
+"F_PropertyIdentifier": "UpFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237710",
+"F_PropertyName": "地下层数",
+"F_PropertyIdentifier": "DownFloor",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "层",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237540",
+"F_PropertyName": "坐标 经度",
+"F_PropertyIdentifier": "BuildLong",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "1107",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237570",
+"F_PropertyName": "坐标 纬度",
+"F_PropertyIdentifier": "BuildLat",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "度",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "663",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237743",
+"F_PropertyName": "体型系数",
+"F_PropertyIdentifier": "BodyCoef",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237960",
+"F_PropertyName": "建筑地址",
+"F_PropertyIdentifier": "BuildAddress",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238260",
+"F_PropertyName": "能耗监测状态",
+"F_PropertyIdentifier": "MonitorStatus",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238307",
+"F_PropertyName": "开始监测日期",
+"F_PropertyIdentifier": "MonitorDate",
+"F_PropertyTypeID": "3",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "2016 08 30",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238463",
+"F_PropertyName": "建筑设计单位",
+"F_PropertyIdentifier": "BuildDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238497",
+"F_PropertyName": "建筑施工单位",
+"F_PropertyIdentifier": "BuildConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238527",
+"F_PropertyName": "监测设计单位",
+"F_PropertyIdentifier": "MonitorDesignUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238557",
+"F_PropertyName": "监测实施单位",
+"F_PropertyIdentifier": "MonitorConstructUnit",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707237993",
+"F_PropertyName": "建筑空调系统",
+"F_PropertyIdentifier": "AirType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238023",
+"F_PropertyName": "建筑采暖系统",
+"F_PropertyIdentifier": "HeatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238057",
+"F_PropertyName": "建筑结构形式",
+"F_PropertyIdentifier": "StruType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238087",
+"F_PropertyName": "建筑外墙材料",
+"F_PropertyIdentifier": "WallMatType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238133",
+"F_PropertyName": "建筑外墙保温",
+"F_PropertyIdentifier": "WallWarmType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238163",
+"F_PropertyName": "建筑外窗类型",
+"F_PropertyIdentifier": "WallWinType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238197",
+"F_PropertyName": "建筑玻璃类型",
+"F_PropertyIdentifier": "GlassType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238227",
+"F_PropertyName": "窗框材料类型",
+"F_PropertyIdentifier": "WinFrameType",
+"F_PropertyTypeID": "1",
+"F_PropertyUnit": "",
+"F_GroupTypeID": "A",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "530707238367",
+"F_PropertyName": "常驻人员数",
+"F_PropertyIdentifier": "WorkingNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "595000405423",
+"F_PropertyName": "用能人数",
+"F_PropertyIdentifier": "UserNum",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "个",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+},
+ {
+"F_PropertyID": "577229780753",
+"F_PropertyName": "建筑面积",
+"F_PropertyIdentifier": "BuildingArea",
+"F_PropertyTypeID": "2",
+"F_PropertyUnit": "㎡",
+"F_GroupTypeID": "B",
+"F_PropertyValue": "",
+"F_PropertyText": ""
+}
+]
+}
+]

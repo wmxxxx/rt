@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css">
+	<link type="text/css" rel="stylesheet" href="../../plugin_share_monitor/index.css">
+	<link type="text/css" rel="stylesheet" href="monitor.css">
+	<title>实时监测配置</title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="monitor.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="sidebar">
+			<h2>系统列表</h2>
+			<ul></ul>
+		</div>
+		<div class="content">
+			<div class="layui-card">
+				<div class="layui-card-header">
+					<h3>分组视图配置</h3>
+					<div>
+						<button type="button" class="layui-btn layui-btn-xs config_pop">清空配置</button>
+						<button type="button" class="layui-btn layui-btn-xs access_pop">接入设备关联</button>
+						<button type="button" class="layui-btn layui-btn-xs group_pop">修改</button>
+					</div>
+				</div>
+				<div class="layui-card-body" id="group_main"></div>
+			</div>
+			<div class="layui-card">
+				<div class="layui-card-header">
+					<h3>节点视图配置</h3>
+					<button type="button" class="layui-btn layui-btn-xs node_pop">修改</button>
+				</div>
+				<div class="layui-card-body" id="node_main"></div>
+			</div>
+			<div class="layui-card">
+				<div class="layui-card-header">
+					<h3>设备视图配置</h3>
+					<button type="button" class="layui-btn layui-btn-xs device_pop">修改</button>
+				</div>
+				<div class="layui-card-body" id="device_main"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/html" id="access_open_tpl">
+	<div class="group">
+		<div class="layui-form layui-form-item">
+			<div class="layui-input-inline" style="width:100%">
+				<select lay-filter="groupSel">
+					<option value="">管理树</option>
+					{{# d.forEach(ele => {}}
+						{{# if(ele.F_EntityTreeType == 1){}}
+							<option value={{ele.F_EntityTreeNo}}>{{ele.F_EntityTreeName}}</option>
+						{{# }}}
+					{{# });}}
+				</select>
+			</div>
+		</div>
+		<div id="groupTree" class="ztree"></div>
+	</div>
+	<div class="device">
+		<div class="layui-form layui-form-item">
+			<div class="layui-input-inline" style="width:100%">
+				<select lay-filter="deviceSel">
+					<option value="">设备树</option>
+					{{# d.forEach(ele => {}}
+						{{# if(ele.F_EntityTreeType == 4){}}
+							<option value={{ele.F_EntityTreeNo}}>{{ele.F_EntityTreeName}}</option>
+						{{# }}}
+					{{# });}}
+				</select>
+			</div>
+		</div>
+		<div id="deviceTree" class="ztree"></div>
+	</div>
+</script>
+<script type="text/html" id="group_tpl">
+	{{# if(d.config.group.length){ }}
+		<div class="x-block show">
+			<h2>样例</h2>
+			<div style="background-image:url(../../plugin_share_monitor/images/3.png)">
+				{{# d.config.group.forEach((ele,i) => {}}
+					<div>
+						<p style="color:{{ele.color}}"><span class="b-attr{{i+1}}" style="font-size:24px;">0</span>{{ele.unit}}</p>
+						<p>{{ele.text}}</p>
+					</div>
+				{{# });}}
+			</div>
+			<ul>
+				<li>在线数量</li>
+				<li>关联策略</li>
+			</ul>
+		</div>
+	{{# }}}
+</script>
+<script type="text/html" id="group_open_tpl">
+	{{# d.config.group.forEach(ele => {}}
+		<div class="layui-form add_tpl">
+			<div class="layui-form-item check">
+				<div class="layui-input-inline" style="width: 100px;">
+					<input type="text" placeholder="名称" autocomplete="off" class="layui-input" value={{ele.text}}>
+				</div>
+				<div class="layui-input-inline" style="width: 100px;">
+					<input type="text" placeholder="单位" autocomplete="off" class="layui-input" value={{ele.unit}}>
+				</div>
+				<div class="layui-input-inline" style="width: 100px;">
+					<input type="text" placeholder="颜色" autocomplete="off" class="layui-input" disabled value={{ele.color}}>
+				</div>
+				<div class="layui-input-inline" style="left:-11px;width:auto;">
+					<div class="colorpicker"></div>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".add_tpl").remove();></i>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i> 
+				</div>
+			</div>
+			{{# for(var tpl in ele.tpl){}}
+				{{# if(d.template[tpl]){}}
+					{{# ele.tpl[tpl].forEach(tele => {}}
+						<div class="layui-form-item">
+							<div class="layui-input-inline oper_temp" style="width: 120px">
+								<select lay-filter="tempSel">
+									<option value="">设备模板</option>
+									{{# for(var dtpl in d.template){}}
+										<option value={{d.template[dtpl].F_TemplateLabel}} {{tpl == dtpl ? 'selected' : ''}}>{{d.template[dtpl].F_TemplateName}}</option>
+									{{# }}}
+								</select>
+							</div>
+							<div class="layui-input-inline oper_key" style="width: 100px;">
+								<select lay-filter="keySel">
+									<option value="">模板参数</option>
+									{{# d.template[tpl].value.forEach(vele => {}}
+										<option value={{vele.F_ValueLabel}} {{vele.F_ValueLabel == tele.attr ? 'selected' : ''}} kv={{vele.F_KV}}>{{vele.F_ValueName}}</option>
+									{{# });}}
+								</select>
+							</div>
+							<div class="layui-input-inline oper_term" style="width: 100px;">
+								<select>
+									<option value="==" {{tele.check == "==" ? 'selected' : ''}}>等于</option>
+									<option value=">" {{tele.check == ">" ? 'selected' : ''}}>大于</option>
+									<option value="<" {{tele.check == "<" ? 'selected' : ''}}>小于</option>
+									<option value="!=" {{tele.check == "!=" ? 'selected' : ''}}>不等于</option>
+								</select>
+							</div>
+							<div class="layui-input-inline oper_val" style="width: 100px;">
+								{{# d.template[tpl].value.forEach(vele => {}}
+									{{# if(vele.F_ValueLabel == tele.attr){}}
+										{{# if(vele.F_KV){}}
+											<select>
+												{{# vele.F_KV.split("-").forEach(kele => {}}
+													<option value={{kele.split(":")[0]}} {{tele.judge == kele.split(":")[0] ? 'selected' : ''}}>{{kele.split(":")[1]}}</option>
+												{{# });}}
+											</select>
+										{{# }else{}}
+											<input type="text" placeholder="判定值" autocomplete="off" class="layui-input" value={{tele.judge}}>
+										{{# }}}
+									{{# }}}
+								{{# });}}
+							</div>
+							<div class="layui-input-inline oper_pos" style="width: 100px;">
+								<select>
+									<option value="">运算符</option>
+									<option value="&&" {{tele.pos == "&&" ? 'selected' : ''}}>与</option>
+									<option value="||" {{tele.pos == "||" ? 'selected' : ''}}>或</option>
+								</select>
+							</div>
+							<div class="layui-input-inline" style="width:auto;" onclick=$(this).parent().remove();>
+								<i class="layui-icon layui-icon-delete" style="font-size: 33px;"></i>
+							</div>
+						</div>
+					{{# });}}
+				{{# }}}
+			{{# }}}
+		</div>
+	{{# });}}
+</script>
+<script type="text/html" id="group_add">
+	<div class="layui-form add_tpl">
+		<div class="layui-form-item check">
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="text" placeholder="名称" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="text" placeholder="单位" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-input-inline" style="width: 100px;">
+				<input type="text" placeholder="颜色" autocomplete="off" class="layui-input" disabled>
+			</div>
+			<div class="layui-input-inline" style="left:-11px;width:auto;">
+				<div class="colorpicker"></div>
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".add_tpl").remove();></i>
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i> 
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="group_oper">
+	<div class="layui-form-item">
+		<div class="layui-input-inline oper_temp" style="width: 120px;">
+			<select lay-filter="tempSel">
+				<option value="">设备模板</option>
+				{{# for(var tpl in d.template){}}
+					<option value={{d.template[tpl].F_TemplateLabel}}>{{d.template[tpl].F_TemplateName}}</option>
+				{{# }}}
+			</select>
+		</div>
+		<div class="layui-input-inline oper_key" style="width: 100px;">
+			<select lay-filter="keySel"></select>
+		</div>
+		<div class="layui-input-inline oper_term" style="width: 100px;">
+			<select>
+				<option value="==">等于</option>
+				<option value=">">大于</option>
+				<option value="<">小于</option>
+				<option value="!=">不等于</option>
+			</select>
+		</div>
+		<div class="layui-input-inline oper_val" style="width: 100px;">
+			<input type="text" placeholder="判定值" autocomplete="off" class="layui-input">
+		</div>
+		<div class="layui-input-inline oper_pos" style="width: 100px;">
+			<select>
+				<option value="">运算符</option>
+				<option value="&&">与</option>
+				<option value="||">或</option>
+			</select>
+		</div>
+		<div class="layui-input-inline" style="width:auto;" onclick=$(this).parent().remove();>
+			<i class="layui-icon layui-icon-delete" style="font-size: 33px;"></i>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="node_tpl">
+	{{# d.config.node.forEach(ele => {}}
+		<div class="layui-tab layui-tab-card" style="margin-top:15px;display:inline-block;">
+			<ul class="layui-tab-title">
+				<li class="layui-this">{{ele.name}}</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show" style="overflow:hidden">
+					<ul class="tips">
+						{{# ele.tips.forEach(tele => {}}
+							<li><span style="background-color:{{tele.color}};"></span>{{tele.text}}</li>
+						{{# });}}
+					</ul>
+					{{# $.each(ele.tpl,function(i,k){}}
+						<div class="x-block small show">
+							<h2>{{i}}</h2>
+							<div style="background-image:url(../../plugin_share_monitor/images/{{k.icon}})">
+								<div>
+									<p>{{k.attr1}}</p>
+								</div>
+							</div>
+							<ul>
+								<li>{{k.attr2}}</li>
+								<li>{{k.attr3}}</li>
+							</ul>
+						</div>
+					{{# });}}
+				</div>
+			</div>
+		</div>
+	{{# });}}
+</script>
+<script type="text/html" id="node_open_tpl">
+	{{# d.config.node.forEach(ele => {}}
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<div class="layui-input-inline" style="width:100px;">
+					<input type="text" placeholder="名称" autocomplete="off" class="layui-input tab_name" value={{ele.name}}>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<button class="layui-btn addState">添加状态</button> 
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<button class="layui-btn addDevice">添加设备</button> 
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form").remove();></i>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<input type="checkbox" title="筛选" value="screen" {{ele.screen ? 'checked' : ''}}>
+				<input type="checkbox" title="批量控制" value="control" {{ele.control ? 'checked' : ''}}>
+				<input type="checkbox" title="无设备隐藏" value="hide" {{ele.hide ? 'checked' : ''}}>
+				<input type="checkbox" title="分组视图" value="group" {{ele.group ? 'checked' : ''}}>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend style="font-size:14px;">状态</legend>
+				<div class="layui-field-box toState ">
+					{{# ele.tips.forEach(iele => {}}
+						<div class="add_tpl">
+							<div class="layui-form-item check">
+								<div class="layui-inline">
+									<div class="layui-input-inline" style="width: 100px;">
+										<input type="text" placeholder="描述" autocomplete="off" class="layui-input" value={{iele.text}}>
+									</div>
+									<div class="layui-input-inline" style="width: 100px;">
+										<input type="text" placeholder="颜色" autocomplete="off" class="layui-input" value={{iele.color}} disabled>
+									</div>
+									<div class="layui-input-inline" style="left:-11px;width:auto;">
+										<div class="colorpicker"></div>
+									</div>
+									<div class="layui-input-inline" style="width:auto;">
+										<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".add_tpl").remove();></i>
+									</div>
+									<div class="layui-input-inline" style="width:auto;">
+										<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>
+									</div>
+								</div>
+							</div>
+							{{# for(var tpl in iele.tpl){}}
+								{{# if(d.template[tpl]){}}
+									{{# iele.tpl[tpl].forEach(tele => {}}
+										<div class="layui-form-item">
+											<div class="layui-input-inline oper_temp" style="width: 120px">
+												<select lay-filter="tempSel">
+													<option value="">设备模板</option>
+													{{# for(var dtpl in d.template){}}
+														<option value={{d.template[dtpl].F_TemplateLabel}} {{tpl == dtpl ? 'selected' : ''}}>{{d.template[dtpl].F_TemplateName}}</option>
+													{{# }}}
+												</select>
+											</div>
+											<div class="layui-input-inline oper_key" style="width: 100px;">
+												<select lay-filter="keySel">
+													<option value="">模板参数</option>
+													{{# d.template[tpl].value.forEach(vele => {}}
+														<option value={{vele.F_ValueLabel}} {{vele.F_ValueLabel == tele.attr ? 'selected' : ''}} kv={{vele.F_KV}}>{{vele.F_ValueName}}</option>
+													{{# });}}
+												</select>
+											</div>
+											<div class="layui-input-inline oper_term" style="width: 100px;">
+												<select>
+													<option value="==" {{tele.check == "==" ? 'selected' : ''}}>等于</option>
+													<option value=">" {{tele.check == ">" ? 'selected' : ''}}>大于</option>
+													<option value="<" {{tele.check == "<" ? 'selected' : ''}}>小于</option>
+													<option value="!=" {{tele.check == "!=" ? 'selected' : ''}}>不等于</option>
+												</select>
+											</div>
+											<div class="layui-input-inline oper_val" style="width: 100px;">
+												{{# d.template[tpl].value.forEach(vele => {}}
+													{{# if(vele.F_ValueLabel == tele.attr){}}
+														{{# if(vele.F_KV){}}
+															<select>
+																{{# vele.F_KV.split("-").forEach(kele => {}}
+																	<option value={{kele.split(":")[0]}} {{tele.judge == kele.split(":")[0] ? 'selected' : ''}}>{{kele.split(":")[1]}}</option>
+																{{# });}}
+															</select>
+														{{# }else{}}
+															<input type="text" placeholder="判定值" autocomplete="off" class="layui-input" value={{tele.judge}}>
+														{{# }}}
+													{{# }}}
+												{{# });}}
+											</div>
+											<div class="layui-input-inline oper_pos" style="width: 100px;">
+												<select>
+													<option value="">运算符</option>
+													<option value="&&" {{tele.pos == "&&" ? 'selected' : ''}}>与</option>
+													<option value="||" {{tele.pos == "||" ? 'selected' : ''}}>或</option>
+												</select>
+											</div>
+											<div class="layui-input-inline" style="width:auto;" onclick=$(this).parent().remove();>
+												<i class="layui-icon layui-icon-delete" style="font-size: 33px;"></i>
+											</div>
+										</div>
+									{{# });}}
+								{{# }}}
+							{{# }}}
+						</div>
+					{{# });}}
+				</div>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend style="font-size:14px;">设备</legend>
+				<div class="layui-field-box toDevice">
+					{{# $.each(ele.tpl,function(i,k){}}
+						<div class="layui-form-item">
+							<div class="layui-input-inline oper_temp" style="width: 100px;">
+								<select lay-filter="tplSel">
+									<option value="">设备模板</option>
+									{{# for(var tpl in d.template){}}
+										<option value={{d.template[tpl].F_TemplateLabel}} {{i == tpl ? 'selected' : ''}}>{{d.template[tpl].F_TemplateName}}</option>
+									{{# }}}
+								</select>
+							</div>
+							<div class="layui-input-inline oper_icon" style="width: 100px;">
+								<input type="text" placeholder="图标" autocomplete="off" class="layui-input" value={{k.icon}}>
+							</div>
+							<div class="layui-input-inline oper_key" style="width: 100px;">
+								<select lay-filter="keySel">
+									{{# if(d.template[i]){}}
+										{{# d.template[i].value.forEach(tele => {}}
+											<option value={{tele.F_ValueLabel}} {{tele.F_ValueLabel == k.attr1 ? 'selected' : ''}}>{{tele.F_ValueName}}</option>
+										{{# });}}
+									{{# }}}
+								</select>
+							</div>
+							<div class="layui-input-inline oper_key" style="width: 100px;">
+								<select lay-filter="keySel">
+									{{# if(d.template[i]){}}
+										{{# d.template[i].value.forEach(tele => {}}
+											<option value={{tele.F_ValueLabel}} {{tele.F_ValueLabel == k.attr2 ? 'selected' : ''}}>{{tele.F_ValueName}}</option>
+										{{# });}}
+									{{# }}}
+								</select>
+							</div>
+							<div class="layui-input-inline oper_key" style="width: 100px;">
+								<select lay-filter="keySel">
+									{{# if(d.template[i]){}}
+										{{# d.template[i].value.forEach(tele => {}}
+											<option value={{tele.F_ValueLabel}} {{tele.F_ValueLabel == k.attr3 ? 'selected' : ''}}>{{tele.F_ValueName}}</option>
+										{{# });}}
+									{{# }}}
+								</select>
+							</div>
+							<div class="layui-input-inline" style="width:auto;">
+								<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form-item").remove();></i>
+							</div>
+						</div>
+					{{# });}}
+				</div>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend style="font-size:14px;">批量控制</legend>
+				<div class="layui-field-box toBatch layui-form-item" style="max-width:500px;">
+					{{# d.command.forEach(cele => {}}
+						<input type="checkbox" title={{cele.F_name}} value={{cele.F_id}} {{ele.batch.includes(cele.F_id) ? 'checked' : ''}}>
+					{{# });}}
+				</div>
+			</fieldset>
+		</div>
+	{{# });}}
+</script>
+<script type="text/html" id="node_add">
+	<div class="layui-form">
+		<div class="layui-form-item">
+			<div class="layui-input-inline" style="width:100px;">
+				<input type="text" placeholder="名称" autocomplete="off" class="layui-input tab_name">
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<button class="layui-btn addState">添加状态</button> 
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<button class="layui-btn addDevice">添加设备</button> 
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form").remove();></i>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<input type="checkbox" title="筛选" value="screen">
+			<input type="checkbox" title="批量控制" value="control">
+			<input type="checkbox" title="无设备隐藏" value="hide">
+			<input type="checkbox" title="分组视图" value="group">
+		</div>
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend style="font-size:14px;">状态</legend>
+			<div class="layui-field-box toState "></div>
+		</fieldset>
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend style="font-size:14px;">设备</legend>
+			<div class="layui-field-box toDevice"></div>
+		</fieldset>
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend style="font-size:14px;">批量控制</legend>
+			<div class="layui-field-box toBatch layui-form-item" style="max-width:500px;">
+				{{# d.command.forEach(ele => {}}
+					<input type="checkbox" title={{ele.F_name}} value={{ele.F_id}}>
+				{{# });}}
+			</div>
+		</fieldset>
+	</div>
+</script>
+<script type="text/html" id="node_add_state">
+	<div class="add_tpl">
+		<div class="layui-form-item check">
+			<div class="layui-inline">
+				<div class="layui-input-inline" style="width: 100px;">
+					<input type="text" placeholder="描述" autocomplete="off" class="layui-input">
+				</div>
+				<div class="layui-input-inline" style="width: 100px;">
+					<input type="text" placeholder="颜色" autocomplete="off" class="layui-input" disabled>
+				</div>
+				<div class="layui-input-inline" style="left:-11px;width:auto;">
+					<div class="colorpicker"></div>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".add_tpl").remove();></i>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="node_add_device">
+	<div class="layui-form-item">
+		<div class="layui-input-inline oper_temp" style="width: 100px;">
+			<select lay-filter="tplSel">
+				<option value="">设备模板</option>
+				{{# for(var tpl in d.template){}}
+					<option value={{d.template[tpl].F_TemplateLabel}}>{{d.template[tpl].F_TemplateName}}</option>
+				{{# }}}
+			</select>
+		</div>
+		<div class="layui-input-inline oper_icon" style="width: 100px;">
+			<input type="text" placeholder="图标" autocomplete="off" class="layui-input">
+		</div>
+		<div class="layui-input-inline oper_key" style="width: 100px;">
+			<select lay-filter="keySel">
+				<option value="">属性1</option>
+			</select>
+		</div>
+		<div class="layui-input-inline oper_key" style="width: 100px;">
+			<select lay-filter="keySel">
+				<option value="">属性2</option>
+			</select>
+		</div>
+		<div class="layui-input-inline oper_key" style="width: 100px;">
+			<select lay-filter="keySel">
+				<option value="">属性3</option>
+			</select>
+		</div>
+		<div class="layui-input-inline" style="width:auto;">
+			<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form-item").remove();></i>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="device_tpl">
+	{{# $.each(d.config.device,function(inx,key){}}
+		{{# if(key.class == "p1"){}}
+			<div class="airPanel {{key.class}}">
+				<div class="aTop">
+					{{# if(key.attr1 != 0){}}
+						<div class="key1">
+							<p>{{key.attr1}}</p>
+						</div>
+					{{# }}}
+					{{# if(key.attr2 != 0){}}
+						<div class="key2">
+							<p>{{key.attr2}}</p>
+						</div>
+					{{# }}}
+					{{# if(key.attr3 != 0){}}
+						<div class="key3">
+							<div>
+								<p>{{key.attr3}}</p>
+							</div>
+						</div>
+					{{# }}}
+					{{# if(key.attr4 != 0){}}
+						<div class="key4">
+							<div>
+								<p>{{key.attr4}}</p>
+							</div>
+						</div>
+					{{# }}}
+					{{# if(key.attr5 != 0){}}
+						<div class="key5">
+							<p>{{key.attr5}}</p>
+						</div>
+					{{# }}}
+				</div>
+				<div class="aDown">
+					<span>{{inx}}</span>
+					<ul>
+						{{# key.btn.forEach(ele => {}}
+							<li style="background-image:url(../../plugin_share_monitor/device/images/{{key.class}}-{{ele.icon}})"></li>
+						{{# });}}
+					</ul>
+				</div>
+			</div>
+		{{# }}}
+		{{# if(key.class == "p2"){}}
+			<div class="airPanel {{key.class}}">
+				<div class="aTop">
+					{{# if(key.attr1 != 0){}}
+						<div class="key1">
+							<p>{{key.attr1}}</p>
+						</div>
+					{{# }}}
+					{{# if(key.attr2 != 0){}}
+						<div class="key2">
+							<p>{{key.attr2}}</p>
+						</div>
+					{{# }}}
+					{{# if(key.attr3 != 0){}}
+						<div class="key3">
+							<div>
+								<p>{{key.attr3}}</p>
+							</div>
+						</div>
+					{{# }}}
+					{{# if(key.attr4 != 0){}}
+						<div class="key4">
+							<div>
+								<p>{{key.attr4}}</p>
+							</div>
+						</div>
+					{{# }}}
+					{{# if(key.attr5 != 0){}}
+						<div class="key5">
+							<p>{{key.attr5}}</p>
+						</div>
+					{{# }}}
+					<div class="aDown">
+						<ul>
+							{{# key.btn.forEach(ele => {}}
+								<li style="background-image:url(../../plugin_share_monitor/device/images/{{key.class}}-{{ele.icon}})"></li>
+							{{# });}}
+						</ul>
+					</div>
+					<span class="name">{{inx}}</span>
+				</div>
+			</div>
+		{{# }}}
+		{{# if(key.class == "p3"){}}
+			<div class="airPanel {{key.class}}">
+				<h3>{{inx}}</h3>
+				<h4>命令：</h4>
+				<div>
+					{{# key.btn.forEach(ele => {}}
+						<div>{{ele.icon}}</div>
+					{{# });}}
+				</div>
+			</div>
+		{{# }}}
+	{{# });}}
+</script>
+<script type="text/html" id="device_open_tpl">
+	{{# $.each(d.config.device,function(i,k){}}
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<div class="layui-input-block" style="margin-left:0;">
+					<input type="checkbox" title="是否显示" {{k.show ? 'checked' : ''}}>
+					<input type="checkbox" title="运行状态" {{k.chart ? 'checked' : ''}}>
+					<input type="checkbox" title="用电日历" {{k.calendar ? 'checked' : ''}}>
+					<input type="checkbox" title="策略明细" {{k.strategy ? 'checked' : ''}}>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-inline oper_temp" style="width: 100px;">
+					<select lay-filter="tempSel">
+						<option value="">设备模板</option>
+						{{# for(var tpl in d.template){}}
+							<option value={{d.template[tpl].F_TemplateLabel}} {{i == tpl ? 'selected' : ''}}>{{d.template[tpl].F_TemplateName}}</option>
+						{{# }}}
+					</select>
+				</div>
+				<div class="layui-input-inline oper_class" style="width: 100px;">
+					<select lay-filter="panelSel">
+						<option value="p1" {{k.class == "p1" ? 'selected' : ''}}>全面屏</option>
+						<option value="p2" {{k.class == "p2" ? 'selected' : ''}}>液晶屏</option>
+						<option value="p3" {{k.class == "p3" ? 'selected' : ''}}>无面板</option>
+					</select>
+				</div>
+				<div class="layui-input-inline oper_ext" style="width: 250px;">
+					<input type="text" placeholder="参数名&状态名&状态值&动作&类名" autocomplete="off" class="layui-input" value={{k.ext}}>
+				</div>
+				<div class="layui-input-inline" style="width:auto;">
+					<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form").remove();></i>
+				</div>
+				<div class="layui-input-inline add_btn" style="width:auto;">
+					<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>  
+				</div>
+			</div>
+			<div class="layui-form-item attr" style="display:{{k.class == "p3" ? 'none' : 'block'}};">
+				<div class="layui-input-inline oper_key" style="width: 100px;">
+					<select>
+						<option value=0>不显示</option>
+						{{# if(d.template[i]){}}
+							{{# d.template[i].value.forEach(ele => {}}
+								<option value={{ele.F_ValueLabel}} {{ele.F_ValueLabel == k.attr1 ? 'selected' : ''}}>{{ele.F_ValueName}}</option>
+							{{# });}}
+						{{# }}}
+					</select>
+				</div>
+				<div class="layui-input-inline oper_key" style="width: 100px;">
+					<select>
+						<option value=0>不显示</option>
+						{{# if(d.template[i]){}}
+							{{# d.template[i].value.forEach(ele => {}}
+								<option value={{ele.F_ValueLabel}} {{ele.F_ValueLabel == k.attr2 ? 'selected' : ''}}>{{ele.F_ValueName}}</option>
+							{{# });}}
+						{{# }}}
+					</select>
+				</div>
+				<div class="layui-input-inline oper_key" style="width: 100px;">
+					<select>
+						<option value=0>不显示</option>
+						{{# if(d.template[i]){}}
+							{{# d.template[i].value.forEach(ele => {}}
+								<option value={{ele.F_ValueLabel}} {{ele.F_ValueLabel == k.attr3 ? 'selected' : ''}}>{{ele.F_ValueName}}</option>
+							{{# });}}
+						{{# }}}
+					</select>
+				</div>
+				<div class="layui-input-inline oper_key" style="width: 100px;">
+					<select>
+						<option value=0>不显示</option>
+						{{# if(d.template[i]){}}
+							{{# d.template[i].value.forEach(ele => {}}
+								<option value={{ele.F_ValueLabel}} {{ele.F_ValueLabel == k.attr4 ? 'selected' : ''}}>{{ele.F_ValueName}}</option>
+							{{# });}}
+						{{# }}}
+					</select>
+				</div>
+				<div class="layui-input-inline oper_key" style="width: 100px;">
+					<select>
+						<option value=0>不显示</option>
+						{{# if(d.template[i]){}}
+							{{# d.template[i].value.forEach(ele => {}}
+								<option value={{ele.F_ValueLabel}} {{ele.F_ValueLabel == k.attr5 ? 'selected' : ''}}>{{ele.F_ValueName}}</option>
+							{{# });}}
+						{{# }}}
+					</select>
+				</div>
+			</div>
+			{{# k.btn.forEach(ele => {}}
+				<div class="layui-form-item com">
+					<div class="layui-input-inline oper_icon" style="width: 100px;">
+						<input type="text" placeholder="图标" autocomplete="off" class="layui-input" value={{ele.icon}}>
+					</div>
+					<div class="comlist" style="float:left;">
+						{{# ele.com.forEach(mele => {}}
+							<div class="layui-input-inline oper_temp" style="width: 100px;">
+								<select lay-filter="comSel">
+									<option value="">选择命令</option>
+									{{# d.command.forEach(cele => {}}
+										<option value={{cele.F_id}} {{mele == cele.F_id ? 'selected' : ''}}>{{cele.F_name}}</option>
+									{{# });}}
+								</select>
+							</div>
+						{{#});}}
+					</div>
+					<div class="layui-input-inline add_com" style="width:auto;">
+						<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>
+					</div>
+					<div class="layui-input-inline" style="width:auto;">
+						<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".com").remove();></i>
+					</div>
+				</div>
+			{{#});}}
+		</div>
+	{{# });}}
+</script>
+<script type="text/html" id="device_add">
+	<div class="layui-form">
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="margin-left:0;">
+				<input type="checkbox" title="是否显示">
+				<input type="checkbox" title="运行状态">
+				<input type="checkbox" title="用电日历">
+				<input type="checkbox" title="策略明细">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-inline oper_temp" style="width: 100px;">
+				<select lay-filter="tempSel">
+					<option value="">设备模板</option>
+					{{# for(var tpl in d.template){}}
+						<option value={{d.template[tpl].F_TemplateLabel}}>{{d.template[tpl].F_TemplateName}}</option>
+					{{# }}}
+				</select>
+			</div>
+			<div class="layui-input-inline oper_class" style="width: 100px;">
+				<select lay-filter="panelSel">
+					<option value="p1">全面屏</option>
+					<option value="p2">液晶屏</option>
+					<option value="p3">无面板</option>
+				</select>
+			</div>
+			<div class="layui-input-inline oper_ext" style="width: 250px;">
+				<input type="text" placeholder="参数名&状态名&状态值&动作&类名" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-input-inline" style="width:auto;">
+				<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".layui-form").remove();></i>
+			</div>
+			<div class="layui-input-inline add_btn" style="width:auto;">
+				<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>  
+			</div>
+		</div>
+		<div class="layui-form-item attr">
+			<div class="layui-input-inline oper_key" style="width: 100px;">
+				<select>
+					<option value="">属性1</option>
+				</select>
+			</div>
+			<div class="layui-input-inline oper_key" style="width: 100px;">
+				<select>
+					<option value="">属性2</option>
+				</select>
+			</div>
+			<div class="layui-input-inline oper_key" style="width: 100px;">
+				<select>
+					<option value="">属性3</option>
+				</select>
+			</div>
+			<div class="layui-input-inline oper_key" style="width: 100px;">
+				<select>
+					<option value="">属性4</option>
+				</select>
+			</div>
+			<div class="layui-input-inline oper_key" style="width: 100px;">
+				<select>
+					<option value="">属性5</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="device_oper">
+	<div class="layui-form-item com">
+		<div class="layui-input-inline oper_icon" style="width: 100px;">
+			<input type="text" placeholder="图标" autocomplete="off" class="layui-input">
+		</div>
+		<div class="comlist" style="float:left;">
+			<div class="layui-input-inline oper_temp" style="width: 100px;">
+				<select lay-filter="comSel">
+					<option value="">选择命令</option>
+					{{# d.command.forEach(ele => {}}
+						<option value={{ele.F_id}}>{{ele.F_name}}</option>
+					{{# });}}
+				</select>
+			</div>
+		</div>
+		<div class="layui-input-inline add_com" style="width:auto;">
+			<i class="layui-icon layui-icon-add-circle" style="font-size:33px;"></i>
+		</div>
+		<div class="layui-input-inline type_rel" style="width:auto;">
+			<i class="layui-icon layui-icon-delete" style="font-size:33px;" onclick=$(this).parents(".com").remove();></i>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="device_com">
+	<div class="layui-input-inline oper_temp" style="width: 100px;">
+		<select lay-filter="comSel">
+			<option value="">选择命令</option>
+			{{# d.command.forEach(ele => {}}
+				<option value={{ele.F_id}}>{{ele.F_name}}</option>
+			{{# });}}
+		</select>
+	</div>
+</script>

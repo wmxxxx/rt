@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2019-02-28 13:41:52
+ * @version $Id$
+ */
+.water-m-panel{
+    background-image: url(/Resources/images/component/WaterPanel/tube.png);
+    background-size: 100% 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.water-m-panel .m-wrap{
+    position: relative;
+    margin: auto;
+    background-color: rgb(213, 214, 218);
+    background-image: url(/Resources/images/component/WaterPanel/bg.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    box-shadow: rgb(153, 153, 153) 0px 0px 6px;
+}
+.water-m-panel .m-hd{
+    margin: auto;
+    padding-top: 20px;
+    font-weight: normal;
+    color: rgb(84, 84, 84);
+    text-align: center;
+}
+.water-m-panel .m-bd{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: rgb(174, 202, 199);
+    padding: 5px 14px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: rgb(99, 99, 99) 0px 0px 10px inset;
+}
+.water-m-panel .m-data{
+    padding: 5px 0;
+}
+.m-data.InstFlux,
+.m-data.InstPressure {
+    width: 50%;
+    float: left;
+}
+.water-m-panel .d-name{
+    display: block;
+    font-size: 12px;
+}
+.water-m-panel .d-val{
+    font-family: led-digital;
+}
+.water-m-panel .m-ft {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+.water-m-panel .m-status{
+    margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+}

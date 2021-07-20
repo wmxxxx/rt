@@ -1,0 +1,113 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #EFF2F7;
+	font-family: 'pingFangSC-Medium';
+}
+body::after{
+	content: "v2.4";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: #00000033;
+}
+/*  */
+.warpper{
+	height: 100%;
+	padding: 30px 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.warpper .panel{
+	width: 330px;
+	height: 580px;
+	background: #fff;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #0000001a;
+	transform-origin: center;
+}
+.warpper .panel .title{
+	height: 60px;
+	border-bottom: 1px dashed #D0DCE480;
+	position: relative;
+	margin: 0 20px;
+}
+.warpper .panel .title h2{
+	color: #798CA0;
+	line-height: 60px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+.warpper .panel .title i{
+	font-size: 24px;
+	color: #00B9B4;
+	position: absolute;
+	top: 28px;
+	right: 10px;
+	cursor: pointer;
+}
+.warpper .panel .main{height: calc(100% - 130px);}
+.warpper .panel .main .sum{text-align: center;}
+.warpper .panel .main .sum h3{
+	height: 70px;
+	line-height: 70px;
+	font-size: 16px;
+}
+.warpper .panel .main .sum p{
+	font-size: 48px;
+	color: #00B9B4;
+}
+.warpper .panel .main .sum p::after{
+	content:'台';
+	font-size: 14px;
+}
+.warpper .panel .main .cont{text-align: center;}
+.warpper .panel .main .cont p{padding-top:15px;}
+.warpper .panel .main .cont div{
+	color: #00B9B4;
+	font-size: 32px;
+}
+.warpper .panel .main .cont span{position: relative;}
+.warpper .panel .main .cont .start::before,.warpper .panel .main .cont .end::before{
+	content: "起";
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	background: #E6EDF5;
+	font-size: 14px;
+	border-radius: 50%;
+	position: absolute;
+	top: 7px;
+	left: -40px;
+	color: #333;
+}
+.warpper .panel .main .cont .end::before{content: "止";}
+.warpper .panel .main .cont .img{
+	height: 205px;
+	margin: 0 70px;
+	background: no-repeat center;
+	background-size: 100% 80%;
+}
+.warpper .panel .main .tips{
+	padding: 20px 70px 0;
+	font-size: 12px;
+	color: #FA5D3A;
+}
+.warpper .panel .btn{
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+#nodeRel_open,#wsRel_open{padding: 0 !important;}

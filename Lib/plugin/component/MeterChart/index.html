@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>表具用量图</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="style.css" rel="stylesheet">
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="My97DatePicker/My97DatePicker/WdatePicker.js"></script>
+<script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script type="text/javascript" src='meterChart.js'></script>
+</head>
+<body>
+    <div id="demo"></div>
+     <div id="demo2"></div>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+		 	// 节点id
+			var device_str=597153517476;
+
+			// 变量标签列表
+			var valuelabel=[{F_ValueLabel: "Epin", F_ValueName: "正向有功总电能", F_ValueType: "1", F_Unit: "kW·h", F_OrderNum: null},
+				 {F_ValueLabel: "Epin", F_ValueName: "正向有功总电能", F_ValueType: "1", F_Unit: "kW·h", F_OrderNum: null},
+				 {F_ValueLabel: "Epout", F_ValueName: "反向有功总电能", F_ValueType: "1", F_Unit: "kW·h", F_OrderNum: null},
+				 {F_ValueLabel: "Ia", F_ValueName: "A相电流", F_ValueType: "2", F_Unit: "A", F_OrderNum: null},
+				 {F_ValueLabel: "Ib", F_ValueName: "B相电流", F_ValueType: "2", F_Unit: "A", F_OrderNum: null}
+			];
+
+			var demo=meterChart.init({id:'demo',node:device_str,valuelabel:valuelabel});
+			var demo2=meterChart.init({	id:'demo2',
+										node:device_str,
+										valuelabel:valuelabel,
+										width:500,height:300,
+										chartType:{'Y':{name:'逐年'},D:{name:'72小时'}},
+									});
+		});
+    </script>
+</body>
+</html>

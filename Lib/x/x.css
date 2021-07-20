@@ -1,0 +1,331 @@
+﻿/*清除默认样式*/
+*{margin:0;padding:0;border:none;list-style:none;outline:none;font-weight:normal;user-select:none;}
+/*布局*/
+.x-init{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	padding: 0 12px;
+	background: #eaebed;
+}
+.x-layTop{
+	height: 55px;
+	background: #fff;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.x-layCont{
+	height: calc(100% - 65px);
+	background: #fff;
+	margin-top: 10px;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+}
+.x-layMain{
+	height: calc(100% - 55px);
+	background: #fff;
+	padding: 0 20px 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+/*豆腐块样式*/
+.x-block{
+	width: 360px;
+	border: 1px solid #d6d6d6;
+	background: #FAFAFA;
+	padding: 0 15px;
+	cursor: pointer;
+}
+.x-block h2{
+	height: 34px;
+	line-height: 35px;
+	padding-left: 5px;
+	font-size: 16px;
+	border-bottom: 1px solid #d6d6d6;
+	position: relative;
+}
+.x-blockCont{
+	background: no-repeat 12px center;
+	background-blend-mode: lighten;
+	background-size: 70px 70px;
+	padding: 30px 0 30px 100px;
+	overflow: hidden;
+}
+.x-blockCont div{
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+}
+.x-blockCont p{margin-left: 20px;}
+.x-blockCont p span{
+	font-size: 36px;
+	font-weight: normal;
+	font-family: "微软雅黑";
+}
+.x-block ul{
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	overflow: hidden;
+	border-top: 1px solid #d6d6d6;
+}
+.x-block ul li{
+	width: 33%;
+	float: left;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+.x-block ul span{color:#11a8ff;}
+.x-block-sm{width:255px;}
+.x-block-sm .x-blockCont{
+	background-size: 70px 54px;
+	padding: 20px 0 20px 100px;
+}
+.x-block-sm .x-blockCont div{width:100%;}
+.x-block-sm ul li{width:50%;}
+/*标签页样式*/
+.x-tabTop{
+	height: 55px;
+	background: #fff;
+	padding: 0 25px;
+	display: flex;
+	align-items: center;
+}
+.x-tabTop li{
+	width: 85px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 12.5px;
+	color: #8c95b2;
+	font-size: 10.5pt;
+	text-align: center;
+	margin-right: 20px;
+	float: left;
+	cursor: pointer;
+}
+.x-tabTop li.active{
+	background: #017cc2;
+	color: #fff;
+}
+.x-tabCont{
+	height: calc(100% - 65px);
+	box-sizing: border-box;
+	background: #fff;
+	margin-top: 10px;
+	overflow: hidden;
+}
+/*下发状态样式*/
+.x-cue{
+	width: 170px;
+	height: 100px;
+	padding-top: 70px;
+	background: url(loading.gif) no-repeat center 10px rgba(255,255,255,0.5);
+	background-size: 50px;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+	margin: 100px auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	box-sizing: border-box;
+}
+.x-con0{background-image: url(con0.png);}
+.x-con1{background-image: url(con1.png);}
+/*表单样式*/
+.x-table table{
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 10.5pt;
+}
+.x-table tr:hover{background:#f7f7f7;}
+.x-table tr:first-child td{border-top:none;}
+.x-table th{
+	height: 50px;
+	background: #f7f7f7;
+	border: 1px solid #d6d6d6;
+}
+.x-table td{
+	border: 1px solid #d6d6d6;
+	padding: 15px 0;
+	text-align: center;
+}
+.x-table a{
+	color: #017cc2;
+	margin: 0 7.5px;
+	text-decoration: none;
+}
+.x-table .x-tbody{
+	height: calc(100% - 51px);
+	overflow-y: auto;
+}
+.x-table .x-tbody::-webkit-scrollbar{display:none;}
+/*模态框样式*/
+.x-shade{
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+.x-modal{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	overflow: hidden;
+}
+.x-modal .x-modalTop{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+	background: #f1f1f1;
+	border-bottom: 1px solid #d6d6d6;
+	box-sizing: border-box;
+}
+.x-modal .x-modalTop h2{
+	font-size: 16px;
+	float: left;
+}
+.x-modal .x-modalTop span{
+	width: 50px;
+	height: 100%;
+	float: right;
+	cursor: pointer;
+	background: url(modaloff.png) no-repeat center;
+}
+.x-modal .x-modalCont{
+	height: calc(100% - 110px);
+	padding: 20px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.x-modal .x-modalBtm{
+	padding: 17.5px 20px;
+	border-top: 1px solid #d6d6d6;
+	overflow: hidden;
+}
+/*提示框样式*/
+.x-tips{
+	width: 300px;
+	height: 150px;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 100px auto;
+	background: #fff;
+	overflow: hidden;
+}
+.x-tips .x-tipsCont{height:100px;}
+.x-tips .x-tipsCont p{
+	color: #4a4a4a;
+	font-size: 16px;
+	text-align: center;
+	line-height: 100px;
+}
+.x-tips .x-tipsFoot{
+	height: 50px;
+	border-top: 1px solid #d6d6d6;
+}
+.x-tips .x-tipsFoot button{
+	width: 50%;
+	line-height: 50px;
+	background: #fff;
+	font-size: 14px;
+	color: #fd9e09;
+	float: left;
+	cursor: pointer;
+}
+/*按钮,日期框样式*/
+.x-loading{
+	width: 120px;
+	height: 120px;
+	background: url(loading.gif) no-repeat center;
+	background-size: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+}
+.x-link{
+	padding-left: 20px !important;
+	background: url(link.png) no-repeat left center;
+}
+.x-lock:after{
+	content: "";
+	width: 16px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	background: url(lock.png) no-repeat right center;
+}
+.x-btn{
+	height: 25px;
+	line-height: 25px;
+	color: #fff;
+	text-align: center;
+	margin-left: 10px;
+	padding: 0 16px;
+	border-radius: 12.5px;
+	background: #017cc2;
+	cursor: pointer;
+	float: right;
+}
+.x-wdate{
+	width: 130px;
+	height: 25px;
+	color: #717c82;
+	border-radius: 12.5px;
+	background: url(calendar.png) 95px center no-repeat rgba(192,193,194,.5);
+	margin-left: 10px;
+	padding-left: 15px;
+	cursor: pointer;
+	float: right;
+}
+.x-toggle div{
+	width: 13px;
+	height: 13px;
+	margin: 0 auto;
+	text-indent: -1000px;
+	background: url(toggle.png) no-repeat;
+}
+.x-subTable{
+	padding: 20px !important;
+	background: #fdfdfd;
+	display: none;
+}
+.x-refresh{
+	width: 18px;
+	height: 35px;
+	display: inline-block;
+	background: url(refresh.png) no-repeat center;
+	background-size: 100%;
+	float: right;
+}
+@-webkit-keyframes zhuan{
+	from{
+		-webkit-transform: rotate(0deg);
+	}to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+.zhuan{-webkit-animation:zhuan 1s linear infinite;}

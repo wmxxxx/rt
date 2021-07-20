@@ -1,0 +1,347 @@
+﻿.storage
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	background-color: #FFFFFF;
+}
+.storage .stitle
+{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 40px;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 5px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.storage .tbar
+{
+    position: relative;
+    height: 44px;
+    margin-top: 10px;
+}
+.storage .tbar .panel
+{
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    right: 30px;
+    bottom: 0px;
+    padding: 5px 0px;
+}
+.storage .tbar .storageo {
+    position: relative;
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.storage .tbar .storageo img{
+    width: 22px;
+    height: 22px;
+}
+.storage .tbar .text_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+    background: #F0F0F0;
+}
+.storage .tbar .date_input {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    box-sizing: border-box;
+    border: 1px solid #E5E5E5;
+    background: url(/Resources/images/calendar.png) center right no-repeat #F0F0F0;
+}
+.storage .tbar .ddl {
+    position: relative;
+    float: right;
+    width: 125px;
+    height: 32px;
+    margin-left: 9px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 130px;
+    font-family: Microsoft YaHei;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #E5E5E5;
+    background: #F0F0F0;
+}
+.storage .tbar .query_btn {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 32px;
+    margin-left: 9px;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Microsoft YaHei;
+    background-color: #0076D6;
+}
+.storage .tbar .query_btn:hover
+{
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.storage .loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:100px;
+	height:100px;
+	margin-left:-50px;
+	margin-top:-50px;
+}
+.storage .thead
+{
+    position: relative;
+    margin: 0px 30px;
+}
+.storage .top
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 338px;
+    border: 0px;
+    overflow: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.storage .view
+{
+    position: absolute;
+    left: 0px;
+    top: 337px;
+    right: 0px;
+    bottom: 41px;
+    border: 0px;
+    overflow: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.storage .view .msg
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -20px;
+    width: 330px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-family: Microsoft YaHei;
+    font-size: 20pt;
+    color: #A9A9A9;
+}
+.storage table
+{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+.storage table th
+{
+    font-size:14px;
+    padding:8px;
+    color:#333;
+    border-bottom:0px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+}
+.storage table td
+{
+    padding:8px;
+    color:#333;
+    vertical-align: top;
+    line-height: 20px;
+    word-break:break-all;
+    border:1px solid #ddd;
+}
+.storage table td .block
+{
+    position:relative;
+    height:100%;
+    border: 1px solid #ddd;
+}
+.storage table td .block .name
+{
+    position:absolute;
+    left:0px;
+    top:10px;
+    width:140px;
+    bottom:10px;
+    color: #008CE2;
+    line-height:26px;
+    border-right: 1px dashed #dddddd;
+}
+.storage table td .block .value
+{
+    position:absolute;
+    left:140px;
+    top:10px;
+    right:0px;
+    bottom:10px;
+    line-height:26px;
+}
+.storage table td .block .value .text {
+    position: relative;
+    width: 60px;
+    height: 12px;
+    color: #008CE2;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    text-align: center;
+    outline: none;
+    border: 0px;
+    border-bottom: 1px solid #b3b3b3;
+    background-color: transparent;
+}
+.storage table tr.active
+{
+    background-color:#f9f9f9;
+}
+.storage .footer
+{
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    right: 30px;
+    height: 41px;
+    border-top: 1px solid #D3D3D3;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.storage .footer .fbar
+{
+    position: relative;
+    margin: auto;
+    width: 594px;
+    height: 100%;
+    padding: 7px 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.storage .footer .fbar .plbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 28px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 10pt;
+    color: #333333;
+    border: 1px solid #CCCCCC;
+}
+.storage .footer .fbar .plbox.active
+{
+    color:#ffffff;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+}
+.storage .footer .fbar .pbbox
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 28px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 10pt;
+    color: #333333;
+    cursor:pointer;
+    border: 1px solid #CCCCCC;
+}
+.storage .footer .fbar .pbbox:hover
+{
+    color:#ffffff;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+}
+.storage .footer .fbar .plabel
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 15px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 10pt;
+    color: #333333;
+}
+.storage .footer .fbar .btn
+{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+    height: 24px;
+    padding: 0px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 10pt;
+    color: #ffffff;
+    cursor:pointer;
+    background-color:#0076D6;
+    border: 1px solid #0076D6;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.storage .footer .fbar .btn:hover {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}

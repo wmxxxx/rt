@@ -1,0 +1,189 @@
+﻿.init
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+}
+.init .win
+{
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+}
+.init .step
+{
+    position: absolute;
+    left: 150px;
+    top: 106px;
+    width: 50px;
+    height: 84px;
+    color: #ffffff;
+    opacity: 0.2;
+    font-size: 84px;
+    line-height: 84px;
+    font-weight: bold;
+}
+.init .title
+{
+    position: absolute;
+    left: 222px;
+    top: 116px;
+    width: 170px;
+    height: 24px;
+    color: #8abaff;
+    font-size: 24px;
+    line-height: 24px;
+}
+.init .subtitle
+{
+    position: absolute;
+    left: 222px;
+    top: 160px;
+    width: 240px;
+    height: 12px;
+    color: #8abaff;
+    font-size: 12px;
+    line-height: 12px;
+}
+.init .form
+{
+    position: absolute;
+    left: 222px;
+    top: 200px;
+    width: 500px;
+    height: 270px;
+}
+.init .form .item
+{
+    position: relative;
+    margin-top: 20px;
+    color: #EBECF2;
+    font-size: 14px;
+    height: 30px;
+}
+.init .form .item .ddl
+{
+    position: relative;
+    height: 30px;
+    padding-left: 8px;
+    font-size: 14px;
+    width: 214px;
+    font-family: Microsoft YaHei;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #163073;
+    border: 1px solid #41578D;
+}
+.init .form .item input {
+    position: relative;
+    width: 214px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #00bab5;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    font-family: Microsoft YaHei;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #163073;
+    border: 1px solid #41578D;
+}
+.init .btn_test
+{
+    position: absolute;
+    left: 222px;
+    top: 480px;
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: #385d9f;
+    color: #fff;
+    text-align: center;
+    line-height: 36px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.init .btn_test:hover
+{
+    opacity:1;
+}
+.init .btn_import
+{
+    position: absolute;
+    left: 398px;
+    top: 480px;
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: #385d9f;
+    color: #fff;
+    text-align: center;
+    line-height: 36px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.init .btn_import:hover
+{
+    opacity:1;
+}
+.init .btn_next
+{
+    position: absolute;
+    left: 398px;
+    top: 480px;
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: #fff;
+    color: #00306f;
+    text-align: center;
+    line-height: 36px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+.init .btn_next:hover
+{
+    opacity:1;
+}
+.init .btn_start
+{
+    position: absolute;
+    left: 382px;
+    top: 410px;
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: #fff;
+    color: #00306f;
+    text-align: center;
+    line-height: 36px;
+    opacity: 0.9;
+    cursor: pointer;
+}
+.init .btn_start:hover
+{
+    opacity:1;
+}

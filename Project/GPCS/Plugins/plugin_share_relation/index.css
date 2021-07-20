@@ -1,0 +1,88 @@
+﻿/* 初始化样式 */
+body *{list-style:none;outline:none;font-weight:normal;user-select:none;}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #EFF2F7;
+	font-family: 'pingFangSC-Medium';
+}
+#header{
+	height: 48px;
+	padding: 0 20px;
+	margin-bottom: 12px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+}
+#header .layui-form-item{margin: 0 5px 0 0;}
+#header .layui-form-item:last-child{margin-left: 10px;}
+#set_open .block{
+	height: calc(100% - 50px);
+	position: relative;
+}
+#set_open .block > div{
+	border:1px solid #D0DCE4;
+	background: #fff;
+	position: absolute;
+}
+#set_open .block > div h3{
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	text-align: center;
+	background: #EFF2F7;
+}
+#set_open .block > div ul{
+	height: calc(100% - 35px);
+	padding: 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+#set_open .block > div ul li{margin-bottom:5px;}
+#set_open .block .user{display:none;}
+#set_open .block .group{
+	width: 35%;
+	height: 100%;
+	right: 20px;
+}
+#set_open .block .cycle,#set_open .block .action{
+	width: calc(65% - 60px);
+	height: calc(50% - 10px);
+	left: 20px;
+}
+#set_open .block .action{top: calc(50% + 10px);}
+#set_open .block.push .user{
+	width: 35%;
+	height: calc(50% - 10px);
+	left: 20px;
+	display: block;
+}
+#set_open .block.push .group{
+	width: 35%;
+	height: calc(50% - 10px);
+	top: calc(50% + 10px);
+	right: 20px;
+}
+#set_open .block.push .cycle{
+	width: calc(65% - 60px);
+	height: calc(50% - 10px);
+	left: auto;
+	right: 20px;
+}
+#set_open .block.push .action{
+	width: calc(65% - 60px);
+	height: calc(50% - 10px);
+}
+#set_open .layui-input-inline{width: auto;}
+.main{
+	height: calc(100% - 60px);
+	background: #fff;
+	padding: 10px 20px;
+	box-sizing: border-box;
+}
+/* 修正 */
+.layui-table-body .layui-table-cell{height: auto !important;}
+.layui-form-item .layui-form-checkbox{margin: 0 !important;}

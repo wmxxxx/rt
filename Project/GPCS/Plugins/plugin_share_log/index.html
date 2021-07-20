@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/Lib/layui/css/layui.css"/>
+	<link type="text/css" rel="stylesheet" href="/Resources/css/component/green.css"/>
+	<link type="text/css" rel="stylesheet" href="/Lib/zTree/zTreeStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<title></title>
+	<script type="text/javascript" src="/Lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/Lib/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.min.js"></script>
+	<script type="text/javascript" src="/Lib/zTree/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="/Lib/base.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div id="header" class="layui-form">
+		<div class="layui-form-item">
+			<input type="text" class="layui-input layui-form-date" id="time" readOnly>
+		</div>
+		<div class="layui-form-item" id="result">
+			<select>
+				<option value="">执行结果(全部)</option>
+				<option value="1">成功</option>
+				<option value="2">失败</option>
+				<option value="3">异常</option>
+				<option value="4">忽略</option>
+			</select>
+		</div>
+		<div class="layui-form-item">
+			<input type="text" class="layui-input" id="name" autocomplete="off" placeholder="设备名称">
+		</div>
+		<div class="layui-form-item">
+			<button class="layui-btn layui-btn-normal layui-btn-sm">查询</button>
+		</div>
+	</div>
+	<div class="main">
+		<table id="table" lay-filter="main"></table>
+	</div>
+</body>
+</html>
+<script type="text/html" id="type">
+	{{#
+		var type = '手动控制';
+		if(d.F_type == 1){
+			type = '批量任务';
+		}else if(d.F_type == 2){
+			type = '策略任务';
+		}else if(d.F_type == 3){
+			type = '重发任务';
+		}
+	}}
+	{{type}}
+</script>
+<script type="text/html" id="send">
+	{{d.F_time != null ? d.F_time : d.F_send}}
+</script>
+<script type="text/html" id="code">
+	{{#
+		var code = "等待执行";
+		if(d.F_code != "" && d.F_code  != null)code = d.F_code == "0" ? '成功' : (["100","101","102","103"].includes(d.F_code) ? '忽略' : '失败');
+	}}
+	{{code}}
+</script>
+<script type="text/html" id="sub_oper">
+	<a class="btn-a" lay-event="node" style="color:#00B9B4;">设备</a>
+	<a class="btn-a" lay-event="info" style="color:#04a9ed;">详情</a>
+</script>
+<script type="text/html" id="info_tpl">
+	<pre class="layui-code" lay-title="发送">{{JSON.stringify(JSON.parse(d.F_content),null,4)}}</pre>
+	<pre class="layui-code" lay-title="返回">{{d.F_back == "" ? "" : JSON.stringify(JSON.parse(d.F_back),null,4)}}</pre>
+</script>

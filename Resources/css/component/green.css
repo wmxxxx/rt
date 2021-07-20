@@ -1,0 +1,325 @@
+﻿/***************************************************common开始*********************************************************/
+.form-group {
+    margin: 0 2px;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    height: 28px;
+    font-size: 12px;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #00B9B4 !important;
+}
+
+.layui-none {
+    background: url(/Resources/images/component/nodata.gif) center center no-repeat;
+    height: 100%;
+    font-size: 0;
+}
+
+/***************************************************common结束*********************************************************/
+
+/***************************************************layer开始**********************************************************/
+body .layui-layer-title {
+    background: linear-gradient(to right, #00BAB4, #88DAD0);
+    padding: 0 20px 0 20px;
+    color: #fff;
+}
+
+body .layui-layer-ico {
+    background: url(/Resources/images/component/newicon.png);
+}
+
+body .layui-layer-content {
+    overflow: hidden;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+body .layui-layer-setwin {
+    top: 12px;
+}
+
+body .layui-layer-btn {
+    border-top: 1px solid #E9E7E7
+}
+
+body .layui-layer-btn a {
+    height: 28px;
+    font-size: 12px;
+    background: #EFF2F7;
+	margin: 5px 12px 0;
+	padding: 0 16px;
+}
+
+body .layui-layer-btn .layui-layer-btn1 {
+    background: #E6F8F7;
+    border-color: #00B9B4;
+    color: #00B9B4;
+}
+
+body .layui-layer-btn .layui-layer-btn0 {
+    background: #EFF2F7;
+    color: #333;
+    border: 1px solid #D0DCE4;
+}
+
+.layui-layer-setwin .layui-layer-close1 {
+    background-position: 0px -40px !important;
+}
+
+/***************************************************layer结束**********************************************************/
+
+/***************************************************layui-tab-title结束**********************************************************/
+.layui-tab-brief>.layui-tab-title .layui-this{
+	color: #00B9B4;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+    border-bottom-color:#00B9B4;
+}
+.layui-tab-title{
+    height: 50px;
+    border-bottom-width: 0;
+    padding-left: 40px;
+}
+.layui-tab-title li {
+    display: inline-block;
+    line-height: 50px;
+    min-width: 110px;
+	margin-right:36px;
+}
+.layui-tab-title li:hover{
+	color: #00B9B4;
+}
+.layui-tab-title .layui-this:after {
+    height: 50px;
+}
+/***************************************************layui-tab-title结束**********************************************************/
+
+/*****************************************************btn开始**********************************************************/
+.layui-btn{
+	background-color: #00B9B4;
+}
+.layui-btn-sm {
+    height: 28px;
+    line-height: 28px;
+	padding: 0 16px;
+}
+
+.layui-btn-normal {
+    background-color: #00B9B4 !important;
+}
+.layui-btn-warm {
+	background-color: #FAAF3A;
+}
+.layui-btn-danger {
+	background-color: #FA5D3A;
+}
+.layui-btn-primary {
+    background-color: #fff;
+}
+.layui-btn-action {
+    background-color: #e6f8f7 !important;
+    border: 1px solid #00B9B4;
+    color: #00B9B4;
+    box-sizing: content-box;
+    height: 26px;
+    line-height: 26px;
+}
+
+.layui-btn+.layui-btn {
+    margin-left: 12px;
+}
+/*****************************************************btn结束**********************************************************/
+
+/****************************************************form开始**********************************************************/
+.layui-form-select dl dd.layui-this {
+    background-color: #00B9B4;
+    color: #fff;
+}
+
+.layui-form-select {
+    font-size: 12px;
+}
+
+.layui-form-date {
+    background: url(/Resources/images/component/time.png) right center no-repeat;
+    background-position: right 10px bottom calc(50% - 0px);
+}
+
+.layui-form-label {
+    float: left;
+    display: block;
+    padding: 4px 15px;
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+}
+
+.layui-form-radio {
+    line-height: 28px;
+    margin: 0px 10px 0 0;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.layui-form-radio > i {
+    font-size: 14px;
+}
+
+.layui-form-radio>i:hover, .layui-form-radioed>i {
+    color: #00B9B4;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #00B9B4 !important;
+    background-color: #00B9B4;
+    color: #fff;
+}
+
+
+/****************************************************form结束**********************************************************/
+
+/***************************************************table开始**********************************************************/
+.layui-table-body .btn-a {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.layui-table-body .btn-a-normal {
+    color: #00B9B4;
+}
+
+.layui-table-view .layui-table td, .layui-table-view .layui-table th {
+    padding: 8px 0;
+}
+
+.layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even) {
+    background-color: #eff2f7;
+}
+
+.layui-table-box td{
+	color:#333;
+}
+/***************************************************table结束**********************************************************/
+
+/*****************************************************layui-date开始**********************************************************/
+
+.layui-laydate-header {
+    padding: 8px 70px 3px !important;
+}
+.layui-laydate-range{
+	width: 486px !important;
+}
+.layui-laydate-main{
+	width: 242px !important;
+	font-size:12px;
+}
+.layui-laydate-header i {
+	top: 8px !important;
+    font-size: 14px !important;
+}
+.layui-laydate .layui-this {
+    background-color: #00B9B4 !important;
+    color: #fff !important;
+}
+.layui-laydate-list>li {
+    height: 28px !important;
+    line-height: 28px !important;
+}
+.layui-laydate-content td, .layui-laydate-content th{
+	height: 22px !important;
+	padding: 4px !important; 
+}
+.laydate-month-list>li {
+    margin: 14px 0 !important;
+}
+.laydate-time-list ol {
+    height: 152px !important;
+}
+.laydate-time-list ol li {
+    line-height: 24px !important;
+}
+.laydate-time-list p {
+    line-height: 24px !important;
+}
+.layui-laydate-content table {
+    font-size: 14px;
+}
+.layui-laydate-content td.laydate-selected {
+    background-color: #E6F8F7!important;
+}
+.laydate-selected:hover {
+    background-color: #E6F8F7!important;
+}
+.layui-laydate ::-webkit-scrollbar {
+    width: 6px;
+	height: 6px;
+    border-radius: 6px;
+}
+.layui-laydate ::-webkit-scrollbar-thumb  
+{  
+    border-radius: 6px;  
+    background-color: #d0dce4;  
+} 
+/*****************************************************layui-date结束**********************************************************/
+
+/***************************************************other开始**********************************************************/
+/*wdatepicker*/
+.reatgreen-Wdate {
+    border: #00B9B4 1px solid;
+    height: 30px;
+    width: 120px;
+    padding-left: 20px;
+    background: #fff url(/Resources/images/component/date.png) no-repeat right;
+}
+
+/*form*/
+.form-label {
+    height: 30px;
+    line-height: 250%;
+}
+
+/*button*/
+.rt-control {
+    text-align: center;
+    width: 100%;
+}
+
+.rt-input {
+    height: 30px;
+}
+
+.rt-select {
+    height: 30px;
+}
+
+.rt-btn {
+    height: 30px;
+}
+
+.btn-query {
+
+}
+
+/***************************************************other结束**********************************************************/
+/********************************************************************************************/
+.nodata{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:100%;
+}
+.nodata:before{
+	content:"无数据";
+	display:inline-block;
+	width:160px;
+	background:url(../../images/component/nodata.gif) no-repeat;
+	padding-top:160px;
+	text-align:center;
+}
+/********************************************************************************************/

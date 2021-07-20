@@ -1,0 +1,41 @@
+﻿.mainPanel{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #eaebed;
+}
+#mTree{
+	width: 225px;
+	height: 100%;
+	background: #fff;
+	margin-right: 12px;
+	overflow: auto;
+	box-sizing: border-box;
+	float: left;
+}
+.content{
+	width: calc(100% - 237px);
+	height: 100%;
+	background: #fff;
+	float: left;
+}
+.content .layTop{
+	height: 60px;
+	padding: 0 15px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.content .layCont{
+	height: calc(100% - 60px);
+	background: #fff;
+	padding: 0 15px 15px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+.mgt15{margin-top: 15px;}
+.mgr10{margin-right: 10px;}
+.inText{width: 120px;}
